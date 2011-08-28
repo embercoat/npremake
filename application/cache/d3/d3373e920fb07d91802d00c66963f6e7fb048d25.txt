@@ -1,0 +1,20 @@
+a:1:{i:0;a:1:{s:7:"content";s:2972:"<h1>
+	Bostad - St&auml;ll dig i bostadsk&ouml; s&aring; snart som m&ouml;jligt</h1>
+<p>
+	S&aring; fort du kommer p&aring; id&eacute;n att b&ouml;rja plugga i Lule&aring; &auml;r det en bra id&eacute; att st&auml;lla dig i bostadsk&ouml;, vilket du kan g&ouml;ra innan du blivit antagen. S&aring; fort du blivit antagen kan du b&ouml;rja s&ouml;ka efter och boka en studentl&auml;genhet. Under Nolleperioden har det under senare &aring;r r&aring;tt en viss brist p&aring; studentl&auml;genheter s&aring; det g&auml;ller att vara ute i s&aring; god tid som m&ouml;jligt. De tv&aring; huvudsakliga f&ouml;rmedlarna av studentl&auml;genheter &auml;r&nbsp;Lulebo och Studentbostadsservice.<br />
+	<br />
+	<b>Lulebo</b><br />
+	<a href="http://www.lulebo.se">www.lulebo.se</a><br />
+	Tel.: 0920-23 67 00<br />
+	<br />
+	Lulebo har l&auml;genheter &ouml;ver hela staden, men studentl&auml;genheterna finns p&aring; Pors&ouml;n och Bj&ouml;rkskatan. P&aring; Pors&ouml;n har Lulebo studentl&auml;genheter p&aring; Pors&ouml;g&aring;rden, V&auml;nortsv&auml;gen (nr 5, 7 och 9), Gamla K&aring;rhuset, Punkthusen, H&ouml;ghusen och L&aring;ghusen. H&auml;r finns m&aring;nga olika m&ouml;jligheter, allt fr&aring;n 1:or med kokvr&aring; till 3:or med riktiga k&ouml;k. Vill man bo i korridor, finns det p&aring; Bj&ouml;rkskatan, som ligger en liten bit fr&aring;n universitetet men som man l&auml;tt och snabbt tar sig till och fr&aring;n med cykel. F&ouml;r att st&auml;lla sig i k&ouml; hos Lulebo g&aring;r man in p&aring; deras hemsida och registrerar dig, varefter det &auml;r fritt fram att s&ouml;ka bland lediga l&auml;genheter. Lulebo har omr&aring;deskontor &ouml;ver hela stan, det som de flesta studenter kommer i kontakt med &auml;r det p&aring; Pors&ouml;n, d&auml;r kontoret ligger i Pors&ouml; Centrum.<br />
+	<br />
+	<b>Studentbostadsservice</b><br />
+	<a href="http://www.sbslulea.se">www.sbslulea.se</a><br />
+	Tel.: 0920-49 25 78<br />
+	<br />
+	Studentbostadsservice har alla sina l&auml;genheter p&aring; Pors&ouml;n, n&auml;rmare best&auml;mt p&aring; V&auml;nortsv&auml;gen. H&auml;r finns allt fr&aring;n 1:or till 4:or. F&ouml;r att st&auml;lla sig i k&ouml; hos Studentbostadsservice &auml;r det bara att bes&ouml;ka deras hemsida. De f&ouml;rmedlar ocks&aring; andrahands-uthyrning. Studentbostadsservice finns i K&aring;ridoren i Akademica (C-huset) p&aring; universitetet.<br />
+	<br />
+	<strong>Nolleperioden</strong><br />
+	B&ouml;rjar Nolleperioden n&auml;rma sig och du har fortfarande ingen bostad? Ingen fara. F&ouml;r de nya studenter som inte lyckas f&aring; tag p&aring;&nbsp;boende i tid st&auml;ller universitetet upp och subventionerar platser p&aring; vandrarhemmen p&aring; Kronan och i Gammelstad. Under Nolleperioden kommer dessutom&nbsp;extrainsatt busstrafik att g&aring; f&ouml;r att s&auml;kerst&auml;lla att alla kan deltaga i de aktiviteter som anordnas. Mer detaljerad information om hur man bokar dessa platser kommer senare.</p>
+";}}

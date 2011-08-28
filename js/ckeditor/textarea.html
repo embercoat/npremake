@@ -1,0 +1,21 @@
+<html>
+<head>
+<script type="text/javascript" src="ckeditor.js"></script>
+
+
+<script type="text/javascript">
+window.onload = function(){
+    CKEDITOR.replace( 'ckedit' );
+}
+
+</script>
+
+</head>
+<body onload="do()">
+<form action="rec.php" method="post">
+    <textarea class="ckeditor" id="ckedit" name="ckedit"></textarea>
+    <input type="submit" value="skicka">
+</form>
+
+</body>
+</html>

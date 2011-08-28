@@ -1,0 +1,1 @@
+a:1:{i:0;a:4:{s:5:"fname";s:8:"kristian";s:5:"lname";s:7:"nordman";s:7:"user_id";s:1:"1";s:10:"membertype";s:3:"NPG";}}

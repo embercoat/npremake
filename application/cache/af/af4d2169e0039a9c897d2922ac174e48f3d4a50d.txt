@@ -1,0 +1,1 @@
+a:2:{i:0;a:4:{s:4:"year";s:4:"2011";s:7:"groupid";s:1:"1";s:9:"groupname";s:7:"LS ÖPH";s:10:"membertype";s:3:"NPG";}i:1;a:4:{s:4:"year";s:4:"2011";s:7:"groupid";s:1:"2";s:9:"groupname";s:8:"Bullfika";s:10:"membertype";s:3:"NPG";}}

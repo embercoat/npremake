@@ -1,0 +1,11 @@
+#details, #groups {
+	float: left;
+	clear: both;
+}
+#main>h1 {
+	float: left;
+	clear:both;
+}
+.collapseHeader {
+	cursor: pointer;
+}

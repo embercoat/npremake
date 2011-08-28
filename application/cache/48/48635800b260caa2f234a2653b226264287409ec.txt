@@ -1,0 +1,23 @@
+a:1:{i:0;a:1:{s:7:"content";s:3237:"<h1>Capsregler</h1>
+
+Caps &auml;r ett dryckesspel som g&aring;r ut p&aring; att med kapsyler (caps) tr&auml;ffa sina motst&aring;ndares muggar. F&ouml;r att kunna spela kr&auml;vs det medspelare, dryck, kapsyler samt plastmuggar. 
+<br /><br />
+Plastmuggarna placeras i en ring med en mugg framf&ouml;r varje deltagare samt tv&aring; gemensamma mittenmuggar, en helt alkoholfri. Deltagarna skall sitta i skr&auml;ddarst&auml;llning och ha en benl&auml;ngds avst&aring;nd till egen mugg. Varje deltagare fyller p&aring; sin mugg med valfri dryck till en lagom m&auml;ngd (ca 2 fingrar h&ouml;gt) och ringen fyller gemensamt upp mittenmuggarna.
+<br /><br />
+Kapsylen skall h&aring;llas mellan tumme och pekfinger (tummen inuti och fingret utanp&aring; kapsylen) och vid kast f&aring;r armb&aring;gens vinkel ej &ouml;verstiga 90 grader. Under ett kast m&aring;ste armb&aring;gen hela tiden ha kontakt med kn&auml;et. Spelet spelas medsols och deltagaren utmanar en motst&aring;ndare genom att kasta i dennes mugg, den utmanade skall d&aring; svara med att kasta i utmanarens mugg, och detta forts&auml;tter till det att n&aring;gon missar. Den som har missat dricker d&aring; egen mugg.
+Om utmanaren vann duellen forts&auml;tter denna att utmana andra deltagare. Om den utmanade vann duellen forts&auml;tter spelet medsols med deltagaren efter den som startade utmaningen.
+<br /><br />
+N&auml;r du av n&aring;gon h&auml;ndelse t&ouml;mmer din mugg m&aring;ste du sj&auml;lv fylla upp den till ursprungsniv&aring;n. 
+<br /><br />
+Skulle n&aring;gon deltagare i det f&ouml;rsta kastet under sin tur tr&auml;ffa egen mugg s&aring; dricker spelaren upp den. Skulle spelaren i sitt f&ouml;rsta kast tr&auml;ffa n&aring;gon av mittenmuggarna s&aring; dricker spelaren upp en av dem (valfritt vilken) som straff samtidigt som samtliga spelare dricker upp egen mugg. D&auml;refter fylles mittenmuggen upp igen av alla spelare. I b&aring;da fallen forts&auml;tter sedan spelet medsols. <br />
+Tr&auml;ff av mittenmugg eller egen mugg under duell r&auml;knas enbart som miss.<br />
+Under spelets g&aring;ng kan kontroll avkr&auml;vas p&aring; motspelare som antas sitta f&ouml;r n&auml;ra egen mugg. Kontroll utf&ouml;res (en benl&auml;ngd skall det vara) och om spelaren sitter f&ouml;r n&auml;ra drickes egen mugg som straff, &auml;r avst&aring;ndet korrekt skall den som beg&auml;rde kontrollen dricka sin egen mugg.<br />
+Om utrymmet skulle vara begr&auml;nsat kan l&auml;ngdregeln bortses ifr&aring;n.<br />
+Om en mugg v&auml;lter ska muggens &auml;gare fylla upp muggen s&aring; att den inte v&auml;lter igen. Kastet r&auml;knas som en miss och spelet g&aring;r vidare.<br />
+<br />
+Om en regel bryts bestraffas capsaren genom att dricka upp sitt glas.<br />
+Vid upprepade regelbrott kan resten av ringen diskvalificera den olydiga capsaren.<br />
+<br />
+<h2>Till&auml;gg f&ouml;r NolleCaps-turnering</h2>
+<br />
+Varje spelare startar med en plastmugg och n&auml;r muggen har blivit urdrucken skall det ritas ett streck p&aring; muggen, spelare som tr&auml;ffar en mittenmugg ritar ett extra streck. N&auml;r man har f&aring;tt 5 streck p&aring; sin mugg &aring;ker man ut. N&auml;r det endast &auml;r en spelare kvar s&aring; har denne vunnit.";}}

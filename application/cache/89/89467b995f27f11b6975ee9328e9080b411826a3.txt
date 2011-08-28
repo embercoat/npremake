@@ -1,0 +1,9 @@
+a:1:{i:0;a:1:{s:7:"content";s:396:"<h1>Datum</h1>
+<h2>Allm&auml;nna datum</h2>
+<div><strong>12/8: Tillbaka i Lule&aring;<br /></strong>13/8: F&ouml;rsta h&ouml;stm&ouml;tet</div>
+<div>14/8 Sjukv&aring;rdsutbildning</div>
+<div>&nbsp;</div>
+<div>15/8 Ph&ouml;sarfrukost</div>
+<div>17/8 Nolleperioden b&ouml;rjar!!!<br /></div>
+<h2>Deadlines</h2>
+1 Maj: Nollehandbok till <a href="mailto:npg@nolleperioden.se">npg@nolleperioden.se</a>";}}

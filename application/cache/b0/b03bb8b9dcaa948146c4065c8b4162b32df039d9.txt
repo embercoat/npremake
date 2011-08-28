@@ -1,0 +1,1 @@
+a:3:{i:0;a:4:{s:7:"user_id";s:1:"1";s:8:"username";s:4:"tiny";s:5:"fname";s:8:"Kristian";s:5:"lname";s:7:"Nordman";}i:1;a:4:{s:7:"user_id";s:1:"3";s:8:"username";s:5:"draco";s:5:"fname";s:8:"Kristian";s:5:"lname";s:7:"Nordman";}i:2;a:4:{s:7:"user_id";s:1:"2";s:8:"username";s:6:"torner";s:5:"fname";s:5:"johan";s:5:"lname";s:7:"törner";}}
