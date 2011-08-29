@@ -1,1 +1,1 @@
-a:1:{i:0;a:5:{s:5:"fname";s:8:"Kristian";s:5:"lname";s:7:"Nordman";s:7:"user_id";s:1:"1";s:4:"year";s:4:"2011";s:10:"membertype";s:3:"NPG";}}
+a:2:{i:0;a:5:{s:5:"fname";s:8:"Kristian";s:5:"lname";s:7:"Nordman";s:7:"user_id";s:1:"1";s:4:"year";s:4:"2011";s:10:"membertype";s:3:"NPG";}i:1;a:5:{s:5:"fname";s:5:"johan";s:5:"lname";s:7:"törner";s:7:"user_id";s:1:"2";s:4:"year";s:4:"2011";s:10:"membertype";s:3:"NPG";}}

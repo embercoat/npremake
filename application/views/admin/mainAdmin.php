@@ -32,6 +32,10 @@
 				<li><a href="/admin/user/">Lista</a></li>
 				<li><a href="/admin/user/group/">Grupper</a></li>
 			</ul>	
+			<ul>
+				<li class="menuGroupHead">Data</li>
+				<li><a href="/admin/data/program">Program</a></li>
+			</ul>
 			
 		</div>
 		<div id="main">

@@ -69,13 +69,14 @@ class user{
 	 * @return int
 	 */
     public static function create_user($fname, $lname, $username, $password){
-        return DB::insert('user', array('fname', 'lname', 'username', 'password'))
+        return DB::insert('user', array('fname', 'lname', 'username', 'password', 'accesskey'))
                             ->values(
                                 array(
                                     'fname' => $fname,
                                     'lname' => $lname,
                                     'username' => $username,
-                                    'password' => self::encrypt_password($password)
+                                    'password' => self::encrypt_password($password),
+                                    'accesskey' => md5(rand())
                                 )
                              )
                             ->execute();

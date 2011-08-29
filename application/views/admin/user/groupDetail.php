@@ -26,6 +26,7 @@ foreach($members as $m){
         <td><?=$m['membertype'];?></td>
         <td><?=$m['year']; ?></td>
         <td>
+        	<a href="/admin/user/editUser/<?=$m['user_id']; ?>/"><img src="/images/icon/edit.gif" /></a>
         	<a href="/admin/user/removeFromGroup/<?=$m['user_id'].'/'.$groupId; ?>"><img src="/images/icon/red_x.svg" height="14px" /></a>
         </td>
     	
