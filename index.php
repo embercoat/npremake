@@ -1,5 +1,5 @@
 <?php
-define('STARTTIME', microtime(true));
+define('STARTTIME', microtime(true) );
 
 /**
  * The directory in which your application specific resources are located.
