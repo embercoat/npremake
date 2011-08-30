@@ -95,6 +95,9 @@ class Kohana_Form {
 		// Set the input name
 		$attributes['name'] = $name;
 
+		// Set the input id
+		$attributes['id'] = $name;
+		
 		// Set the input value
 		$attributes['value'] = $value;
 
@@ -229,6 +232,10 @@ class Kohana_Form {
 		// Set the input name
 		$attributes['name'] = $name;
 
+		// Set the input id
+		$attributes['id'] = $name;
+		
+
 		// Add default rows and cols attributes (required)
 		$attributes += array('rows' => 10, 'cols' => 50);
 
@@ -253,7 +260,10 @@ class Kohana_Form {
 	{
 		// Set the input name
 		$attributes['name'] = $name;
-
+		
+		// Set the input id
+		$attributes['id'] = $name;
+		
 		if (is_array($selected))
 		{
 			// This is a multi-select, god save us!
@@ -402,6 +412,10 @@ class Kohana_Form {
 	{
 		// Set the input name
 		$attributes['name'] = $name;
+
+		// Set the input id
+		$attributes['id'] = $name;
+		
 
 		return '<button'.HTML::attributes($attributes).'>'.$body.'</button>';
 	}

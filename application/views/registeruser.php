@@ -22,6 +22,9 @@
 <?=Form::label('password2', 'Lösenord Igen')."\r\n" ?>
 <?=Form::password('password2') ?>
 
+<?=Form::label('tos', 'Jag har läst och accepterar ToS för nolleperioden.se'); ?>
+<?=Form::checkbox('tos', '1'); ?>
+
 <?=Form::submit('save', 'Save')?>
 </form>
 <script type="text/javascript">

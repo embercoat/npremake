@@ -22,13 +22,19 @@ class Controller_register extends SuperController {
             ->rule('fname', 'not_empty')
             ->rule('lname', 'not_empty');
         if($post->check()){
-            if($post['reg_password'] == $post['password2']){
+            if($post['reg_password'] == $post['password2'] && (isset($post['tos']) && $post['tos'] == 1)){
                 user::create_user($_POST['fname'],$_POST['lname'],$_POST['reg_username'],$_POST['reg_password']);
                 $_SESSION['message']['success'][] = 'Du är nu registrerad!';
                 
             } else {
                 $_SESSION['message']['fail'][] = 'Dina lösenord matchade inte.';
+                $this->request->redirect('/register');
             }
+            if(!isset($_POST['tos'])) {
+                $_SESSION['message']['fail'][] = 'Du måste acceptera Terms of Service';
+                $this->request->redirect('/register');
+            }
+                
         } else {
             $errors = $post->errors();
             if(isset($errors['reg_username'])){
@@ -50,6 +56,7 @@ class Controller_register extends SuperController {
             if(isset($errors['lname'])){
                 $_SESSION['message']['fail'][] = 'Du måste ange efternamn.';
             }
+       	    $this->request->redirect('/register');
             
         }
 	}

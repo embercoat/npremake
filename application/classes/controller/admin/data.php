@@ -38,16 +38,20 @@ class Controller_Admin_data extends SuperAdminController{
 	}
 	public function action_editProgram(){
 	    if($_POST['program_id'] !== 'new'){
-		    DB::update('program')
-		        ->set(array('name' => $_POST['newname']))
-		        ->where('id', '=', $_POST['program_id'])
-		        ->execute();
-		    $_SESSION['messages']['success'][] = 'Successfully changed <b>'. $_POST['oldname'] .'</b> to <b>'.$_POST['newname'].'</b>';
+	        if($_POST['oldname'] == $_POST['newname']){
+	            $_SESSION['messages']['warning'][] = 'No difference between new and old name. Not changed.';
+	        } else {
+		        DB::update('program')
+			        ->set(array('name' => $_POST['newname']))
+			        ->where('id', '=', $_POST['program_id'])
+			        ->execute();
+			    $_SESSION['messages']['success'][] = 'Successfully changed <b>'. $_POST['oldname'] .'</b> to <b>'.$_POST['newname'].'</b>';
+	        }
 	    } else {
 	        DB::insert('program', array('name'))
 	            ->values(array('name' => $_POST['newname']))
 	            ->execute();
-                $_SESSION['messages']['success'][] = 'Successfully added <b>'.$_POST['newname'].'</b> to available programs';
+            $_SESSION['messages']['success'][] = 'Successfully added <b>'.$_POST['newname'].'</b> to available programs';
 	    }
         $this->request->redirect('/admin/data/program');
 	        

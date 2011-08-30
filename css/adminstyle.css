@@ -60,6 +60,12 @@ table {
 	margin:9px;
 	padding:5px;
 }
+.warning {
+	list-style:none outside none;
+	background-color: #FFFF33;
+	margin:9px;
+	padding:5px;
+}
 .fail {
 	list-style:none outside none;
 	background-color:lightCoral;

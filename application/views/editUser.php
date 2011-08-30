@@ -33,6 +33,9 @@
 		<?=Form::label('showAllergies', "Visa Allergier?");?>
 		<?=Form::checkbox('showAllergies', 1, ($details['showAllergies'] == 1 ? true: false)); ?>
 		
+		<?=Form::label('socialsecuritynumber', "Personnummer (10 siffror. Med bindestreck)");?>
+		<?=Form::input('socialsecuritynumber', $details['socialsecuritynumber']); ?>
+
 		<?=Form::label('email', "Epost");?>
 		<?=Form::input('email', $details['email']); ?>
 		
@@ -46,8 +49,7 @@
 		<?=Form::input('driverlicens', $details['driverlicens']); ?>
 		
 		<?=Form::label('programId', "Program");?>
-		<?=Form::input('programId', $details['programId']); ?>
-		
+		<?=Form::select('programId', user::get_programs(false, true), $details['programId']); ?>
 		<?=Form::submit('submit', "Spara");?>
 		</form>
 </div>

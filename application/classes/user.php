@@ -69,14 +69,15 @@ class user{
 	 * @return int
 	 */
     public static function create_user($fname, $lname, $username, $password){
-        return DB::insert('user', array('fname', 'lname', 'username', 'password', 'accesskey'))
+        return DB::insert('user', array('fname', 'lname', 'username', 'password', 'accesskey', 'acceptTos'))
                             ->values(
                                 array(
                                     'fname' => $fname,
                                     'lname' => $lname,
                                     'username' => $username,
                                     'password' => self::encrypt_password($password),
-                                    'accesskey' => md5(rand())
+                                    'accesskey' => md5(rand()),
+                                    'acceptTos' => 1
                                 )
                              )
                             ->execute();
@@ -211,6 +212,29 @@ class user{
     }
     
     /**
+	 * getProgram
+	 * Returns single program if argument present. if not, returns all programs
+	 *
+	 * @param program_id
+	 * @param sort
+	 * @return array
+	 */
+    public static function get_programs($program_id = false, $sort = false){
+        $data = DB::select('*')
+                        ->from('program');
+        if($program_id !== false)
+            $data = $data->where('id', '=', $program_id);
+        if($sort)
+            $data = $data->order_by('name', 'asc');
+            
+        $data = $data->execute()->as_array();
+        $return = array();
+        foreach($data as $d)
+            $return[$d['id']] = $d['name'];
+        return $return;
+    }
+    
+    /**
 	 * Add user to group
 	 * adds users to a group using membertype. 
 	 *
@@ -302,10 +326,31 @@ class user{
 	 * @return bool
 	 */
     function isAdmin(){
-        //TODO add some real adminvalidation
-        if($this->logged_in())
-            return true;
-        else 
+        if($this->logged_in()) {
+            //Does he have the membertype of NPG for this year?
+	        $data = DB::select(DB::expr('count(1)'))
+	            ->from('lt_UserGroup')
+	            ->where('userid', '=', $this->getId())
+	            ->where('type', '=', 1)
+	            ->where('year', '=', DB::expr('year(now())'))
+	            ->execute()
+	            ->as_array();
+	        if($data[0]['count(1)'] > 0){
+	            //Guess he is. Let's return true and end it right here.
+	            return true;
+	        }
+	        //If not. Lets Check if he belongs with the mighty Bullfika
+	        $data = DB::select(DB::expr('count(1)'))
+	            ->from('lt_UserGroup')
+	            ->where('userid', '=', $this->getId())
+	            ->where('groupid', '=', 2)
+	            ->execute()
+	            ->as_array();
+	        if($data[0]['count(1)'] > 0){
+	            //Guess he is. Let's return true and end it right here.
+	            return true;
+	        }
+        } else 
             return false;
     }
     

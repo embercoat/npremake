@@ -29,7 +29,7 @@
 		<?= Form::hidden('oldname', '', array('id' => 'oldname')); ?>
 		<?= Form::label('newname', 'Namn'); ?>
 		<?= Form::input('newname', '', array('id' => 'newname')); ?>
-		<?= Form::submit('', 'Spara'); ?>
-		<?= Form::button('','Avbryt', array('onclick' => 'hello')); ?>
+		<?= Form::submit('save', 'Spara'); ?>
 	</form>
+	<?= Form::button('abort','Avbryt', array('onclick' => 'hideEditBox()')); ?>
 </div>

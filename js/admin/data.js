@@ -8,3 +8,6 @@ function addProgram(){
 	$('#editBox').show();
 	document.getElementById('program_id').value = 'new'; 
 }
+function hideEditBox(){
+	$('#editBox').hide();
+}

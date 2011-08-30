@@ -20,3 +20,7 @@ input[type="checkbox"] {
 input[type="submit"], button {
 	width: 100px;
 }
+
+.floatRight {
+	float: right;
+}

@@ -37,7 +37,7 @@
                     <input name="username" type="text" id="textbox_username" class="login" />
                     L&ouml;senord
                     <input name="password" type="password" id="textbox_password" class="login" />
-                    <button type="submit" id="submit" >Logga In</button>
+                    <button type="submit" id="submit" class="floatRight">Logga In</button>
                 </form>
                 <?
                 }
