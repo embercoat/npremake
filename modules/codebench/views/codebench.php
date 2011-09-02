@@ -176,7 +176,7 @@
 			<p>
 				<strong>
 					Remember to prefix the methods you want to benchmark with “bench”.<br />
-					You might also want to overwrite <code>Codebench->method_filter()</code>.
+					You might also want to overwrite <code>Codebench-&gt;method_filter()</code>.
 				</strong>
 			</p>
 
