@@ -41,6 +41,33 @@ class Controller_Admin_phosare extends SuperAdminController{
 	            ->execute();
 	    $this->request->redirect('/admin/phosare/applicants/');
 	}
+	public function action_list($what = false) {
+        $list = DB::select_array(array('user.user_id', DB::expr("Concat(user.fname, ' ', user.lname) as phosarename"), 'group.name', 'lt_UserGroup.year', array('membertype.name', 'membertype')))
+                ->from('lt_UserGroup')
+		        ->join('user')
+		        ->on('lt_UserGroup.userid', '=', 'user.user_id')
+		        ->join('group')
+		        ->on('lt_UserGroup.groupid', '=', 'group.id')
+		        ->join('membertype')
+		        ->on('lt_UserGroup.type', '=', 'membertype.id');
+		        
+	    switch($what){
+	        case 'thisYear':
+	            $list = $list->where('lt_UserGroup.year', '=', date('Y'));
+		    break;
+	        default:
+	            //Nothing;
+	        break;
+	    }
+	    $this->content = View::factory('list');
+	    $this->content->list = $list->execute()->as_array();
+	    $this->content->list_heads = array(
+	    									'phosarename' =>  'Namn',
+	                                        'name' => 'Grupp',
+	                                        'membertype' => 'Phösartyp',
+	                                        'year' => 'År'
+	                                 );
+	}
 }
 			
 

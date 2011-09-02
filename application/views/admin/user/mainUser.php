@@ -14,8 +14,8 @@
 		foreach($users as $u){
 		    ?>
 		    <tr>
-		    	<td><?=$u['lname']?></a></td>
-		    	<td><?=$u['fname']?></a></td>
+		    	<td><?=$u['lname']?></td>
+		    	<td><?=$u['fname']?></td>
 		    	<td><?=$u['username']?></td>
 		    	<td>
 		    		<a href="/admin/user/editUser/<?=$u['user_id']; ?>/"><img src="/images/icon/edit.gif" /></a>
