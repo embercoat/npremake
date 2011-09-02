@@ -1,3 +1,4 @@
+<a href="/admin/user/addGroup">Add Group</a>
 <table>
 <thead>
 	<tr>
@@ -13,7 +14,10 @@ foreach($groups as $g){
 	<tr>
 		<td><?=$g['id'];?></td>
 		<td><?=$g['name'];?></td>
-		<td><a href="/admin/user/editGroup/<?=$g['id'];?>/"><img src="/images/icon/edit.gif" /></a></td>
+		<td>
+			<a href="/admin/user/editGroup/<?=$g['id'];?>/"><img src="/images/icon/edit.gif" /></a>
+			<a href="/admin/user/delGroup/<?=$g['id'];?>"><img src="/images/icon/red_x.svg" height="14px"; /></a>
+		</td>
 	</tr>
 <?
 }

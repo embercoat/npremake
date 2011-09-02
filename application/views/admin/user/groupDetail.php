@@ -1,8 +1,11 @@
-<form action="/admin/user/group/edit/<?=$groupId?>" method="post">
+<form action="/admin/user/editGroup/<?=$groupId; ?>" method="post">
 <?=Form::hidden('groupid', $groupId);?>
 
 <?=Form::label('name', 'Namn'); ?>
 <?=Form::input('name', $group['name'])?>
+
+<?=Form::label('shortname', 'Kortnamn'); ?>
+<?=Form::input('shortname', $group['shortname'])?>
 
 <?=Form::submit('', 'Spara');?>
 </form>

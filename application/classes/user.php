@@ -287,6 +287,21 @@ class user{
     public static function add_group($groupname){
         return DB::insert('group', array('name'))->values(array('name' => $groupname))->execute();
     }
+    /**
+	 * deleter group
+	 * Add a group to the database
+	 *
+	 * @param int groupid
+	 * @return int 
+	 */
+    public static function del_group($groupid){
+        DB::delete('lt_UserGroup')
+                ->where('groupid', '=', $groupid)
+                ->execute();
+        DB::delete('group')
+                ->where('id', '=', $groupid)
+                ->execute();
+    }
     
     /**
 	 * Get username by id

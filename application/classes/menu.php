@@ -5,9 +5,6 @@
  *
  */
 class menu{
-    /**
-     * TODO add functionality for user-based security
-     */
     
     static function get_items(){
         

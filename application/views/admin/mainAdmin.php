@@ -31,7 +31,11 @@
 				<li class="menuGroupHead">Avändare</li>
 				<li><a href="/admin/user/">Lista</a></li>
 				<li><a href="/admin/user/group/">Grupper</a></li>
-			</ul>	
+			</ul>
+			<ul>
+				<li class="menuGroupHead">Phösare</li>
+				<li><a href="/admin/phosare/applicants/">Ansökningar</a></li>
+			</ul>
 			<ul>
 				<li class="menuGroupHead">Data</li>
 				<li><a href="/admin/data/program">Program</a></li>

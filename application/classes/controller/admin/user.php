@@ -46,14 +46,33 @@ class Controller_Admin_User extends SuperAdminController{
 	    $this->js[] = '/js/editUser.js';
 	    
 	}
+	public function action_delGroup($id){
+	    user::del_group($id);
+        $this->request->redirect('/admin/user/group/');
+	    
+	}
 	public function action_group(){
         $groups = DB::select('*')->from('group')->order_by('name')->execute();
         $this->content = View::factory('groupList');
 	    $this->content->groups = $groups;
 	}
+	public function action_addGroup(){
+	    $this->content = View::factory('admin/user/addGroup');
+	}
 	public function action_editGroup($id){
-	    if(isset($_POST) && !empty($_POST) && $_SESSION['user']->isAdmin()){
-	        $q = DB::update('group')->set(array('name' => $_POST['name']))->where('id', '=', $id)->execute();
+	    if(isset($_POST) && !empty($_POST)){
+	        if($id == 'new'){
+	            list($id, $null) = DB::insert('group', array('name', 'shortname'))
+	                    ->values(array('name' => $_POST['name'], 'shortname' => $_POST['shortname']))
+                        ->execute();
+		        $_SESSION['messages']['success'][] = 'Successfully added '.$_POST['name'].' to groups';
+	        } else {
+		        $q = DB::update('group')
+		                    ->set(array('name' => $_POST['name'], 'shortname' => $_POST['shortname']))
+		                    ->where('id', '=', $_POST['groupid'])
+		                    ->execute();
+		        $_SESSION['messages']['success'][] = 'Successfully updated groupdetails';
+	        }
 	    }
         $group = DB::select('*')->from('group')->where('id','=',$id)->execute();
 	    $this->content = View::factory('admin/user/groupDetail');
