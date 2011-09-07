@@ -13,6 +13,7 @@ class SuperAdminController extends Kohana_Controller {
     protected $content;
     protected $js = array();
     protected $css = array();
+    protected $custom_head = array();
     private $starttime;
     private $stats = array();
 	/**
@@ -37,6 +38,7 @@ class SuperAdminController extends Kohana_Controller {
         }
         $this->mainView->content = $this->content;
         $this->mainView->css = $this->css;
+        $this->mainView->custom_head = $this->custom_head;
         $this->mainView->js = $this->js;
         $this->response->body($this->mainView);
     }

@@ -3,6 +3,7 @@
 		<title>AdminPanel för Nolleperioden.se</title>
 		<link rel="stylesheet" href="/css/resethtml5.css" type="text/css" />  
         <link rel="stylesheet" href="/css/adminstyle.css" type="text/css" />  
+        <script type="text/javascript" src="/js/jquery.js"> 1;</script>
         <?php
             if(isset($css))
                 foreach($css as $c)
@@ -10,8 +11,10 @@
             if(isset($js))
                 foreach($js as $j)
                     echo '<script type="text/javascript" src="'.$j.'">1;</script>'."\r\n";
+            if(isset($custom_head))
+                foreach($custom_head as $ch)
+                    echo $ch."\r\n";
         ?>
-        <link rel="stylesheet" href="/css/form.css" type="text/css" />  
 	</head>
 	<body>
 		<div id="adminHead">
@@ -37,6 +40,11 @@
 				<li><a href="/admin/phosare/applicants/">Ansökningar</a></li>
 				<li><a href="/admin/phosare/list/thisYear/">Årets Phösare</a></li>
 				<li><a href="/admin/phosare/list/">Alla Phösare</a></li>
+			</ul>
+			<ul>
+				<li class="menuGroupHead">Phösaruppdrag</li>
+				<li><a href="/admin/phmission/list/">Alla</a></li>
+				<li><a href="/admin/phmission/edit/new/">Lägg till</a></li>
 			</ul>
 			<ul>
 				<li class="menuGroupHead">Data</li>

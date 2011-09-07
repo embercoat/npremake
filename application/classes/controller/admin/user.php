@@ -12,6 +12,7 @@ class Controller_Admin_User extends SuperAdminController{
 		$this->js[] = '/js/datatables/media/js/jquery.dataTables.js';
 		$this->js[] = '/js/admin/mainUser.js';
 
+		$this->css[] = '/css/form.css';
 		$this->css[] = '/js/datatables/media/css/demo_page.css';
 		$this->css[] = '/js/datatables/media/css/demo_table.css';
 		
@@ -91,13 +92,20 @@ class Controller_Admin_User extends SuperAdminController{
 	}
 	public function action_addToGroup(){
 	    user::add_user_to_group($_POST['userids'], $_POST['groupSelect'], $_POST['membershiptypeSelect']);
-        $this->request->redirect('/admin/user/');
-	    
+        $this->request->redirect('/admin/user/');   
 	}
 	public function action_removeFromGroup($user_id, $group_id){
 	    user::removeUserFromGroup($user_id, $group_id);
-//	    $this->request->redirect('/admin/user/');
-   //hellp
+	    $this->request->redirect('/admin/user/');
+	}
+	public function action_addToMission(){
+	    $insert = DB::insert('lt_UserMission', array('userid', 'missionid'));
+	    foreach($_POST['userids'] as $id){
+	        $insert->values(array('userid'=>$id, 'missionid' => $_POST['missionSelect']));
+	    }
+	    $insert->execute();
+        $this->request->redirect('/admin/user/');
+	    
 	}
 	
 }

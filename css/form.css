@@ -24,3 +24,6 @@ input[type="submit"], button {
 .floatRight {
 	float: right;
 }
+textarea {
+	width: 500px;
+}
