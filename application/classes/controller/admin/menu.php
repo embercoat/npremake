@@ -5,6 +5,7 @@ class Controller_Admin_Menu extends SuperAdminController{
         $this->content = View::factory('admin/menu/mainMenu');
     }
     function action_editItem($id){
+        $this->css[] = "/css/form.css";
         if(Arr::get($_POST, 'id', false)){
             $post = Validation::factory($_POST);
             $post
@@ -22,6 +23,7 @@ class Controller_Admin_Menu extends SuperAdminController{
         $this->content->action = 'editItem';
     }
     function action_addItem(){
+        $this->css[] = "/css/form.css";
         if(Arr::get($_POST, 'id', false) !== false){
 	        $post = Validation::factory($_POST);
 	        $post
@@ -45,6 +47,7 @@ class Controller_Admin_Menu extends SuperAdminController{
         $this->request->redirect('/admin/menu/');
     }
     function action_editGroup($id){
+        $this->css[] = "/css/form.css";
         if(Arr::get($_POST, 'id', false)){
             $post = Validation::factory($_POST);
             $post
@@ -62,6 +65,7 @@ class Controller_Admin_Menu extends SuperAdminController{
         $this->content->action = 'editGroup';
     }
     function action_addGroup(){
+        $this->css[] = "/css/form.css";
         if(Arr::get($_POST, 'id', false) !== false){
 	        $post = Validation::factory($_POST);
 	        $post

@@ -225,6 +225,7 @@ class Kohana_Database_Query {
 		$result = $db->query($this->_type, $sql, $this->_as_object, $this->_object_params);
         $db->num_queries += 1;
         $db->queries[] = $sql;
+//        file_put_contents('mysql.log', $sql."\r\n", FILE_APPEND);
 		if (isset($cache_key))
 		{
 			// Cache the result array

@@ -85,7 +85,7 @@ class menu{
         } else {
             unset($values['id'], $values['save']);
                 
-            $query = DB::insert('menu', array_keys($values))->values($values);
+            $query = DB::insert('menu_groups', array_keys($values))->values($values);
         }
         return $query->execute();
     }

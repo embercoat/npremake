@@ -39,5 +39,16 @@ class Controller_me extends SuperController {
 	    $this->content = View::factory('userGroups');
         $this->content->groups = user::get_user_groups($_SESSION['user']->getId());    
 	}
+	public function action_Missions(){
+	    $missions = DB::select('*')
+	                   ->from('lt_UserMission')
+	                   ->join('mission')
+	                   ->on('lt_UserMission.missionid', '=', 'mission.id')
+	                   ->where('lt_UserMission.userid', '=', $_SESSION['user']->getId())
+	                   ->execute()
+	                   ->as_array();
+	    $this->content = View::factory('meMissions');
+	    $this->content->missions = $missions;
+	}
 
 } // End Welcome
