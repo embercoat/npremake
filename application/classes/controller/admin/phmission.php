@@ -12,7 +12,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 		$this->action_list();
 	}
 	public function action_list(){
-	    $this->content = View::Factory('admin/phmission/missionList');
+	    $this->content = View::Factory('admin/phmission/editMission');
 	    
 	    $this->content->missions = DB::select('*')
 	            ->from('mission')
@@ -21,7 +21,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 	            ->as_array();
 	}
 	public function action_edit($mission_id = 'new'){
-	    $this->content = View::Factory('admin/phmission/missionform');
+	    $this->content = View::Factory('admin/phmission/editMission');
 	    if(!empty($_POST)){
 	        if($_POST['mission_id'] == 'new'){
 		        list($mission_id, $null) = DB::insert('mission', array('name', 'description', 'startdate', 'enddate'))
@@ -29,7 +29,8 @@ class Controller_Admin_phmission extends SuperAdminController{
 		                'name'         => $_POST['name'],
 		                'description'  => $_POST['description'],
 		                'startdate'	   => $_POST['starttime'],
-		                'enddate'      => $_POST['endtime']
+		                'enddate'      => $_POST['endtime'],
+		            	'responsible_organisation' => $_POST['responsible_organisation']
 		            ))
 		            ->execute();
 		            $this->request->redirect('/admin/phmission/edit/'.$mission_id);
@@ -39,7 +40,8 @@ class Controller_Admin_phmission extends SuperAdminController{
 		                'name'         => $_POST['name'],
 		                'description'  => $_POST['description'],
 		                'startdate'	   => $_POST['starttime'],
-		                'enddate'      => $_POST['endtime']
+		                'enddate'      => $_POST['endtime'],
+		                'responsible_organisation' => $_POST['responsible_organisation']
 		            ))
 		            ->where('id','=',$_POST['mission_id'])
 		            ->execute();
@@ -53,6 +55,9 @@ class Controller_Admin_phmission extends SuperAdminController{
 		                    ->as_array();
 		    $this->content->mission = $data;
 		}
+		$this->content->organisations = array('0' => '- Ingen');
+		foreach(DB::select('*')->from('organisation')->order_by('name', 'ASC')->execute()->as_array() as $org)
+		    $this->content->organisations[$org['id']] = $org['name'];
 	    
 	    $this->js[] = '/js/jquery.ui.timepicker.js';
 	    $this->js[] = '/js/jquery.ui.js';

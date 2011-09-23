@@ -119,3 +119,9 @@ hr.bottomdivider {
     border-bottom-style: dotted; 
     border-color: #000000;
 }
+dt {
+	font-size:14px;
+}
+dd {
+	padding-left: 10px;
+}

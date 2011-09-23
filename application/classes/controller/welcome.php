@@ -7,7 +7,6 @@
 class Controller_Welcome extends SuperController {
     function before(){
         parent::before();
-        
     }
     
 	public function action_index()

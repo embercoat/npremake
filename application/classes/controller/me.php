@@ -39,7 +39,7 @@ class Controller_me extends SuperController {
 	    $this->content = View::factory('userGroups');
         $this->content->groups = user::get_user_groups($_SESSION['user']->getId());    
 	}
-	public function action_Missions(){
+	public function action_Mission(){
 	    $missions = DB::select('*')
 	                   ->from('lt_UserMission')
 	                   ->join('mission')
@@ -49,6 +49,15 @@ class Controller_me extends SuperController {
 	                   ->as_array();
 	    $this->content = View::factory('meMissions');
 	    $this->content->missions = $missions;
+	}
+	public function action_missionDetails($mission_id){
+	    $this->content = View::factory('missionDetails');
+	    list($this->content->missionDetails) = DB::select_array(array('mission.*', array('organisation.name', 'organisation_name')))
+                                            ->from('mission')
+                                            ->join('organisation')
+                                            ->on('mission.responsible_organisation','=', 'organisation.id')
+                                            ->execute()
+                                            ->as_array();
 	}
 
 } // End Welcome

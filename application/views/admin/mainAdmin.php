@@ -49,6 +49,7 @@
 			<ul>
 				<li class="menuGroupHead">Data</li>
 				<li><a href="/admin/data/program">Program</a></li>
+				<li><a href="/admin/data/organisation">Organisationer</a></li>
 			</ul>
 			
 		</div>

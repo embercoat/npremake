@@ -4,6 +4,9 @@
 <?=Form::label('name', 'Namn'); ?>
 <?=Form::input('name',(isset($mission['name'])?$mission['name']:'')); ?>
 
+<?=Form::label('responsible_organisation', 'Ansvarig Organisation'); ?>
+<?=Form::select('responsible_organisation', $organisations, (isset($mission['responsible_organisation'])?$mission['responsible_organisation']:'')); ?>
+
 <?=Form::label('description', 'Beskrivning'); ?>
 <?=Form::textarea('description', (isset($mission['description'])?$mission['description']:'')); ?>
 
