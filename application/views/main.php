@@ -23,8 +23,15 @@
                     echo '<script type="text/javascript" src="'.$j.'">1;</script>'."\r\n";
         ?>
         <script type="text/javascript" src="/js/main.js">1;</script>
+        <? if(!isset($_SESSION['user']) || !$_SESSION['user']->logged_in()) { ?>
+        <script type="text/javascript">
+            $(document).ready(function(){
+    	        document.loginform.textbox_username.focus();
+            });
+        <? } ?>
+        </script>
     </head>
-        <body <?=(isset($_SESSION['user']) && $_SESSION['user']->logged_in()) ? 'onload="document.loginform.textbox_username.focus()"' : ''; ?>>
+        <body>
         <div id="topLogo"> 
             <div id="login_form">
                 <?
