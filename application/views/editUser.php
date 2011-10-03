@@ -36,6 +36,9 @@
 		<?=Form::label('socialsecuritynumber', "Personnummer (10 siffror. Med bindestreck)");?>
 		<?=Form::input('socialsecuritynumber', $details['socialsecuritynumber']); ?>
 
+		<?=Form::label('cardnumber', "Passerkortsnummer");?>
+		<?=Form::input('cardnumber', $details['cardnumber']); ?>
+
 		<?=Form::label('email', "Epost");?>
 		<?=Form::input('email', $details['email']); ?>
 		
