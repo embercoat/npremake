@@ -15,6 +15,7 @@ class SuperController extends Kohana_Controller {
     private $stats = array();
     protected $css = array();
 	protected $js = array();
+	protected $render = true;
 	/**
 	 * This function is run before the controller. 
 	 * Useful for preparing the environment
@@ -36,8 +37,8 @@ class SuperController extends Kohana_Controller {
         
         $this->mainView->css = $this->css;
         $this->mainView->js = $this->js;
-        
-        $this->response->body($this->mainView);
+        if($this->render)
+            $this->response->body($this->mainView);
     }
 
 }

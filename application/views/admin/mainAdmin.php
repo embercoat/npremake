@@ -58,6 +58,11 @@
 				<li><a href="/admin/data/program">Program</a></li>
 				<li><a href="/admin/data/organisation">Organisationer</a></li>
 			</ul>
+			<ul>
+				<li class="menuGroupHead">Dokument</li>
+				<li><a href="/admin/document/">Alla</a></li>
+				<li><a href="/admin/document/add">Lägg Till</a></li>
+			</ul>
 			
 		</div>
 		<div id="main">
