@@ -1,19 +1,38 @@
-a:1:{i:0;a:1:{s:7:"content";s:2319:"<h1>Minneslista</h1>
-<p>Nolleperioden inneb&auml;r m&aring;nga aktiviteter som tar det mesta av din tid de f&ouml;rsta tv&aring; veckorna s&aring; f&ouml;rs&ouml;k att komma n&aring;gon dag tidigare s&aring; du f&aring;r tid att packa upp, handla mat och f&ouml;rbereda dig f&ouml;r att allt det roligt s&auml;tter ig&aring;ng direkt efter den 17:e augusti.</p>
-<h2>Bra att ha under och efter nolleperioden:</h2>
-<ul style="MARGIN-RIGHT: 0px" dir="ltr">
-    <li>Se till att ha med er pengar till Nolleperioden och till terminsstart. Pengar har en tendens att g&aring; &aring;t till k&aring;ravgift, b&ouml;cker, mat och n&ouml;jen. </li>
-    <li>Bostad - Har du inte st&auml;llt dig i bostadsk&ouml; &auml;nnu; g&ouml;r det omedelbart. </li>
-    <li>Legitimation beh&ouml;vs till&nbsp;bland annat till inskrivningen&nbsp;och f&ouml;r att komma in p&aring; STUK (K&aring;rhusrestaurangen). </li>
-    <li>Kamera med mycket film eller stort minneskort - f&ouml;reviga de tv&aring; roligaste veckorna i ditt liv. </li>
-    <li>Olika sorters kl&auml;der:</li>
-    <ul style="MARGIN-RIGHT: 0px" dir="ltr">
-        <li>Finkl&auml;der (till v&auml;lkomstmiddagen) </li>
-        <li>Badkl&auml;der (ett svalkande dopp i havet kan vara sk&ouml;nt ibland) </li>
-        <li>Tr&auml;ningskl&auml;der (StiL har ett stort utbud av aktiviteter) </li>
-        <li>Regnkl&auml;der (det h&auml;nder att det regnar ibland, funkar hyfsat med paraply ocks&aring;) </li>
-        <li>Varma (det kan va kyligt om h&ouml;sten, &hellip; och vintern) och o&ouml;mma kl&auml;der </li>
-    </ul>
+a:1:{i:0;a:1:{s:7:"content";s:2329:"<h1>
+	Minneslista</h1>
+<p>
+	Nolleperioden inneb&auml;r m&aring;nga aktiviteter som tar det mesta av din tid de f&ouml;rsta tv&aring; veckorna s&aring; f&ouml;rs&ouml;k att komma n&aring;gon dag tidigare s&aring; du f&aring;r tid att packa upp, handla mat och f&ouml;rbereda dig f&ouml;r att allt det roligt s&auml;tter ig&aring;ng direkt efter den 17:e augusti.</p>
+<h2>
+	Bra att ha under och efter nolleperioden:</h2>
+<p>
+	&nbsp;</p>
+<ul dir="ltr" style="MARGIN-RIGHT: 0px">
+	<li>
+		Se till att ha med er pengar till Nolleperioden och till terminsstart. Pengar har en tendens att g&aring; &aring;t till k&aring;ravgift, b&ouml;cker, mat och n&ouml;jen.</li>
+	<li>
+		Bostad - Har du inte st&auml;llt dig i bostadsk&ouml; &auml;nnu; g&ouml;r det omedelbart.</li>
+	<li>
+		Legitimation beh&ouml;vs till&nbsp;bland annat till inskrivningen&nbsp;och f&ouml;r att komma in p&aring; STUK (K&aring;rhusrestaurangen).</li>
+	<li>
+		Kamera med mycket film eller stort minneskort - f&ouml;reviga de tv&aring; roligaste veckorna i ditt liv.</li>
 </ul>
-<p>Vi vet att du har en massa fr&aring;gor inf&ouml;r studiestarten, men vi garanterar att du kommer f&aring; all hj&auml;lp du beh&ouml;ver f&ouml;r att k&auml;nna dig hemmastadd. Bland annat kommer en fixardag h&aring;llas under Nolleperioden d&aring; du kan fixa telefon, bostad, bank&auml;renden, f&ouml;rs&auml;kringar och betala diverse avgifter mm. Mellan den 15:e och 16:e augusti kommer det alltid att finnas n&aring;gra Ph&ouml;sare vid flygplats, t&aring;g- och busstationer f&ouml;r att h&auml;mta upp dig och hj&auml;lpa dig till r&auml;tta. S&aring; h&aring;ll utkik f&ouml;r de modeenligt overallskl&auml;dda varelserna med solglas&ouml;gon och huvudbonad, de &auml;r d&auml;r f&ouml;r att hj&auml;lpa dig. <br /></p>
-<p>&nbsp;</p>";}}
+Olika sorters kl&auml;der:
+		<ul dir="ltr" style="MARGIN-RIGHT: 0px">
+			<li>
+				Finkl&auml;der (till v&auml;lkomstmiddagen)</li>
+			<li>
+				Badkl&auml;der (ett svalkande dopp i havet kan vara sk&ouml;nt ibland)</li>
+			<li>
+				Tr&auml;ningskl&auml;der (StiL har ett stort utbud av aktiviteter)</li>
+			<li>
+				Regnkl&auml;der (det h&auml;nder att det regnar ibland, funkar hyfsat med paraply ocks&aring;)</li>
+			<li>
+				Varma (det kan va kyligt om h&ouml;sten, &hellip; och vintern) och o&ouml;mma kl&auml;der</li>
+		</ul>
+<p>
+	&nbsp;</p>
+<p>
+	Vi vet att du har en massa fr&aring;gor inf&ouml;r studiestarten, men vi garanterar att du kommer f&aring; all hj&auml;lp du beh&ouml;ver f&ouml;r att k&auml;nna dig hemmastadd. Bland annat kommer en fixardag h&aring;llas under Nolleperioden d&aring; du kan fixa telefon, bostad, bank&auml;renden, f&ouml;rs&auml;kringar och betala diverse avgifter mm. Mellan den 15:e och 16:e augusti kommer det alltid att finnas n&aring;gra Ph&ouml;sare vid flygplats, t&aring;g- och busstationer f&ouml;r att h&auml;mta upp dig och hj&auml;lpa dig till r&auml;tta. S&aring; h&aring;ll utkik f&ouml;r de modeenligt overallskl&auml;dda varelserna med solglas&ouml;gon och huvudbonad, de &auml;r d&auml;r f&ouml;r att hj&auml;lpa dig.</p>
+<p>
+	&nbsp;</p>
+";}}

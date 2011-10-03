@@ -12,24 +12,24 @@ body {
 	width: 1000px;
 }
 
-#adminhead{
+#adminHead {
 	width: 990px;
 	height: 60px;
 	border: 1px solid black;
 	padding: 5px;
 }
-#adminhead > h1{
+#adminHead > h1{
 	font-size: 30px;
 }
-#adminmenu{
+#adminMenu {
 	width: 200px;
 	min-height:80%;
 	text-align: right;
 	float:left;
 	padding-bottom: 5px;
-	background-color: lightGray;
+	background-color: silver;
 }
-#adminmenu > ul > li{
+#adminMenu > ul > li{
 	list-style: none;
 }
 .menuGroupHead{
@@ -59,10 +59,10 @@ table {
 	left: 1010px;
 }
 .success {
-	list-style:none outside none;
-	background-color:lightGreen;
-	margin:9px;
-	padding:5px;
+	list-style: none outside none;
+	background-color: lime;
+	margin: 9px;
+	padding: 5px;
 }
 .warning {
 	list-style:none outside none;
@@ -72,7 +72,7 @@ table {
 }
 .fail {
 	list-style:none outside none;
-	background-color:lightCoral;
+	background-color: maroon;
 	margin:9px;
 	padding:5px;
 }
@@ -80,8 +80,8 @@ table {
 	display: none;
 }
 .detailSelectForm {
-	background-color: lightgray;
-	border: 4px solid grey;
+	background-color: silver;
+	border: 4px solid gray;
 	position: fixed;
 	top: 350px;
 	left:600px;

@@ -12,7 +12,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 		$this->action_list();
 	}
 	public function action_list(){
-	    $this->content = View::Factory('admin/phmission/editMission');
+	    $this->content = View::Factory('admin/phmission/missionList');
 	    
 	    $this->content->missions = DB::select('*')
 	            ->from('mission')
@@ -24,7 +24,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 	    $this->content = View::Factory('admin/phmission/editMission');
 	    if(!empty($_POST)){
 	        if($_POST['mission_id'] == 'new'){
-		        list($mission_id, $null) = DB::insert('mission', array('name', 'description', 'startdate', 'enddate'))
+		        list($mission_id, $null) = DB::insert('mission', array('name', 'description', 'startdate', 'enddate', 'responsible_organisation'))
 		            ->values(array(
 		                'name'         => $_POST['name'],
 		                'description'  => $_POST['description'],
@@ -69,6 +69,7 @@ class Controller_Admin_phmission extends SuperAdminController{
                                     ->from('lt_UserMission')
                                     ->join('user')
                                     ->on('lt_UserMission.userid','=','user.user_id')
+                                    ->where('lt_UserMission.missionid', '=', $mission_id)
                                     ->execute()
                                     ->as_array();
 	}
@@ -76,8 +77,19 @@ class Controller_Admin_phmission extends SuperAdminController{
 	    DB::delete('mission')
 	        ->where('id', '=', $id)
 	        ->execute();
+	    DB::delete('lt_UserMission')
+	        ->where('missionid','=', $id)
+	        ->execute();
 	    $_SESSION['messages']['success'][] = 'Mission successfully deleted';
         $this->request->redirect('/admin/phmission/list/');
+	}
+	public function action_rmUser($mission_id, $user_id){
+	    DB::delete('lt_UserMission')
+	        ->where('missionid', '=', $mission_id)
+	        ->where('userid', '=', $user_id)
+	        ->execute();
+	        $_SESSION['messages']['success'][] = 'User successfully removed';
+	        $this->request->redirect('/admin/phmission/edit/'.$mission_id);
 	}
 }
 			

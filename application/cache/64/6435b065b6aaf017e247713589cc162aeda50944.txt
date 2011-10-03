@@ -1,9 +1,9 @@
-a:1:{i:0;a:1:{s:7:"content";s:4566:"<h1>
+a:1:{i:0;a:1:{s:7:"content";s:4606:"<h1>
 	Studiest&ouml;d</h1>
 <h2>
 	Det nya studiemedelssystemet</h2>
 <p>
-	Fr&aring;n och med den 1 juli 2001 g&auml;ller ett nytt studiemedelssystem i Sverige. H&auml;r finns de grundl&auml;ggande reglerna. Mer information finns p&aring; <a href="http://www.csn.se" target="_blank">CSNs hemsida</a>.</p>
+	Fr&aring;n och med den 1 juli 2001 g&auml;ller ett nytt studiemedelssystem i Sverige. H&auml;r finns de grundl&auml;ggande reglerna. Mer information finns p&aring; <a href="http://www.csn.se" onclick="window.open(this.href,'_blank');return false;">CSNs hemsida</a>.</p>
 <ul>
 	<li>
 		Som studerande vid h&ouml;gskola eller universitet har du r&auml;tt till 240 veckors studiest&ouml;d. Detta motsvarar 12 terminers studier men nu f&ouml;rverkas studiest&ouml;dsveckor &auml;ven vid sommarkurser.</li>

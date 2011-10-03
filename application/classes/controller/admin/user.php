@@ -104,7 +104,8 @@ class Controller_Admin_User extends SuperAdminController{
 	        $insert->values(array('userid'=>$id, 'missionid' => $_POST['missionSelect']));
 	    }
 	    $insert->execute();
-        $this->request->redirect('/admin/user/');
+        $_SESSION['messages']['success'][] = 'User(s) added to mission';
+	    $this->request->redirect('/admin/user/');
 	    
 	}
 	

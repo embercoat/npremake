@@ -1,17 +1,37 @@
-a:1:{i:0;a:1:{s:7:"content";s:3926:"<h1>Flytta hemifr&aring;n</h1>
-Nu n&auml;r du har skall flytta hemifr&aring;n finns det ett antal saker du b&ouml;r t&auml;nka p&aring;. H&auml;r kan du l&auml;sa om n&aring;gra av de viktigaste sakerna.
-<h2>F&ouml;rs&auml;kringar</h2>
-<p>M&aring;nga studenter har ingen f&ouml;rs&auml;kring, skulle n&aring;got h&auml;nda kan det f&aring; allvarliga konsekvenser. Det finns tv&aring; &quot;myter&quot; om f&ouml;rs&auml;kringar som vi vill sl&aring; h&aring;l p&aring;.</p>
-<li>&quot;S&aring; l&auml;nge jag &auml;r folkbokf&ouml;rd hos mina f&ouml;r&auml;ldrar g&auml;ller deras f&ouml;rs&auml;kring f&ouml;r mig ocks&aring;.&quot; D&auml;r du har din huvudsakliga nattvila ska du ocks&aring; vara folkbokf&ouml;rd, d&auml;rf&ouml;r m&aring;ste du ha en f&ouml;rs&auml;kring som g&auml;ller f&ouml;r ditt studentrum eller din l&auml;genhet. </li>
-<li>&quot;Jag &auml;ger inget v&auml;rdefullt s&aring; jag beh&ouml;ver ingen f&ouml;rs&auml;kring.&quot; Skulle du r&aring;ka ut f&ouml;r en eldsv&aring;da, vattenskada eller liknande kan du bli ers&auml;ttningsskyldig. Utan f&ouml;rs&auml;kring leder detta i v&auml;rsta fall till livsl&aring;nga skulder.
-<p><b>Vad beh&ouml;ver du?</b></p>
-</li>
-<li><b>Hemf&ouml;rs&auml;kring</b> b&ouml;r alla ha. F&ouml;rutom att den skyddar dina saker t&auml;cker en s&aring;dan f&ouml;rs&auml;kring ofta vid t.ex. &ouml;verfall, r&auml;tteg&aring;ngskostnader och om du skulle bli skadest&aring;ndsskyldig som i exemplet ovan. </li>
-<li><b>Olycksfallsf&ouml;rs&auml;kringar</b> t&auml;cker kostnader f&ouml;r l&auml;karbes&ouml;k och liknande. Skulle du bli skadad f&ouml;r livet kan du ocks&aring; f&aring; ers&auml;ttning. N&auml;r det g&auml;ller olycksfallsf&ouml;rs&auml;kringen kan det vara bra att ta reda p&aring; om det finns n&aring;gra undantag. Om du till exempel kl&auml;ttrar i berg p&aring; fritiden m&aring;ste din olycksfallsf&ouml;rs&auml;kring g&auml;lla f&ouml;r bergskl&auml;ttring. </li>
-<li><b>Livf&ouml;rs&auml;kring</b> kan vara bra att ha om du har familj eller om n&aring;gon skulle bli ekonomiskt lidande om du g&aring;r bort, exempelvis om ni har gemensamma l&aring;n.</li>
-<li><b>Resef&ouml;rs&auml;kring</b> ing&aring;r i m&aring;nga f&ouml;rs&auml;kringar. Ofta &auml;r den ganska begr&auml;nsad s&aring; det &auml;r bra att ta reda p&aring; vad man b&ouml;r komplettera med n&auml;r man reser utomlands.
-<p>Kom ih&aring;g att olika f&ouml;rs&auml;kringsbolag, och till och med olika f&ouml;rs&auml;kringar i samma bolag, har olika villkor och undantag. Se till att din f&ouml;rs&auml;kring passar dig. M&aring;nga f&ouml;rs&auml;kringsbolag har studentpaket till bra priser. <br />Fr&aring;n och med den 1 juli 2000 har varje h&ouml;gskolestudent ett personskadeskydd som g&auml;ller i skolan och p&aring; v&auml;g till och fr&aring;n skolan. Det inneb&auml;r att om du skulle skada dig p&aring; n&aring;got s&auml;tt kan detta skydd t&auml;cka l&auml;karkostnader och liknande.</p>
-<h2>Banker</h2>
-<p>De flesta bankerna har n&aring;gon form att studentpaket till ett f&ouml;rm&aring;nligt pris. I paketet brukar det mesta man beh&ouml;ver som student ing&aring;. Det kan vara v&auml;rt att j&auml;mf&ouml;ra olika banker och se vad de kan erbjuda. <br />N&aring;got som de flesta banker erbjuder i sina studentpaket &auml;r internetbank, n&aring;got som &auml;r mycket bra att ha f&ouml;r att betala r&auml;kningar och s&aring;nt. &Auml;ven medlemsavgiften till studentk&aring;ren betalas via internetbank.</p>
-<h2>Adress&auml;ndring</h2>
-N&auml;r du flyttar &auml;r du enligt lag skyldig att anm&auml;la din nya adress. Det enklaste och billigaste s&auml;tt att g&ouml;ra det &auml;r via Internet. P&aring; <a target="blank_" href="http://www.adressandring.se/">www.adressandring.se</a> kan du g&ouml;ra flyttanm&auml;lan, best&auml;lla efters&auml;ndning, s&auml;nda e-flyttkort, SMS-flyttkort och flyttkort till f&ouml;retag du har kontakt med.</li>";}}
+a:1:{i:0;a:1:{s:7:"content";s:4053:"<h1>
+	Flytta hemifr&aring;n</h1>
+<p>
+	Nu n&auml;r du har skall flytta hemifr&aring;n finns det ett antal saker du b&ouml;r t&auml;nka p&aring;. H&auml;r kan du l&auml;sa om n&aring;gra av de viktigaste sakerna.</p>
+<h2>
+	F&ouml;rs&auml;kringar</h2>
+<p>
+	M&aring;nga studenter har ingen f&ouml;rs&auml;kring, skulle n&aring;got h&auml;nda kan det f&aring; allvarliga konsekvenser. Det finns tv&aring; &quot;myter&quot; om f&ouml;rs&auml;kringar som vi vill sl&aring; h&aring;l p&aring;.</p>
+<ul>
+	<li>
+		&quot;S&aring; l&auml;nge jag &auml;r folkbokf&ouml;rd hos mina f&ouml;r&auml;ldrar g&auml;ller deras f&ouml;rs&auml;kring f&ouml;r mig ocks&aring;.&quot; D&auml;r du har din huvudsakliga nattvila ska du ocks&aring; vara folkbokf&ouml;rd, d&auml;rf&ouml;r m&aring;ste du ha en f&ouml;rs&auml;kring som g&auml;ller f&ouml;r ditt studentrum eller din l&auml;genhet.</li>
+	<li>
+		&quot;Jag &auml;ger inget v&auml;rdefullt s&aring; jag beh&ouml;ver ingen f&ouml;rs&auml;kring.&quot; Skulle du r&aring;ka ut f&ouml;r en eldsv&aring;da, vattenskada eller liknande kan du bli ers&auml;ttningsskyldig. Utan f&ouml;rs&auml;kring leder detta i v&auml;rsta fall till livsl&aring;nga skulder.
+		<p>
+			<b>Vad beh&ouml;ver du?</b></p>
+	</li>
+	<li>
+		<b>Hemf&ouml;rs&auml;kring</b> b&ouml;r alla ha. F&ouml;rutom att den skyddar dina saker t&auml;cker en s&aring;dan f&ouml;rs&auml;kring ofta vid t.ex. &ouml;verfall, r&auml;tteg&aring;ngskostnader och om du skulle bli skadest&aring;ndsskyldig som i exemplet ovan.</li>
+	<li>
+		<b>Olycksfallsf&ouml;rs&auml;kringar</b> t&auml;cker kostnader f&ouml;r l&auml;karbes&ouml;k och liknande. Skulle du bli skadad f&ouml;r livet kan du ocks&aring; f&aring; ers&auml;ttning. N&auml;r det g&auml;ller olycksfallsf&ouml;rs&auml;kringen kan det vara bra att ta reda p&aring; om det finns n&aring;gra undantag. Om du till exempel kl&auml;ttrar i berg p&aring; fritiden m&aring;ste din olycksfallsf&ouml;rs&auml;kring g&auml;lla f&ouml;r bergskl&auml;ttring.</li>
+	<li>
+		<b>Livf&ouml;rs&auml;kring</b> kan vara bra att ha om du har familj eller om n&aring;gon skulle bli ekonomiskt lidande om du g&aring;r bort, exempelvis om ni har gemensamma l&aring;n.</li>
+	<li>
+		<b>Resef&ouml;rs&auml;kring</b> ing&aring;r i m&aring;nga f&ouml;rs&auml;kringar. Ofta &auml;r den ganska begr&auml;nsad s&aring; det &auml;r bra att ta reda p&aring; vad man b&ouml;r komplettera med n&auml;r man reser utomlands.
+		<p>
+			Kom ih&aring;g att olika f&ouml;rs&auml;kringsbolag, och till och med olika f&ouml;rs&auml;kringar i samma bolag, har olika villkor och undantag. Se till att din f&ouml;rs&auml;kring passar dig. M&aring;nga f&ouml;rs&auml;kringsbolag har studentpaket till bra priser.<br />
+			Fr&aring;n och med den 1 juli 2000 har varje h&ouml;gskolestudent ett personskadeskydd som g&auml;ller i skolan och p&aring; v&auml;g till och fr&aring;n skolan. Det inneb&auml;r att om du skulle skada dig p&aring; n&aring;got s&auml;tt kan detta skydd t&auml;cka l&auml;karkostnader och liknande.</p>
+		<h2>
+			Banker</h2>
+		<p>
+			De flesta bankerna har n&aring;gon form att studentpaket till ett f&ouml;rm&aring;nligt pris. I paketet brukar det mesta man beh&ouml;ver som student ing&aring;. Det kan vara v&auml;rt att j&auml;mf&ouml;ra olika banker och se vad de kan erbjuda.<br />
+			N&aring;got som de flesta banker erbjuder i sina studentpaket &auml;r internetbank, n&aring;got som &auml;r mycket bra att ha f&ouml;r att betala r&auml;kningar och s&aring;nt. &Auml;ven medlemsavgiften till studentk&aring;ren betalas via internetbank.</p>
+		<h2>
+			Adress&auml;ndring</h2>
+		N&auml;r du flyttar &auml;r du enligt lag skyldig att anm&auml;la din nya adress. Det enklaste och billigaste s&auml;tt att g&ouml;ra det &auml;r via Internet. P&aring; <a href="http://www.adressandring.se/" onclick="window.open(this.href,'_blank');return false;">www.adressandring.se</a> kan du g&ouml;ra flyttanm&auml;lan, best&auml;lla efters&auml;ndning, s&auml;nda e-flyttkort, SMS-flyttkort och flyttkort till f&ouml;retag du har kontakt med.</li>
+</ul>
+";}}

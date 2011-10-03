@@ -33,3 +33,21 @@ td {
 		</tr>
 	</tbody>
 </table>
+<? if(!empty($users)){ ?>
+<table style="float: left; clear: both;">
+	<thead>
+		<tr>
+			<th style="width: 200px;">Namn</th>
+			<th>Telefonnummer</th>
+		</tr>
+	</thead>
+	<tbody>
+	<? foreach($users as $u){ ?>
+		<tr>
+			<td><?=$u['name']; ?></td>
+			<td><?=$u['phone']; ?></td>
+		</tr>
+	<? } ?>
+	</tbody>
+</table>
+<? } ?>

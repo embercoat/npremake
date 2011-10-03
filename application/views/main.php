@@ -1,14 +1,18 @@
-<html> 
+<?='<?xml version="1.0"?>'; ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv"> 
     <head> 
         <title>LTU - Nolleperioden 2011</title> 
-        <link rel="stylesheet" href="/css/resethtml5.css" type="text/css" />  
-        <link rel="stylesheet" href="/css/style.css" type="text/css" />
-        <link rel="stylesheet" href="/css/form.css" type="text/css" />    
-        <?php
+        <style type="text/css">
+            @import url('/css/resethtml5.css');
+            @import url('/css/style.css');
+            @import url('/css/form.css');
+<?php
             if(isset($css))
                 foreach($css as $c)
-                    echo '<link rel="stylesheet" type="text/css" href="'.$c.'" />'."\r\n";
-        ?>
+                    echo '@import url(\''.$c.'\');'."\r\n";
+?>
+        </style>
         <script type="text/javascript" src="/js/jquery.js">1;</script>
         <meta http-equiv="Content-Language" content="sv" /> 
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
@@ -39,12 +43,14 @@
                         echo '<a href="/backend/logout">Logga ut '.$_SESSION['user']->get_full_name().'</a>'; 
                 } else {
                     ?>
-                <form name="loginform" id="loginform" method="post" action="http://npremake.scripter.se/backend/login">
+                <form id="loginform" method="post" action="http://npremake.scripter.se/backend/login">
+                    <p>
                     Login
                     <input name="username" type="text" id="textbox_username" class="login" />
                     L&ouml;senord
                     <input name="password" type="password" id="textbox_password" class="login" />
                     <button type="submit" id="submit" class="floatRight">Logga In</button>
+                    </p>
                 </form>
                 <?
                 }

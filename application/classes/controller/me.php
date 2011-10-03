@@ -6,6 +6,9 @@
  */
 class Controller_me extends SuperController {
     function before(){
+        if(!isset($_SESSION['user']) || !$_SESSION['user']->logged_in()){
+			$this->request->redirect('/');
+		}
         parent::before();
         
     }
@@ -47,7 +50,16 @@ class Controller_me extends SuperController {
 	                   ->where('lt_UserMission.userid', '=', $_SESSION['user']->getId())
 	                   ->execute()
 	                   ->as_array();
+	                   
+        $responsible_missions = DB::select('mission.*')
+	                   ->from('lt_UserOrganisation')
+	                   ->join('mission')
+	                   ->on('lt_UserOrganisation.organisationid', '=', 'mission.responsible_organisation')
+	                   ->where('lt_UserOrganisation.userid', '=', $_SESSION['user']->getId())
+	                   ->execute()
+	                   ->as_array();
 	    $this->content = View::factory('meMissions');
+	    $this->content->responsible_missions = $responsible_missions;
 	    $this->content->missions = $missions;
 	}
 	public function action_missionDetails($mission_id){
@@ -58,6 +70,24 @@ class Controller_me extends SuperController {
                                             ->on('mission.responsible_organisation','=', 'organisation.id')
                                             ->execute()
                                             ->as_array();
+                                            
+        $is_responsible_for = DB::select('mission.id')
+	                   ->from('lt_UserOrganisation')
+	                   ->join('mission')
+	                   ->on('lt_UserOrganisation.organisationid', '=', 'mission.responsible_organisation')
+	                   ->where('lt_UserOrganisation.userid', '=', $_SESSION['user']->getId())
+	                   ->where('mission.id','=', $mission_id)
+	                   ->execute()
+	                   ->as_array();
+	    if(isset($is_responsible_for[0]['id']) && $is_responsible_for[0]['id'] == $mission_id){
+	        $this->content->users = DB::select_array(array(DB::Expr('concat(user.fname, " ", user.lname) as name'), 'user.user_id', 'user.phone'))
+                                    ->from('lt_UserMission')
+                                    ->join('user')
+                                    ->on('lt_UserMission.userid','=','user.user_id')
+                                    ->where('lt_UserMission.missionid', '=', $mission_id)
+                                    ->execute()
+                                    ->as_array();
+	    }
 	}
 
 } // End Welcome
