@@ -33,6 +33,10 @@
 				<li><a href="/admin/">Start</a></li>
 			</ul>
 			<ul>
+				<li><a href="/admin/news/">Nyheter</a></li>
+				<li><a href="/admin/news/edit">Skriv</a></li>
+			</ul>
+			<ul>
 				<li class="menuGroupHead">Utseende</li>
 				<li><a href="/admin/menu/">MenyAdmin</a></li>
 				<li><a href="/admin/dynamic/">Dynamiska Sidor</a></li>
