@@ -68,8 +68,8 @@ class user{
 	 * @param string password
 	 * @return int
 	 */
-    public static function create_user($fname, $lname, $username, $password){
-        return DB::insert('user', array('fname', 'lname', 'username', 'password', 'accesskey', 'acceptTos'))
+    public static function create_user($fname, $lname, $username, $password, $socialsecuritynumber){
+        return DB::insert('user', array('fname', 'lname', 'username', 'password', 'accesskey', 'acceptTos', 'socialsecuritynumber'))
                             ->values(
                                 array(
                                     'fname' => $fname,
@@ -77,7 +77,9 @@ class user{
                                     'username' => $username,
                                     'password' => self::encrypt_password($password),
                                     'accesskey' => md5(rand()),
-                                    'acceptTos' => 1
+                                    'acceptTos' => 1,
+                                    'socialsecuritynumber'=> $socialsecuritynumber
+                                
                                 )
                              )
                             ->execute();

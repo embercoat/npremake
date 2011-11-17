@@ -27,6 +27,9 @@ class Controller_me extends SuperController {
 	        $_POST['showAllergies'] = (isset($_POST['showAllergies']) ? 1 : 0);
 	        $_POST['showEmail']     = (isset($_POST['showEmail'])     ? 1 : 0);
 	        user::change_user_details($id, $_POST);
+	        //Clear the session and do a new login to update the sessiondata
+	        unset($_SESSION['user']);
+	        $_SESSION['user'] = user::instance()->login_by_user_id($id);
 	    }
 	    $this->content = View::factory('editUser');
 	    $this->content->details = user::get_user_data($_SESSION['user']->getId());

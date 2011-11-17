@@ -23,7 +23,7 @@ class Controller_register extends SuperController {
             ->rule('lname', 'not_empty');
         if($post->check()){
             if($post['reg_password'] == $post['password2'] && (isset($post['tos']) && $post['tos'] == 1)){
-                user::create_user($_POST['fname'],$_POST['lname'],$_POST['reg_username'],$_POST['reg_password']);
+                user::create_user($_POST['fname'],$_POST['lname'],$_POST['reg_username'],$_POST['reg_password'], $_POST['socialsecuritynumber']);
                 $_SESSION['message']['success'][] = 'Du är nu registrerad!';
                 
             } else {

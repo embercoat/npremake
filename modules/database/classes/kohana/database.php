@@ -162,6 +162,7 @@ abstract class Kohana_Database {
 	 * @return  void
 	 */
 	abstract public function connect();
+	
 	/**
 	 * Returns the total number of queries run by the instance
 	 * @return int

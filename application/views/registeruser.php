@@ -13,6 +13,9 @@
     <?=Form::label('lname', 'Efternamn')."\r\n" ?>
     <?=Form::input('lname') ?>
 
+    <?=Form::label('socialsecuritynumber', 'Personnummer')."\r\n" ?>
+    <?=Form::input('socialsecuritynumber') ?>
+
     <?=Form::label('reg_username', 'Användarnamn')."\r\n" ?>
     <?=Form::input('reg_username')?>
 
@@ -22,7 +25,7 @@
     <?=Form::label('password2', 'Lösenord Igen')."\r\n" ?>
     <?=Form::password('password2') ?>
 
-    <?=Form::label('tos', 'Jag har läst och accepterar ToS för nolleperioden.se'); ?>
+    <?=Form::label('tos', 'Jag har läst och accepterar <a href="/dynamic/tos" target="_blank">ToS</a> för nolleperioden.se'); ?>
     <?=Form::checkbox('tos', '1'); ?>
 
     <?=Form::submit('save', 'Save')?>
