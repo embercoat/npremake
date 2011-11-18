@@ -76,7 +76,19 @@ class Controller_Admin_User extends SuperAdminController{
 	        }
 	    }
         $group = DB::select('*')->from('group')->where('id','=',$id)->execute();
+        
+        $homeroom = DB::select('*')
+                    ->from('lt_HomeroomGroup')
+                    ->where('group', '=', $id)
+                    ->join('homeroom')
+                    ->on('homeroom.homeroom_id', '=', 'lt_HomeroomGroup.homeroom')
+                    ->execute()
+                    ->as_array();
+        
 	    $this->content = View::factory('admin/user/groupDetail');
+	    $this->css[] = '/css/form.css';
+	    $this->js[] = '/js/admin/groupDetail.js';
+	    $this->content->homeroom = $homeroom;
 	    $this->content->group = $group[0];
 	    $this->content->groupId = $id;
 	    $members = DB::select('u.fname', 'u.lname','u.user_id', 'ltug.year', array('mt.name', 'membertype'))
@@ -94,6 +106,34 @@ class Controller_Admin_User extends SuperAdminController{
 	    user::add_user_to_group($_POST['userids'], $_POST['groupSelect'], $_POST['membershiptypeSelect']);
         $this->request->redirect('/admin/user/');   
 	}
+    public function action_addGroupHomeroom(){
+        list($count) = DB::select(DB::expr('count(1) as c'))
+            ->from('lt_HomeroomGroup')
+            ->where('homeroom', '=', $_POST['homeroom'])
+            ->and_where('group', '=', $_POST['groupId'])
+            ->and_where('year', '=', date('Y'))
+            ->execute()
+            ->as_array();
+        if($count['c'] == 0){
+    	    DB::insert('lt_HomeroomGroup', array('homeroom', 'group', 'year'))
+	            ->values(array(
+	                $_POST['homeroom'],
+	                $_POST['groupId'],
+	                date('Y')
+	            ))
+	            ->execute();
+        }
+	    $this->request->redirect('/admin/user/editGroup/'.$_POST['groupId']);
+	}
+	public function action_removeHomeroomGroup($group_id, $homeroom, $year){
+	    DB::delete('lt_HomeroomGroup')
+	        ->where('homeroom', '=', $homeroom)
+            ->and_where('group', '=', $group_id)
+            ->and_where('year', '=', $year)
+            ->execute();
+	    $this->request->redirect('/admin/user/editGroup/'.$group_id);
+	}
+	
 	public function action_removeFromGroup($user_id, $group_id){
 	    user::removeUserFromGroup($user_id, $group_id);
 	    $this->request->redirect('/admin/user/');

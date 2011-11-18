@@ -45,6 +45,26 @@ class Controller_me extends SuperController {
 	    $this->content = View::factory('userGroups');
         $this->content->groups = user::get_user_groups($_SESSION['user']->getId());    
 	}
+	public function action_groupDetails($id){
+	    $this->content = View::factory('groupDetails');
+	    $this->content->homerooms = DB::select('*')
+                    ->from('lt_HomeroomGroup')
+                    ->where('group', '=', $id)
+                    ->join('homeroom')
+                    ->on('homeroom.homeroom_id', '=', 'lt_HomeroomGroup.homeroom')
+                    ->execute()
+                    ->as_array();
+        $this->content->members = DB::select('u.fname', 'u.lname','u.user_id', 'ltug.year', array('mt.name', 'membertype'))
+	                ->from(array('lt_UserGroup', 'ltug'))
+	                ->where('ltug.groupid','=',$id)
+	                ->join(array('user', 'u'))
+	                ->on('ltug.userid','=','u.user_id')
+	                ->join(array('membertype', 'mt'))
+	                ->on('ltug.type','=','mt.id')
+	                ->order_by('u.lname')
+	                ->execute()->as_array();
+        list($this->content->group) = DB::select('*')->from('group')->where('id','=',$id)->execute()->as_array();
+    }
 	public function action_Mission(){
 	    $missions = DB::select('*')
 	                   ->from('lt_UserMission')

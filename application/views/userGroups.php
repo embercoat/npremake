@@ -10,7 +10,7 @@
 		<tbody>
 		<? foreach($groups as $g){ ?>
 			<tr>
-				<td><?=$g['groupname']?></td>
+				<td><a href="/me/groupDetails/<?=$g['groupid']; ?>"><?=$g['groupname']?></a></td>
 				<td><?=$g['membertype']?></td>
 				<td><?=$g['year']?></td>
 			</tr>

@@ -9,6 +9,7 @@ td {
 			<td>
 				<h1>Uppdrag:</h1>
 				<?=$missionDetails['name']; ?>
+			</td>
 			<td>
 				<h1>Ansvarig Organisation:</h1>
 				<a href="/organisation/Details/<?=$missionDetails['responsible_organisation']; ?>">
@@ -26,6 +27,7 @@ td {
 				<?=date('d M Y h:i', $missionDetails['startdate']); ?>
 			</td>
 		</tr>
+		<tr>
 			<td colspan="2">
 				<h1>Beskrivning:</h1>
 				<?=$missionDetails['description']; ?>

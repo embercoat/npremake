@@ -31,5 +31,12 @@ class Controller_json extends SuperController {
 	                    ->execute()
 	                    ->as_array());
 	}
+    public function action_getHomeroom(){
+	    echo json_encode(DB::select_array(array('homeroom_id', 'room'))
+	                    ->from('homeroom')
+	                    ->order_by('room', 'ASC')
+	                    ->execute()
+	                    ->as_array());
+	}
 
 } // End Welcome

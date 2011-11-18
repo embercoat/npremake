@@ -102,7 +102,42 @@ class Controller_Admin_data extends SuperAdminController{
 		
         $this->request->redirect('/admin/data/editOrganisation/'.$organisationid);
 	}
-		
+	public function action_homeroom(){
+        $this->js[] = '/js/admin/data.js';
+	    
+	    $this->content = View::factory('admin/data/homeroom');
+	    $this->content->homerooms = DB::select('*')
+	                ->from('homeroom')
+	                ->order_by('room', 'ASC')
+	                ->execute()
+	                ->as_array();
+	}
+    public function action_editHomeroom(){
+	    if($_POST['homeroom_id'] !== 'new'){
+	        if($_POST['oldname'] == $_POST['newname']){
+	        } else {
+		        DB::update('homeroom')
+			        ->set(array('room' => $_POST['newname']))
+			        ->where('homeroom_id', '=', $_POST['homeroom_id'])
+			        ->execute();
+	        }
+	    } else {
+	        DB::insert('homeroom', array('room'))
+	            ->values(array('room' => $_POST['newname']))
+	            ->execute();
+	    }
+        $this->request->redirect('/admin/data/homeroom');        
+	}
+    public function action_delHomeroom($id){
+	    DB::delete('homeroom')
+	        ->where('homeroom_id', '=', $id)
+	        ->limit(1)
+	        ->execute();
+	    DB::delete('lt_HomeroomGroup')
+            ->where('homeroom','=', $id)
+            ->execute();
+	    $this->request->redirect('/admin/data/homeroom');
+	}
 }
 			
 

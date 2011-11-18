@@ -61,6 +61,7 @@
 				<li class="menuGroupHead">Data</li>
 				<li><a href="/admin/data/program">Program</a></li>
 				<li><a href="/admin/data/organisation">Organisationer</a></li>
+				<li><a href="/admin/data/homeroom">Hemklassrum</a></li>
 			</ul>
 			<ul>
 				<li class="menuGroupHead">Dokument</li>
