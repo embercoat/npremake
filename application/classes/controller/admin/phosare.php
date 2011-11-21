@@ -68,6 +68,20 @@ class Controller_Admin_phosare extends SuperAdminController{
 	                                        'year' => 'År'
 	                                 );
 	}
+	public function action_responsible(){
+	    $this->content = View::factory('admin/phosare/responsible');
+        $this->content->responsible = DB::select_array(array('r.*', 'user.fname', 'user.lname', 'user.phone', 'group.name'))
+            ->from(array('responsibility', 'r'))
+            ->join('group')
+            ->on('r.group', '=', 'group.id')
+            ->join('user')
+            ->on('r.user', '=', 'user.user_id')
+            ->where(DB::expr('unix_timestamp()'), 'between', DB::expr('start and end'))
+            ->order_by('priority', 'ASC')
+            ->execute()
+            ->as_array();
+            
+	}
 }
 			
 

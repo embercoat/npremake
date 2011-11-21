@@ -125,3 +125,6 @@ dt {
 dd {
 	padding-left: 10px;
 }
+.preHidden {
+	display: none;
+}

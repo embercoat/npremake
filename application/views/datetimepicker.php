@@ -1,3 +1,9 @@
+<?php
+$date = (isset($date)?$date:time());
+$date = Model::factory('general')->round_custom($date, 15*60);
+?>
+<?=Form::input($field, $date); ?>
+<?=Form::input($field.'_timeholder'); ?>
 <div style="float: left; clear: both; margin-bottom: 20px;">
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -10,9 +16,9 @@
 		        var epoch = $.datepicker.formatDate('@', $('#<?=$field; ?>_datepicker').datepicker('getDate')) / 1000;
 		        var time = parseInt($('#<?=$field; ?>_timeholder').val());
 		        if(!isNaN(time)){
-			        $('input[id=<?=$field; ?>]').val(epoch+time);
+			        $('#<?=$field; ?>').val(epoch+time);
 		        } else {
-		        	$('input[id=<?=$field; ?>]').val(epoch);
+		        	$('#<?=$field; ?>').val(epoch);
 		        }
 		    }
 		});
@@ -29,15 +35,13 @@
 				var min = parseInt(inst.minutes);
 				var timeEpoch = ((hour*60)+min)*60;
 				var epoch = $.datepicker.formatDate('@', $('#<?=$field; ?>_datepicker').datepicker('getDate')) / 1000;
-				$('input[id=<?=$field; ?>]').val((epoch+timeEpoch));
-				$('input[id=<?=$field; ?>_timeholder]').val(timeEpoch);
+				$('#<?=$field; ?>').val((epoch+timeEpoch));
+				$('#<?=$field; ?>_timeholder').val(timeEpoch);
 		        
 		    }	
 		});
 	});
 	</script>
-	<?=Form::hidden($field, $date); ?>
-	<?=Form::hidden($field.'_timeholder'); ?>
 	<div id="<?=$field; ?>_datepicker" style="float: left;"></div>
 	<div id="<?=$field; ?>_timepicker" style="float: left;"></div>
 </div>

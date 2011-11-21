@@ -46,7 +46,23 @@ class Controller_me extends SuperController {
         $this->content->groups = user::get_user_groups($_SESSION['user']->getId());    
 	}
 	public function action_groupDetails($id){
+	    if(isset($_POST) && !empty($_POST)){
+	        DB::insert('responsibility', array('user', 'group', 'start', 'end', 'priority'))
+	            ->values(array(
+	                    $_POST['user'],
+	                    $_POST['group_id'],
+	                    $_POST['start'],
+	                    $_POST['end'],
+	                    $_POST['priority']
+	            ))
+	            ->execute();
+	    }
 	    $this->content = View::factory('groupDetails');
+	    $this->js[] = '/js/me.js';
+	    $this->js[] = '/js/jquery.ui.timepicker.js';
+	    $this->js[] = '/js/jquery.ui.js';
+	    $this->css[] = '/css/jquery.ui.css';
+	    $this->css[] = '/css/jquery-ui-timepicker.css';
 	    $this->content->homerooms = DB::select('*')
                     ->from('lt_HomeroomGroup')
                     ->where('group', '=', $id)
@@ -57,13 +73,25 @@ class Controller_me extends SuperController {
         $this->content->members = DB::select('u.fname', 'u.lname','u.user_id', 'ltug.year', array('mt.name', 'membertype'))
 	                ->from(array('lt_UserGroup', 'ltug'))
 	                ->where('ltug.groupid','=',$id)
-	                ->join(array('user', 'u'))
+                    ->join(array('user', 'u'))
 	                ->on('ltug.userid','=','u.user_id')
 	                ->join(array('membertype', 'mt'))
 	                ->on('ltug.type','=','mt.id')
 	                ->order_by('u.lname')
 	                ->execute()->as_array();
         list($this->content->group) = DB::select('*')->from('group')->where('id','=',$id)->execute()->as_array();
+        $this->content->responsibilities = DB::select_array(array(
+                        'responsibility.*',
+                        'u.fname', 
+                        'u.lname', 
+                        'u.phone'
+                    ))
+                    ->from('responsibility')
+                    ->join(array('user', 'u'))
+                    ->on('responsibility.user','=','u.user_id')
+                    ->where('group', '=', $id)
+                    ->execute()
+                    ->as_array();
     }
 	public function action_Mission(){
 	    $missions = DB::select('*')

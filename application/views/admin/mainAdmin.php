@@ -51,6 +51,7 @@
 				<li><a href="/admin/phosare/applicants/">Ansökningar</a></li>
 				<li><a href="/admin/phosare/list/thisYear/">Årets Phösare</a></li>
 				<li><a href="/admin/phosare/list/">Alla Phösare</a></li>
+				<li><a href="/admin/phosare/responsible/">Ansvariga just nu</a></li>
 			</ul>
 			<ul>
 				<li class="menuGroupHead">Phösaruppdrag</li>
