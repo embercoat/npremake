@@ -103,7 +103,8 @@ class Controller_Admin_User extends SuperAdminController{
         $this->content->members = $members;	    
 	}
 	public function action_addToGroup(){
-	    user::add_user_to_group($_POST['userids'], $_POST['groupSelect'], $_POST['membershiptypeSelect']);
+	    if(isset($_POST['userids']))
+    	    user::add_user_to_group($_POST['userids'], $_POST['groupSelect'], $_POST['membershiptypeSelect']);
         $this->request->redirect('/admin/user/');   
 	}
     public function action_addGroupHomeroom(){
