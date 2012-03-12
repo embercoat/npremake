@@ -1,3 +1,4 @@
+<a href="/admin/data/editOrganisation/new">Lägg till Organisation</a>
 <table>
 <thead>
 	<tr>
@@ -7,7 +8,8 @@
 	</tr>
 </thead>
 <tbody>
-<? foreach($organisations as $o){ ?>
+<?
+foreach($organisations as $o){ ?>
     <tr>
     	<td><?=$o['name']; ?></td>
     	<td><?=$o['type']; ?></td>

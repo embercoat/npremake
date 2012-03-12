@@ -23,6 +23,7 @@ class Controller_Admin_User extends SuperAdminController{
 		                            ->as_array();
 	}
 	public function action_editUser($userId = NULL){
+	    $this->css[] = '/css/form.css';
 	    if(is_null($userId)){
 	        $_SESSION['messages']['fail'][] = 'Du måste ange ett Id';
 	        $this->request->redirect('/admin/user/');
@@ -58,7 +59,23 @@ class Controller_Admin_User extends SuperAdminController{
 	    $this->content->groups = $groups;
 	}
 	public function action_addGroup(){
+        $this->css[] = '/css/form.css';
 	    $this->content = View::factory('admin/user/addGroup');
+	}
+	public function action_addToOrganisation(){
+	    $organisation = $_POST['orgSelect'];
+	    $sql = DB::insert('lt_UserOrganisation', array('userid', 'organisationid', 'title', 'isAdmin'));
+	    foreach($_POST['userids'] as $userid){
+	        $sql->values(array(
+	            $userid, 
+	            $organisation, 
+	            $_POST['role'][$userid],
+	            (isset($_POST['makeAdmin'][$userid]) ? 1:0)
+	        ));
+	    }
+	    $sql->execute();
+	    $_SESSION['messages']['success'][] = 'Användarna har lagts till i organisationen.';
+	    $this->request->redirect('/admin/user/');
 	}
 	public function action_editGroup($id){
 	    if(isset($_POST) && !empty($_POST)){

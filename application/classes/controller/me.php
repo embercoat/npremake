@@ -30,6 +30,7 @@ class Controller_me extends SuperController {
 	        //Clear the session and do a new login to update the sessiondata
 	        unset($_SESSION['user']);
 	        $_SESSION['user'] = user::instance()->login_by_user_id($id);
+	        $_SESSION['message']['success'][] = 'Dina uppgifter har uppdaterats';
 	    }
 	    $this->content = View::factory('editUser');
 	    $this->content->details = user::get_user_data($_SESSION['user']->getId());

@@ -33,5 +33,28 @@ function performAction(){
 			$('#missionSelectForm').removeClass('preHidden');
 		break;
 		}
+		case 'addToOrganisation':{
+			$.getJSON('/json/getOrganisation', function(data) {
+				  var options = '';
+				  $.each(data, function(id, group) {
+					  options = options + ('<option value="' + group['id'] + '">' + group['name'] + '</li>');
+				  });
+				  $('#orgSelect').html(options);
+				});
+			$('#userForm').attr('action', '/admin/user/addToOrganisation/');
+			html = '';
+			$(':checked').each(function(index, object){
+				html = html+'<tr><td>'
+						+$('#fname_' + object.value).html() 
+						+ ' ' 
+						+$('#lname_' +object.value).html()
+						+'</td><td><input type="text" name="role['+object.value+']" /></td>'
+						+'<td><input type="checkbox" name="makeAdmin['+object.value+']" value="1"/></td></tr>\r\n';
+			});
+			$('#organisationList').html(html);
+			$('#organisationSelectForm').removeClass('preHidden');
+			
+		break;
+		}
 	}
 }

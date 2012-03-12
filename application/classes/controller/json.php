@@ -38,5 +38,11 @@ class Controller_json extends SuperController {
 	                    ->execute()
 	                    ->as_array());
 	}
-
-} // End Welcome
+    public function action_getOrganisation(){
+	    echo json_encode(DB::select_array(array('id', 'name'))
+	                    ->from('organisation')
+	                    ->order_by('name', 'ASC')
+	                    ->execute()
+	                    ->as_array());
+	}
+}

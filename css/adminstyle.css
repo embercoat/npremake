@@ -91,6 +91,14 @@ table {
 	margin-top: -100px;
 	padding: 4px;
 }
+#organisationSelectForm {
+	height: 400px;
+	width: 500px;
+	position: fixed;
+	top: 350px;
+	left:600px;
+	
+}
 pre {
 	font-family: monospace;
 }

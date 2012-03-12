@@ -56,50 +56,68 @@ class Controller_Admin_data extends SuperAdminController{
         $this->request->redirect('/admin/data/program');
 	        
 	}
-	public function action_organisation($id = FALSE){
+	public function action_organisation(){
 	    $this->content = View::Factory('admin/data/organisation');
-	    $this->content->organisations = DB::select('*')
+	    $this->content->organisations = DB::select_array(array('organisation.*', 'organisation_type.type'))
 	                        ->from('organisation')
 	                        ->join('organisation_type')
 	                        ->on('organisation.type', '=', 'organisation_type.id')
 	                        ->execute()->as_array();
-	   
 	}
 	public function action_delOrganisation($id){ 
-	    
+	    DB::delete('organisation')
+	        ->where('id', '=', $id)
+	        ->execute();
+	   $this->request->redirect('/admin/data/organisation');
 	}
 	public function action_editOrganisation($id){
 	    $this->content = View::Factory('admin/data/editOrganisation');
 	    $this->css[] = '/css/form.css';
-	    
-	    list($data) = DB::select('*')
-	                    ->from('organisation')
-	                    ->where('organisation.id', '=', $id)
-	                    ->execute()
-	                    ->as_array();
-	    $members = DB::select('*')
-	                    ->from('lt_UserOrganisation')
-	                    ->join('user')
-	                    ->on('lt_UserOrganisation.userid', '=', 'user.user_id')
-	                    ->where('lt_UserOrganisation.organisationid', '=', $id)
-	                    ->execute()
-	                    ->as_array();
-	    $organisation_types = array();
-	    foreach(DB::select('*')->from('organisation_type')->execute()->as_array() as $ot)
-	        $organisation_types[$ot['id']] = $ot['type'];
-	    
+	    if($id !== 'new'){
+		    list($data) = DB::select('*')
+		                    ->from('organisation')
+		                    ->where('organisation.id', '=', $id)
+		                    ->execute()
+		                    ->as_array();
+		    $members = DB::select('*')
+		                    ->from('lt_UserOrganisation')
+		                    ->join('user')
+		                    ->on('lt_UserOrganisation.userid', '=', 'user.user_id')
+		                    ->where('lt_UserOrganisation.organisationid', '=', $id)
+		                    ->execute()
+		                    ->as_array();
+		    
+		    $this->content->data = $data;
+		    $this->content->members = $members;
+	    } else {
+	        $this->content->data = false;
+	        $this->content->members = array();
+	    }
+        $organisation_types = array();
+        foreach(DB::select('*')->from('organisation_type')->execute()->as_array() as $ot)
+            $organisation_types[$ot['id']] = $ot['type'];
         $this->content->organisation_types = $organisation_types;
-	    $this->content->data = $data;
-	    $this->content->members = $members;
+            
 	}
 	public function action_updateOrganisation(){
+	    $this->js = '/js/admin/data.js';
 	    $organisationid = $_POST['organisationid'];
 	    unset($_POST['organisationid']);
-	    var_dump($_POST);
-	    DB::update('organisation')
-	            ->set($_POST)
+	    if($organisationid == 'new'){
+	        list($organisationid, $num_rows) = DB::insert('organisation', array('name', 'description', 'type'))
+	            ->values(array(
+	                $_POST['name'],
+	                $_POST['description'],
+	                $_POST['type']
+	            ))
 	            ->execute();
-		
+	       
+	    } else {
+		    DB::update('organisation')
+		            ->set($_POST)
+		            ->where('id', '=', $organisationid)
+		            ->execute();
+	    }
         $this->request->redirect('/admin/data/editOrganisation/'.$organisationid);
 	}
 	public function action_homeroom(){

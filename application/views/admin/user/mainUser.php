@@ -14,9 +14,9 @@
 		foreach($users as $u){
 		    ?>
 		    <tr>
-		    	<td><?=$u['lname']?></td>
-		    	<td><?=$u['fname']?></td>
-		    	<td><?=$u['username']?></td>
+		    	<td id="lname_<?=$u['user_id'];?>"><?=$u['lname']; ?></td>
+		    	<td id="fname_<?=$u['user_id'];?>"><?=$u['fname']; ?></td>
+		    	<td><?=$u['username']; ?></td>
 		    	<td>
 		    		<a href="/admin/user/editUser/<?=$u['user_id']; ?>/"><img src="/images/icon/edit.gif" /></a>
 		    		<input type="checkbox" name="userids[]" value="<?=$u['user_id']; ?>" /></td>
@@ -34,6 +34,7 @@
 		<option value="nil">Choose carefully</option>
 		<option value="addToGroup">Add to Group...</option>
 		<option value="addToMission">Add to Mission...</option>
+		<option value="addToOrganisation">Add to Organisation...</option>
 	</select>
 	<button type="button" style="float: right; font-size: 16px;" onClick="performAction();">Do</button>
 </div>
@@ -52,4 +53,23 @@
 
 	<button type="submit" style="float: right;">Go for it!</button>
 </div>
+
+<div id="organisationSelectForm" class="detailSelectForm preHidden">
+	<label for="orgSelect">Select Organisation</label>
+	<select name="orgSelect" id="orgSelect"></select>
+	<table id="orgTable">
+		<thead>
+			<tr>
+				<td>Name</td>
+				<td>Role</td>
+				<td>Make Admin</td>				
+			</tr>
+		</thead>
+		<tbody id="organisationList">
+		</tbody>
+	</table>
+
+	<button type="submit" style="float: right;">Go for it!</button>
+</div>
+
 </form>

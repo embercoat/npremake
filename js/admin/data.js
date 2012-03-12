@@ -8,6 +8,12 @@ function addProgram(){
 	$('#editBox').show();
 	document.getElementById('program_id').value = 'new'; 
 }
+function editOrgMember(id){
+	$('#editBox').show();
+	document.getElementById('newname').value = $('#program_'+id).html();
+	document.getElementById('oldname').value = $('#program_'+id).html();
+	document.getElementById('program_id').value = id; 
+}
 function addHomeroom(){
 	document.getElementById('homeroom_id').value = 'new';
 	$('#editBox').show();
@@ -19,8 +25,6 @@ function editHomeroom(id){
 	document.getElementById('oldname').value = $('#homeroom_'+id).html();
 	document.getElementById('homeroom_id').value = id; 
 }
-
-
 function hideEditBox(){
 	$('#editBox').hide();
 }
