@@ -2,7 +2,7 @@
 /**
  * 
  * @author Kristian Nordman <kristian.nordman@scripter.se>
- * @contact kristian.nordman@scripter.se
+ * 
  */
 class menu{
     
