@@ -2,12 +2,11 @@
 /**
  * 
  * @author Kristian Nordman <kristian.nordman@scripter.se>
- *
+ * @contact kristian.nordman@scripter.se
  */
 class menu{
     
     static function get_items(){
-        
 		$menu = array();
         $baseQuery = DB::select('*')->from('menu')->order_by(DB::Expr('`group`, sortorder'));
         if(isset($_SESSION['user'])){
