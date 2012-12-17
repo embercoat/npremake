@@ -5,7 +5,7 @@
  * 
  */
 class menu{
-    
+    //hi
     static function get_items(){
 		$menu = array();
         $baseQuery = DB::select('*')->from('menu')->order_by(DB::Expr('`group`, sortorder'));
