@@ -1,1 +1,6 @@
 /mysql.log
+/.settings
+/.buildpath
+/.gitignore
+/.project
+/dump_logs

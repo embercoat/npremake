@@ -19,7 +19,7 @@ return array
 			 */
 			'hostname'   => 'localhost',
 			'database'   => 'nollep',
-			'username'   => "root",
+			'username'   => "draco",
 			'password'   => "#Warcraft1",
 			'persistent' => FALSE,
 		),
