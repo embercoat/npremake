@@ -1,47 +1,32 @@
-a:1:{i:0;a:1:{s:7:"content";s:4606:"<h1>
-	Studiest&ouml;d</h1>
-<h2>
-	Det nya studiemedelssystemet</h2>
-<p>
-	Fr&aring;n och med den 1 juli 2001 g&auml;ller ett nytt studiemedelssystem i Sverige. H&auml;r finns de grundl&auml;ggande reglerna. Mer information finns p&aring; <a href="http://www.csn.se" onclick="window.open(this.href,'_blank');return false;">CSNs hemsida</a>.</p>
-<ul>
-	<li>
-		Som studerande vid h&ouml;gskola eller universitet har du r&auml;tt till 240 veckors studiest&ouml;d. Detta motsvarar 12 terminers studier men nu f&ouml;rverkas studiest&ouml;dsveckor &auml;ven vid sommarkurser.</li>
-	<li>
-		N&auml;r du har f&ouml;rverkat de 240 veckorna kr&auml;vs synnerliga sk&auml;l f&ouml;r att f&aring; f&ouml;rl&auml;ngt studiest&ouml;d, och dit r&auml;knas inte att du har p&aring;b&ouml;rjat en utbildning och vill slutf&ouml;ra den.</li>
-	<li>
-		Du har r&auml;tt till studiest&ouml;d fram till slutet av det &aring;r du fyller 50. Fr&aring;n 41 &aring;rs &aring;lder minskar dock maxbeloppet du f&aring;r l&aring;na.</li>
-	<li>
-		Du kan s&ouml;ka studiemedel n&auml;r som helst under &aring;ret men det utbetalas f&ouml;r maximalt fyra veckor retroaktivt. Om din ans&ouml;kan beh&ouml;ver kompletteras f&aring;r du &auml;nd&aring; studiemedel f&ouml;r fyra veckor innan din f&ouml;rsta ans&ouml;kan kom in till CSN.</li>
-	<li>
-		Du kan f&aring; ett merkostnadsl&aring;n f&ouml;r exempelvis musikinstrument, dubbelt boende, och resor.</li>
-	<li>
-		Fribeloppet f&ouml;r hur mycket du f&aring;r tj&auml;na per halv&aring;r &auml;r 125% av prisbasbeloppet, under &aring;r 2005 &auml;r det 49250:-. Om du har studiest&ouml;d f&ouml;r mindre &auml;n 40 veckor eller l&auml;gre &auml;n 100% studietakt h&ouml;js fribeloppet.</li>
-	<li>
-		L&aring;net ska betalas tillbaka innan du fyller 60 &aring;r. Du kan beg&auml;ra neds&auml;ttning av &aring;terbetalningsbeloppet men d&aring; l&aring;net f&ouml;rr&auml;ntas &auml;r det inte alltid l&ouml;nsamt. Denna neds&auml;ttning s&ouml;ks f&ouml;r ett &aring;r i taget. N&auml;r du fyllt 60 &aring;r &ouml;kar &aring;terbetalningsbeloppet om du har l&aring;n kvar.</li>
-	<li>
-		L&aring;net skrivs av n&auml;r du fyller 68 &aring;r, tanken &auml;r att alla ska ha betalat tillbaka sina l&aring;n innan dess.</li>
+a:1:{i:0;a:1:{s:7:"content";s:4082:"<h1>StudiestÃ¶d</h1><h2>Det nya studiemedelssystemet</h2>FrÃ¥n och med den 1 juli 2001 gÃ¤ller ett nytt studiemedelssystem i Sverige. HÃ¤r finns de 
+grundlÃ¤ggande reglerna. Mer information finns pÃ¥ <a href="http://www.csn.se" target="_blank">CSNs hemsida</a>.
+<ul><li>Som studerande vid hÃ¶gskola eller universitet har du rÃ¤tt
+till 240 veckors studiestÃ¶d. Detta motsvarar 12 terminers
+studier men nu fÃ¶rverkas studiestÃ¶dsveckor Ã¤ven vid
+sommarkurser.</li>
+<li>NÃ¤r du har fÃ¶rverkat de 240 veckorna krÃ¤vs synnerliga skÃ¤l fÃ¶r att fÃ¥ fÃ¶rlÃ¤ngt studiestÃ¶d, och dit rÃ¤knas inte att du har pÃ¥bÃ¶rjat en utbildning och vill slutfÃ¶ra den.</li>
+<li>Du har rÃ¤tt till studiestÃ¶d fram till slutet av det Ã¥r du
+fyller 50. FrÃ¥n 41 Ã¥rs Ã¥lder minskar dock maxbeloppet du
+fÃ¥r lÃ¥na.</li>
+<li>Du kan sÃ¶ka studiemedel nÃ¤r som helst under Ã¥ret men det
+utbetalas fÃ¶r maximalt fyra veckor retroaktivt. Om din
+ansÃ¶kan behÃ¶ver kompletteras fÃ¥r du Ã¤ndÃ¥ studiemedel
+fÃ¶r fyra veckor innan din fÃ¶rsta ansÃ¶kan kom in till CSN.</li>
+<li>Du kan fÃ¥ ett merkostnadslÃ¥n fÃ¶r exempelvis
+musikinstrument, dubbelt boende, och resor.</li>
+<li>Fribeloppet fÃ¶r hur mycket du fÃ¥r tjÃ¤na per halvÃ¥r Ã¤r 125% av prisbasbeloppet, under Ã¥r 2005 Ã¤r det 49250:-. Om du har studiestÃ¶d fÃ¶r mindre Ã¤n 40 veckor eller lÃ¤gre Ã¤n 100% studietakt hÃ¶js fribeloppet.</li>
+<li>LÃ¥net ska betalas tillbaka innan du fyller 60 Ã¥r. Du kan
+begÃ¤ra nedsÃ¤ttning av Ã¥terbetalningsbeloppet men dÃ¥
+lÃ¥net fÃ¶rrÃ¤ntas Ã¤r det inte alltid lÃ¶nsamt. Denna
+nedsÃ¤ttning sÃ¶ks fÃ¶r ett Ã¥r i taget. NÃ¤r du fyllt
+60 Ã¥r Ã¶kar Ã¥terbetalningsbeloppet om du har lÃ¥n kvar.</li>			
+<li>LÃ¥net skrivs av nÃ¤r du fyller 68 Ã¥r, tanken Ã¤r att alla ska ha betalat tillbaka sina lÃ¥n innan dess.</li>
 </ul>
-<h2>
-	S&auml;rskild pr&ouml;vning</h2>
-<p>
-	Om du inte blivit beviljad studiest&ouml;d och vill att CSN ska g&ouml;ra en pr&ouml;vning p&aring; grund av s&auml;rskilda sk&auml;l finns det n&aring;gra saker att t&auml;nka p&aring;. H&auml;r har vi listat n&aring;gra tips du kan ta hj&auml;lp av n&auml;r du skriver brev till CSN.</p>
-<ul>
-	<li>
-		De personliga sk&auml;len &auml;r mycket avg&ouml;rande f&ouml;r vilket beslut CSN kommer att fatta. T&auml;nk p&aring; att hellre skriva f&ouml;r mycket &auml;n f&ouml;r lite. De som l&auml;ser ditt brev vet inget om din situation, utan de skall fatta beslut enbart utifr&aring;n det som st&aring;r i brevet.</li>
-	<li>
-		Visa p&aring; kopplingen (tidsm&auml;ssigt) mellan dina d&aring;liga resultat och de personliga sk&auml;l som inverkat p&aring; resultaten. Skriv helst i kronologisk ordning.</li>
-	<li>
-		Finns det intyg som styrker det du skriver om i ditt brev ang&aring;ende det som inverkat negativt p&aring; dina studier? I s&aring; fall ordna fram dessa och bifoga dem med ditt brev.</li>
-	<li>
-		Fundera en extra g&aring;ng p&aring; om du inte har n&aring;gra po&auml;ng som du tagit men som du inte f&aring;tt ut. Kanske har du klarat n&aring;got moment i en delkurs, som du f&ouml;r &ouml;vrigt inte klarat. Din l&auml;rare kan skriva ett intyg p&aring; att du klarat delmomentet, och d&auml;rmed f&aring;r du extra po&auml;ng att redovisa f&ouml;r CSN.</li>
-	<li>
-		Om du t&auml;nkt byta utbildning f&ouml;r att den tidigare inte k&auml;nts r&auml;tt, ber&auml;tta detta i brevet. Om du pratat med en studiev&auml;gledare om din situation redovisa detta f&ouml;r att visa att du tagit tag i problemen.</li>
-	<li>
-		K&auml;nner du att studiemotivationen &auml;r tillbaka efter de problem du haft? Tryck s&auml;rskilt p&aring; detta i brevet. Detta f&ouml;r att visa att du skulle fixa b&auml;ttre resultat om du f&aring;r en chans nu n&auml;r allt ordnat upp sig, eller h&aring;ller p&aring; att ordna upp sig.</li>
-	<li>
-		Kontakta g&auml;rna din studiev&auml;gledare f&ouml;r att g&ouml;ra upp en studieplan. Detta &auml;r inte f&ouml;r att imponera p&aring; CSN, utan f&ouml;r din egen skull. Ni kan tillsammans l&auml;gga upp en plan f&ouml;r vilka tentor som ska skrivas n&auml;r osv.</li>
-	<li>
-		Var &auml;rlig! CSN genomsk&aring;dar d&aring;liga urs&auml;kter och bortf&ouml;rklaringar.</li>
-</ul>
-";}}
+<h2>SÃ¤rskild prÃ¶vning</h2>Om du inte blivit beviljad studiestÃ¶d och vill att CSN ska gÃ¶ra en prÃ¶vning pÃ¥ grund av sÃ¤rskilda skÃ¤l finns det nÃ¥gra saker att tÃ¤nka pÃ¥. HÃ¤r har vi listat nÃ¥gra tips du kan ta hjÃ¤lp av nÃ¤r du skriver brev till CSN.<ul><li>De personliga skÃ¤len Ã¤r mycket avgÃ¶rande fÃ¶r vilket beslut CSN kommer att fatta. TÃ¤nk pÃ¥ att hellre skriva fÃ¶r mycket Ã¤n fÃ¶r lite. De som lÃ¤ser ditt brev vet inget om din situation, utan de skall fatta beslut enbart utifrÃ¥n det som stÃ¥r i brevet.</li>
+<li>Visa pÃ¥ kopplingen (tidsmÃ¤ssigt) mellan dina dÃ¥liga resultat och de personliga skÃ¤l som inverkat pÃ¥ resultaten. Skriv helst i kronologisk ordning.</li>
+<li>Finns det intyg som styrker det du skriver om i ditt brev angÃ¥ende det som inverkat negativt pÃ¥ dina studier? I sÃ¥ fall ordna fram dessa och bifoga dem med ditt brev.</li>
+<li>Fundera en extra gÃ¥ng pÃ¥ om du inte har nÃ¥gra poÃ¤ng som du tagit men som du inte fÃ¥tt ut. Kanske har du klarat nÃ¥got moment i en delkurs, som du fÃ¶r Ã¶vrigt inte klarat. Din lÃ¤rare kan skriva ett intyg pÃ¥ att du klarat delmomentet, och dÃ¤rmed fÃ¥r du extra poÃ¤ng att redovisa fÃ¶r CSN. </li>
+<li>Om du tÃ¤nkt byta utbildning fÃ¶r att den tidigare inte kÃ¤nts rÃ¤tt, berÃ¤tta detta i brevet. Om du pratat med en studievÃ¤gledare om din situation redovisa detta fÃ¶r att visa att du tagit tag i problemen.</li>
+<li>KÃ¤nner du att studiemotivationen Ã¤r tillbaka efter de problem du haft? Tryck sÃ¤rskilt pÃ¥ detta i brevet. Detta fÃ¶r att visa att du skulle fixa bÃ¤ttre resultat om du fÃ¥r en chans nu nÃ¤r allt ordnat upp sig, eller hÃ¥ller pÃ¥ att ordna upp sig.</li>
+<li>Kontakta gÃ¤rna din studievÃ¤gledare fÃ¶r att gÃ¶ra upp en studieplan. Detta Ã¤r inte fÃ¶r att imponera pÃ¥ CSN, utan fÃ¶r din egen skull. Ni kan tillsammans lÃ¤gga upp en plan fÃ¶r vilka tentor som ska skrivas nÃ¤r osv.</li>
+<li>Var Ã¤rlig! CSN genomskÃ¥dar dÃ¥liga ursÃ¤kter och bortfÃ¶rklaringar.</li></ul>";}}

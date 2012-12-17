@@ -1,38 +1,17 @@
-a:1:{i:0;a:1:{s:7:"content";s:3228:"<h1>
-    What is &ldquo;Nolleperioden&rdquo;?
-</h1>
-<p>
-    The Nobility , the Generals&nbsp;and the Master Ph&ouml;sare&nbsp;wish to bid you welcome to Lule&aring; University of Technology (LTU). &ldquo;the Nolleperiod&rdquo; is a welcoming period for all new students that have been accepted to any of the programmes at the University, whether it is in Lule&aring; or in one of the other campuses that belong to the same school.
-</p>
-<p>
-    <span>The first Nolleperiod&nbsp;at Lule&aring; University of Technology&nbsp;was held in 1974 and has since carried out every autumn without fail. </span>
-    <span>It is with pride and with the warmth of heart as we continue this tradition&nbsp;knowing that the nolleperiod here at LTU is one of Sweden&#39;s best. It is we, the Nobility and Master Ph&ouml;sare of the Student Association of Engineering and the Generals and Master Ph&ouml;sare of Lule&aring; Student Union, who together over the last six months meanwhile studying have worked on planning the nolleperiod to ensure the best possible reception for you here at Lule&aring; University of Technology. The Master Ph&ouml;sare &nbsp;are the right hand of the&nbsp;Nobility and the Generals and it is through&nbsp;the Master Ph&ouml;sare the&nbsp;Nobility and the Generals&nbsp;interact with&nbsp;your&nbsp;Ph&ouml;sare.<br />
-        <br />
-        <span>As your guide throughout the welcoming period serve the so called Ph&ouml;sare. You will recognize a Ph&ouml;sare by his overall, shades and student cap.&nbsp;They are your light in the darkness, your pivot element in the matrix, your aurora borealis in the skies and your fly in the soup. Your best friend in an unknown world. They&rsquo;ll take care of you the coming days and be available for YOU at any time you may need them. In less than two weeks, they will&nbsp;transform you from lost little sparrows to fatted ducks with cream sauce and pomme chateux.</span>
-    </span>
-</p>
-<p>
-    <span>What happens during &quot;Nolleperioden&quot;</span>
-</p>
-<p>
-    The welcming period will skip from social activities and jovial student traditions, like day-trips, games, student section days and&nbsp;welcoming dinners. The exchange students also&nbsp;get a crash course in Swedish during the days.
-</p>
-<p>
-    What then, ultimately, is the purpose of this period of hectic associating? Well, to stimulate you and your coming of age as fully fledged students at the Lule&aring; University of Technology! We hope that you look forward to commence your studies at LTU and bid you a warm welcome to our University.
-</p>
-<p>
-    The Nobility, Generals and Master Ph&ouml;sare&nbsp;at Lule&aring; University of Technology
-</p>
-<h3>
-    Glossary:
-</h3>
-<p>
-    Student Association of Engineering = TKL, Teknologk&aring;ren vid Lule&aring; tekniska universitet.&nbsp;<br />
-    Lule&aring; Student union&nbsp;=&nbsp;LS, Lule&aring; Studentk&aring;r<br />
-    The Generals = Generalerna<br />
-    The&nbsp;Nobility =&nbsp;Adeln<br />
-    The Master Ph&ouml;sare = &Ouml;PH, &Ouml;verph&ouml;sare<br />
-    Ph&ouml;sare = Your class&rsquo;s Senior Student Guide<br />
-    Welcoming period = The Nolleperiod, N&oslash;lle-p (the period before the first class-period).
-</p>
-";}}
+a:1:{i:0;a:1:{s:7:"content";s:5227:"<h1>What is &ldquo;Nolleperioden&rdquo;?</h1>
+<p>The Nobility , the Generals&nbsp;and the Master Ph&ouml;sare&nbsp;wish to bid you welcome to Lule&aring; University of Technology (LTU). &ldquo;the Nolleperiod&rdquo; is a welcoming period for all new students that have been accepted to any of the programmes at the University, whether it is in Lule&aring; or in one of the other campuses that belong to the same school. </p>
+<p><span title="" ae="The first nÃ¸lleperioden Association of Engineering was held in 1974 and has since carried out every autumn. " closure_uid_yl2mje="104">The first Nolleperiod&nbsp;at Lule&aring; University of Technology&nbsp;was held in 1974 and has since carried out every autumn without fail. </span><span title="" ae="It is with pride and with the warmth of heart as we continue this thread production and notes that the LTU is one of Sweden&#039;s best nÃ¸lleperioder. " closure_uid_yl2mje="105">It is with pride and with the warmth of heart as we continue this tradition&nbsp;knowing that the nolleperiod here at LTU is one of Sweden&#039;s best. It is we, the Nobility and Master Ph&ouml;sare of the Student Association of Engineering and the Generals and Master Ph&ouml;sare of Lule&aring; Student Union, who together over the last six months meanwhile studying have worked on planning the nolleperiod to ensure the best possible reception for you here at Lule&aring; University of Technology. The Master Ph&ouml;sare</span><span title="" ae="Ã?verphÃ¶sarna is nobility and General The right hand and it is through Ã?verphÃ¶sarna as Adel and Generals is maintaining contact with Phos and then proceed to your zero.
+" closure_uid_yl2mje="107">&nbsp;are the right hand of the&nbsp;Nobility and the Generals and it is through&nbsp;the Master Ph&ouml;sare the&nbsp;Nobility and the Generals&nbsp;interact with&nbsp;your&nbsp;Ph&ouml;sare.<br /><br /><span title="" ae="Common to all zeros is that when you come to the place of study and met up by Phos, enrollment is on Wednesday 17 August. " closure_uid_yl2mje="108">As your guide throughout the welcoming period serve the so called Ph&ouml;sare. You will recognize a Ph&ouml;sare by his overall, shades and student cap.&nbsp;They are your light in the darkness, your pivot element in the matrix, your aurora borealis in the skies and your fly in the soup. Your best friend in an unknown world. They&rsquo;ll take care of you the coming days and be available for YOU at any time you may need them. In less than two weeks, they will&nbsp;transform you from lost little sparrows to </span><span title="" ae="Common to all zeros is that when you come to the place of study and met up by Phos, enrollment is on Wednesday 17 August. " closure_uid_yl2mje="108">fatted ducks with cream sauce and pomme chateux.</span></span><span title="" ae="Ã?verphÃ¶sarna is nobility and General The right hand and it is through Ã?verphÃ¶sarna as Adel and Generals is maintaining contact with Phos and then proceed to your zero.
+" closure_uid_yl2mje="107"><span title="" ae="Common to all zeros is that when you come to the place of study and met up by Phos, enrollment is on Wednesday 17 August. " closure_uid_yl2mje="108"><span title="" ae="Common to all zeros is that when you come to the place of study and met up by Phos, enrollment is on Wednesday 17 August. " closure_uid_yl2mje="108">
+<h2>
+<p><span title="" ae="Ã?verphÃ¶sarna is nobility and General The right hand and it is through Ã?verphÃ¶sarna as Adel and Generals is maintaining contact with Phos and then proceed to your zero.
+" closure_uid_yl2mje="107"><span title="" ae="Common to all zeros is that when you come to the place of study and met up by Phos, enrollment is on Wednesday 17 August. " closure_uid_yl2mje="108"><span title="" ae="Common to all zeros is that when you come to the place of study and met up by Phos, enrollment is on Wednesday 17 August. " closure_uid_yl2mje="108">What happens during &quot;Nolleperioden&quot;</span></span></span></p>
+</h2>
+</span></span></span></p>
+<p>&nbsp;</p>
+<p>The welcming period will skip from social activities and jovial student traditions, like day-trips, games, student section days and&nbsp;welcoming dinners. The exchange students also&nbsp;get a crash course in Swedish during the days. </p>
+<p>What then, ultimately, is the purpose of this period of hectic associating? Well, to stimulate you and your coming of age as fully fledged students at the Lule&aring; University of Technology! We hope that you look forward to commence your studies at LTU and bid you a warm welcome to our University. </p>
+<p>The Nobility, Generals and Master Ph&ouml;sare&nbsp;at Lule&aring; University of Technology </p>
+<h3>&nbsp;</h3>
+<h3>Glossary:</h3>
+<p>Student Association of Engineering = TKL, Teknologk&aring;ren vid Lule&aring; tekniska universitet.&nbsp;<br />Lule&aring; Student union&nbsp;=&nbsp;LS, Lule&aring; Studentk&aring;r<br />The Generals = Generalerna <br />The&nbsp;Nobility =&nbsp;Adeln <br />The Master Ph&ouml;sare = &Ouml;PH, &Ouml;verph&ouml;sare <br />Ph&ouml;sare = Your class&rsquo;s Senior Student Guide <br />Welcoming period = The Nolleperiod, N&oslash;lle-p (the period before the first class-period).</p>";}}

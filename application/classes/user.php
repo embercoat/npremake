@@ -48,6 +48,21 @@ class user{
     }
     
     /**
+     * getApplication
+     * returns application of the specified user
+     *
+     * @param int user_id
+     * @return mixed
+     */
+    function getApplication($user_id){
+    	return DB::select('*')
+    	    ->from('applicant')
+    	    ->where('userid', '=', $user_id)
+    	    ->where('timestamp', '>', mktime(0,0,0,0,0))
+    	    ->execute()->as_array();
+    }
+    
+    /**
 	 * encrypt_password
 	 * encrypts and returns the string
 	 *
