@@ -13,11 +13,11 @@
             <td><?php echo $p['fname'].' '. $p['lname']; ?></td>
             <?php echo ($list['require_moderation']) ? (($p['confirmed'] == 1) ? '<td style="background-color:lightgreen">Ja</td>' : '<td style="background-color:lightcoral">Nej</td>') : ''; ?>
             <td>
-                <a href="/admin/list/deleteparticipant/<?php echo $p['id']; ?>"><img src="/images/icon/red_x.svg" height="14px" /></a>
+                <a href="/admin/list/deleteparticipant/<?php echo $p['user'].'/'.$p['list_id']; ?>"><img src="/images/icon/red_x.svg" height="14px" /></a>
                 <?php if($p['confirmed'] == 0) { ?>
-                    <a href="/admin/list/confirmparticipant/<?php echo $p['id']; ?>">Godkänn</a>
+                    <a href="/admin/list/confirmparticipant/<?php echo $p['user'].'/'.$p['list_id']; ?>">Godkänn</a>
                 <?php } else { ?>
-                    <a href="/admin/list/unconfirmparticipant/<?php echo $p['id']; ?>">Underkänn</a>
+                    <a href="/admin/list/unconfirmparticipant/<?php echo $p['user'].'/'.$p['list_id']; ?>">Underkänn</a>
                 <?php }?>
             </td>
         </tr>

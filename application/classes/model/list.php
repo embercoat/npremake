@@ -10,6 +10,15 @@
   PRIMARY KEY (`idlist`)
 ) DEFAULT CHARSET=latin1
 
+CREATE TABLE `list_data` (
+  `id` int(11) NOT NULL,
+  `list_id` int(11) NOT NULL,
+  `user` int(11) NOT NULL,
+  `confirmed` int(11) DEFAULT NULL,
+  PRIMARY KEY (`list_id`,`user`)
+) ENGINE=InnoDB DEFAULT
+
+
  */
 Class Model_list extends Model {
     function get_lists($only_visible = false){
@@ -90,9 +99,6 @@ Class Model_list extends Model {
         return $return['open'];
     }
 
-    function delete_participant_by_id($id){
-        DB::delete('list_data')->where('id', '=', $id)->execute();
-    }
     function add_participant($users, $list){
         if(!is_array($users))
             $users = array($users);
@@ -107,11 +113,11 @@ Class Model_list extends Model {
             $users = array($users);
         $delete = DB::delete('list_data')->where('user', 'IN', $users)->where('list_id', '=', $list)->execute();
     }
-    function confirm_participant($id){
-        DB::update('list_data')->set(array('confirmed' => '1'))->where('id', '=', $id)->execute();
+    function confirm_participant($userid, $listid){
+        DB::update('list_data')->set(array('confirmed' => '1'))->where('list_id', '=', $listid)->where('user', '=', $userid)->execute();
     }
-    function unconfirm_participant($id){
-        DB::update('list_data')->set(array('confirmed' => '0'))->where('id', '=', $id)->execute();
+    function unconfirm_participant($userid, $listid){
+        DB::update('list_data')->set(array('confirmed' => '0'))->where('list_id', '=', $listid)->where('user', '=', $userid)->execute();
     }
 
 }

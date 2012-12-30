@@ -52,16 +52,16 @@ class Controller_Admin_list extends SuperAdminController{
 	    $this->content->participants = Model::factory('list')->get_participants($list);
 	    $this->content->list = Model::factory('list')->get_list($list);
 	}
-	public function action_deleteparticipant($id){
-	    Model::factory('list')->delete_participant_by_id($id);
+	public function action_deleteparticipant($userid, $listid){
+	    Model::factory('list')->remove_participant($userid, $listid);
 	    $this->request->redirect($_SERVER['HTTP_REFERER']);
 	}
-	public function action_confirmparticipant($id){
-	    Model::factory('list')->confirm_participant($id);
+	public function action_confirmparticipant($userid, $listid){
+	    Model::factory('list')->confirm_participant($userid, $listid);
 	    $this->request->redirect($_SERVER['HTTP_REFERER']);
 	}
-	public function action_unconfirmparticipant($id){
-	    Model::factory('list')->unconfirm_participant($id);
+	public function action_unconfirmparticipant($userid, $listid){
+	    Model::factory('list')->unconfirm_participant($userid, $listid);
 	    $this->request->redirect($_SERVER['HTTP_REFERER']);
 	}
 
