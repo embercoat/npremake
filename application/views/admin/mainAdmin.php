@@ -1,6 +1,6 @@
 <?='<?xml version="1.0"?>'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv"> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv">
 	<head>
 		<title>AdminPanel för Nolleperioden.se</title>
 		<style type="text/css">
@@ -21,7 +21,7 @@
                 foreach($custom_head as $ch)
                     echo $ch."\r\n";
         ?>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	</head>
 	<body>
 		<div id="adminHead">
@@ -52,6 +52,7 @@
 				<li><a href="/admin/phosare/list/thisYear/">Årets Phösare</a></li>
 				<li><a href="/admin/phosare/list/">Alla Phösare</a></li>
 				<li><a href="/admin/phosare/responsible/">Ansvariga just nu</a></li>
+				<li><a href="/admin/list/">Anmälningslistor</a></li>
 			</ul>
 			<ul>
 				<li class="menuGroupHead">Phösaruppdrag</li>
@@ -69,7 +70,7 @@
 				<li><a href="/admin/document/">Alla</a></li>
 				<li><a href="/admin/document/add">Lägg Till</a></li>
 			</ul>
-			
+
 		</div>
 		<div id="main">
 		    <?

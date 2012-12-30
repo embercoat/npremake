@@ -19,6 +19,8 @@ class Kohana_Database_Query_Builder_Insert extends Database_Query_Builder {
 	// VALUES (...)
 	protected $_values = array();
 
+	protected $_ignore = false;
+
 	/**
 	 * Set the table and columns for an insert.
 	 *
@@ -55,6 +57,16 @@ class Kohana_Database_Query_Builder_Insert extends Database_Query_Builder {
 		$this->_table = $table;
 
 		return $this;
+	}
+	/**
+	 * Sets the insert to insert ignore.
+	 *
+	 * @param   bool  to ignore or to not ignore
+	 * @return  $this
+	 */
+	public function ignore($tf){
+	    $this->_ignore = $tf;
+	    return $this;
 	}
 
 	/**
@@ -119,7 +131,7 @@ class Kohana_Database_Query_Builder_Insert extends Database_Query_Builder {
 	public function compile(Database $db)
 	{
 		// Start an insertion query
-		$query = 'INSERT INTO '.$db->quote_table($this->_table);
+		$query = 'INSERT'.($this->_ignore ? ' IGNORE' : '').' INTO '.$db->quote_table($this->_table);
 
 		// Add the column names
 		$query .= ' ('.implode(', ', array_map(array($db, 'quote_column'), $this->_columns)).') ';
