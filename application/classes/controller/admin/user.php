@@ -15,7 +15,7 @@ class Controller_Admin_User extends SuperAdminController{
 		$this->css[] = '/css/form.css';
 		$this->css[] = '/js/datatables/media/css/demo_page.css';
 		$this->css[] = '/js/datatables/media/css/demo_table.css';
-		
+
 		$this->content->users = DB::select('user_id', 'username','fname','lname')
 		                            ->from('user')
 		                            ->order_by(DB::Expr('lname, fname'))
@@ -46,12 +46,12 @@ class Controller_Admin_User extends SuperAdminController{
 	    $this->js[] = '/js/jquery.js';
 	    $this->js[] = '/js/jquery.collapser.js';
 	    $this->js[] = '/js/editUser.js';
-	    
+
 	}
 	public function action_delGroup($id){
 	    user::del_group($id);
         $this->request->redirect('/admin/user/group/');
-	    
+
 	}
 	public function action_group(){
         $groups = DB::select('*')->from('group')->order_by('name')->execute();
@@ -67,8 +67,8 @@ class Controller_Admin_User extends SuperAdminController{
 	    $sql = DB::insert('lt_UserOrganisation', array('userid', 'organisationid', 'title', 'isAdmin'));
 	    foreach($_POST['userids'] as $userid){
 	        $sql->values(array(
-	            $userid, 
-	            $organisation, 
+	            $userid,
+	            $organisation,
 	            $_POST['role'][$userid],
 	            (isset($_POST['makeAdmin'][$userid]) ? 1:0)
 	        ));
@@ -93,7 +93,7 @@ class Controller_Admin_User extends SuperAdminController{
 	        }
 	    }
         $group = DB::select('*')->from('group')->where('id','=',$id)->execute();
-        
+
         $homeroom = DB::select('*')
                     ->from('lt_HomeroomGroup')
                     ->where('group', '=', $id)
@@ -101,7 +101,7 @@ class Controller_Admin_User extends SuperAdminController{
                     ->on('homeroom.homeroom_id', '=', 'lt_HomeroomGroup.homeroom')
                     ->execute()
                     ->as_array();
-        
+
 	    $this->content = View::factory('admin/user/groupDetail');
 	    $this->css[] = '/css/form.css';
 	    $this->js[] = '/js/admin/groupDetail.js';
@@ -117,12 +117,12 @@ class Controller_Admin_User extends SuperAdminController{
 	                ->on('ltug.type','=','mt.id')
 	                ->order_by('u.lname')
 	                ->execute()->as_array();
-        $this->content->members = $members;	    
+        $this->content->members = $members;
 	}
 	public function action_addToGroup(){
 	    if(isset($_POST['userids']))
     	    user::add_user_to_group($_POST['userids'], $_POST['groupSelect'], $_POST['membershiptypeSelect']);
-        $this->request->redirect('/admin/user/');   
+        $this->request->redirect('/admin/user/');
 	}
     public function action_addGroupHomeroom(){
         list($count) = DB::select(DB::expr('count(1) as c'))
@@ -151,24 +151,24 @@ class Controller_Admin_User extends SuperAdminController{
             ->execute();
 	    $this->request->redirect('/admin/user/editGroup/'.$group_id);
 	}
-	
+
 	public function action_removeFromGroup($user_id, $group_id){
 	    user::removeUserFromGroup($user_id, $group_id);
 	    $this->request->redirect('/admin/user/');
 	}
 	public function action_addToMission(){
-	    $insert = DB::insert('lt_UserMission', array('userid', 'missionid'));
+	    $insert = DB::insert('lt_UserMission', array('userid', 'missionid'))->ignore(true);
 	    foreach($_POST['userids'] as $id){
 	        $insert->values(array('userid'=>$id, 'missionid' => $_POST['missionSelect']));
 	    }
 	    $insert->execute();
         $_SESSION['messages']['success'][] = 'User(s) added to mission';
 	    $this->request->redirect('/admin/user/');
-	    
+
 	}
-	
+
 }
-			
+
 
 
 
