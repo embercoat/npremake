@@ -4,7 +4,7 @@ class user{
     private $user_data = array();
     private static $instance;
     protected $user_id;
-    
+
 	/**
 	 * Constructor
 	 *
@@ -21,7 +21,7 @@ class user{
 			$instance->login_by_username_and_password($username, $password);
 		}
 	}
-	
+
     /**
 	 * Instance
 	 * Singleton function
@@ -34,9 +34,9 @@ class user{
             self::$instance = new $c;
         }
         return self::$instance;
-        
+
     }
-    
+
     /**
 	 * getId
 	 * returns the current users userID
@@ -46,7 +46,7 @@ class user{
     function getId(){
         return $this->user_id;
     }
-    
+
     /**
      * getApplication
      * returns application of the specified user
@@ -61,7 +61,7 @@ class user{
     	    ->where('timestamp', '>', mktime(0,0,0,0,0))
     	    ->execute()->as_array();
     }
-    
+
     /**
 	 * encrypt_password
 	 * encrypts and returns the string
@@ -72,7 +72,7 @@ class user{
     public static function encrypt_password($password){
         return md5($password);
     }
-    
+
     /**
 	 * Create User
 	 * Creates a basic user to access more of the site
@@ -94,16 +94,16 @@ class user{
                                     'accesskey' => md5(rand()),
                                     'acceptTos' => 1,
                                     'socialsecuritynumber'=> $socialsecuritynumber
-                                
+
                                 )
                              )
                             ->execute();
     }
-    
+
     /**
 	 * Login by username and password
 	 * Takes username and password, searches the db for a match and then calls login_by_user_id
-	 * 
+	 *
 	 * @param string username
 	 * @param string password
 	 * @return mixed
@@ -121,7 +121,7 @@ class user{
             return false;
         }
     }
-    
+
     /**
 	 * Login by user id
 	 * Takes userid and logs the user in
@@ -136,7 +136,7 @@ class user{
             return false;
         }
     }
-    
+
     /**
 	 * Load user data
 	 * Called when login occurs. Loads the users data into the object
@@ -153,7 +153,7 @@ class user{
         }
         return false;
     }
-    
+
     /**
 	 * Get user data
 	 * Gets the userdata from the database
@@ -170,11 +170,11 @@ class user{
             return array();
         }
     }
-    
+
     /**
 	 * getUserGroups
 	 * Gets the groups a user is a member of along with membertype and year.
-	 * 
+	 *
 	 * @param int user_id
 	 * @return array
 	 */
@@ -193,7 +193,7 @@ class user{
             return array();
         }
     }
-    
+
     /**
 	 * Get Group
 	 * Gets a single group if group_id is presented, if not, returns all groups
@@ -210,7 +210,7 @@ class user{
         }
         return $data->execute()->as_array();
     }
-    
+
     /**
 	 * getMembertype
 	 * Returns single membertype if presented with type_id, if not, returns all membertypes
@@ -227,7 +227,7 @@ class user{
         }
         return $data->execute()->as_array();
     }
-    
+
     /**
 	 * getProgram
 	 * Returns single program if argument present. if not, returns all programs
@@ -243,19 +243,19 @@ class user{
             $data = $data->where('id', '=', $program_id);
         if($sort)
             $data = $data->order_by('name', 'asc');
-            
+
         $data = $data->execute()->as_array();
         $return = array();
         foreach($data as $d)
             $return[$d['id']] = $d['name'];
         return $return;
     }
-    
+
     /**
 	 * Add user to group
-	 * adds users to a group using membertype. 
+	 * adds users to a group using membertype.
 	 *
-	 * @param mixed user_id can be either single user_id or array of users to be added to group 
+	 * @param mixed user_id can be either single user_id or array of users to be added to group
 	 * @param int group_id
 	 * @param int membertype
 	 * @return object - Returns the current instance
@@ -263,7 +263,7 @@ class user{
     public static function add_user_to_group($user_id, $group_id, $membertype){
         if(!is_array($user_id)) //Just in case someone misses it.
             $user_id = array($user_id);
-            
+
         $query = DB::insert('lt_UserGroup', array('userid', 'groupid', 'type', 'year'));
         foreach($user_id as $uid){
             $query->values(array('userid' => $uid, 'groupid' => $group_id, 'type' => $membertype, 'year' => date('Y')));
@@ -275,7 +275,7 @@ class user{
             $_SESSION['messages']['fail'][] = "One or more of the users already existed in that group with that role";
         }
     }
-    
+
     /**
 	 * Remove one or more users from one or more groups
 	 *
@@ -287,19 +287,19 @@ class user{
             $user_id = array($user_id);
         if(!is_array($group_id))
             $group_id = array($group_id);
-        
+
         $query = DB::delete('lt_UserGroup')
                     ->where('groupid', 'in', DB::Expr('('.implode(',', $group_id).')'))
                     ->and_where('userid','in',DB::Expr('('.implode(',',$user_id).')'))
                     ->execute();
     }
-    
+
     /**
 	 * add group
 	 * Add a group to the database
 	 *
 	 * @param string groupname
-	 * @return int 
+	 * @return int
 	 */
     public static function add_group($groupname){
         return DB::insert('group', array('name'))->values(array('name' => $groupname))->execute();
@@ -309,7 +309,7 @@ class user{
 	 * Add a group to the database
 	 *
 	 * @param int groupid
-	 * @return int 
+	 * @return int
 	 */
     public static function del_group($groupid){
         DB::delete('lt_UserGroup')
@@ -319,7 +319,7 @@ class user{
                 ->where('id', '=', $groupid)
                 ->execute();
     }
-    
+
     /**
 	 * Get username by id
 	 * returns the username corresponding to the user_id
@@ -335,7 +335,7 @@ class user{
             return false;
         }
     }
-    
+
     /**
 	 * Logged in
 	 * Checks to see if the user is currently logged in.
@@ -350,7 +350,7 @@ class user{
             return false;
         }
     }
-    
+
     /**
 	 * isAdmin
 	 * Checks whether or not the user has administrative rights
@@ -382,10 +382,10 @@ class user{
 	            //Guess he is. Let's return true and end it right here.
 	            return true;
 	        }
-        } else 
+        } else
             return false;
     }
-    
+
     /**
 	 * get full name
 	 * Returns the full name of the current user
@@ -395,7 +395,7 @@ class user{
     public function get_full_name(){
         return $this->user_data['fname'].' '.$this->user_data['lname'];
     }
-    
+
     /**
 	 * free username
 	 * Used in the validation process to check whether or not a username is taken
@@ -407,14 +407,14 @@ class user{
         $free = DB::select('username')->from('user')->where('username','=',$username)->execute()->as_array();
         if(count($free) == 0)
             return true;
-        else 
+        else
             return false;
     }
-    
+
     /**
 	 * change_user_details
 	 * Updates user details according to details
-	 * 
+	 *
 	 * @param int id the user id
 	 * @param array details key-value pairs of the new details
 	 */
@@ -425,7 +425,25 @@ class user{
 	            ->where('user_id','=', $id)
 	            ->execute();
     }
+    /**
+     * check_ssn
+     * Checks whether or not a swedish ssn is valid
+     *
+     * @param string ssn 10-digits, no dashes
+     * @return bool
+     */
+    static function check_ssn($pnr){
+       if (strlen($pnr) != 10) return false;
+       $n = 2;
+       $sum = 0;
+       for ($i=0; $i<9; $i++) {
+          $tmp = $pnr[$i] * $n;
+          ($tmp > 9) ? $sum += 1 + ($tmp % 10) : $sum += $tmp;
+          ($n == 2) ? $n = 1 : $n = 2;
+       }
 
+        return !( ($sum + $pnr[9]) % 10);
+    }
 }
 
 

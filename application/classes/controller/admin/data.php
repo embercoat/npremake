@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
@@ -21,7 +21,7 @@ class Controller_Admin_data extends SuperAdminController{
                         ->as_array();
         $this->content = View::Factory('admin/data/programs');
         $this->content->programs = $programs;
-                        
+
 	}
 	public function action_delProgram($pid){
 	    DB::delete('program')
@@ -54,75 +54,63 @@ class Controller_Admin_data extends SuperAdminController{
 //            $_SESSION['messages']['success'][] = 'Successfully added <b>'.$_POST['newname'].'</b> to available programs';
 	    }
         $this->request->redirect('/admin/data/program');
-	        
+
 	}
 	public function action_organisation(){
 	    $this->content = View::Factory('admin/data/organisation');
-	    $this->content->organisations = DB::select_array(array('organisation.*', 'organisation_type.type'))
-	                        ->from('organisation')
-	                        ->join('organisation_type')
-	                        ->on('organisation.type', '=', 'organisation_type.id')
-	                        ->execute()->as_array();
+	    $this->content->organisations = Model::factory('organisation')->get_organisation();
 	}
-	public function action_delOrganisation($id){ 
-	    DB::delete('organisation')
-	        ->where('id', '=', $id)
-	        ->execute();
+	public function action_addusertoorganisation(){
+	    Model::factory('organisation')->add_user_to_org(
+	                $_POST['organisationid'],
+	                $_POST['userid'],
+	                $_POST['title'],
+	                (isset($_POST['is_admin']) ? 1:0)
+	           );
+	    $this->request->redirect('/admin/data/editOrganisation/'.$_POST['organisationid']);
+	}
+
+	public function action_delOrganisation($id){
+	    Model::factory('organisation')->del_organisation();
 	   $this->request->redirect('/admin/data/organisation');
 	}
 	public function action_editOrganisation($id){
 	    $this->content = View::Factory('admin/data/editOrganisation');
 	    $this->css[] = '/css/form.css';
+	    $this->css[] = '/css/jquery.ui.css';
+	    $this->js[] = '/js/jquery.ui.js';
+	    $this->js[] = '/js/jquery.hotkeys.js';
+	    $this->js[] = '/js/admin/data/organisation.js';
+	    $this->js[] = '/js/xmlrpc.js';
+
 	    if($id !== 'new'){
-		    list($data) = DB::select('*')
-		                    ->from('organisation')
-		                    ->where('organisation.id', '=', $id)
-		                    ->execute()
-		                    ->as_array();
-		    $members = DB::select('*')
-		                    ->from('lt_UserOrganisation')
-		                    ->join('user')
-		                    ->on('lt_UserOrganisation.userid', '=', 'user.user_id')
-		                    ->where('lt_UserOrganisation.organisationid', '=', $id)
-		                    ->execute()
-		                    ->as_array();
-		    
+		    list($data) = Model::factory('organisation')->get_organisation($id);
 		    $this->content->data = $data;
-		    $this->content->members = $members;
+		    $this->content->members = Model::factory('organisation')->get_organisation_members($id);
 	    } else {
 	        $this->content->data = false;
 	        $this->content->members = array();
 	    }
         $organisation_types = array();
-        foreach(DB::select('*')->from('organisation_type')->execute()->as_array() as $ot)
+        foreach(Model::factory('organisation')->get_organisation_types() as $ot)
             $organisation_types[$ot['id']] = $ot['type'];
         $this->content->organisation_types = $organisation_types;
-            
+
 	}
 	public function action_updateOrganisation(){
 	    $this->js = '/js/admin/data.js';
 	    $organisationid = $_POST['organisationid'];
 	    unset($_POST['organisationid']);
 	    if($organisationid == 'new'){
-	        list($organisationid, $num_rows) = DB::insert('organisation', array('name', 'description', 'type'))
-	            ->values(array(
-	                $_POST['name'],
-	                $_POST['description'],
-	                $_POST['type']
-	            ))
-	            ->execute();
-	       
+	        $organisationid = Model::factory('organisation')->add_organisation($_POST['name'], $_POST['description'], $_POST['type']);
 	    } else {
-		    DB::update('organisation')
-		            ->set($_POST)
-		            ->where('id', '=', $organisationid)
-		            ->execute();
+	        Model::factory('organisation')->update_organisation($organisationid, $_POST);
 	    }
         $this->request->redirect('/admin/data/editOrganisation/'.$organisationid);
 	}
 	public function action_homeroom(){
         $this->js[] = '/js/admin/data.js';
-	    
+
 	    $this->content = View::factory('admin/data/homeroom');
 	    $this->content->homerooms = DB::select('*')
 	                ->from('homeroom')
@@ -144,7 +132,7 @@ class Controller_Admin_data extends SuperAdminController{
 	            ->values(array('room' => $_POST['newname']))
 	            ->execute();
 	    }
-        $this->request->redirect('/admin/data/homeroom');        
+        $this->request->redirect('/admin/data/homeroom');
 	}
     public function action_delHomeroom($id){
 	    DB::delete('homeroom')
@@ -156,9 +144,29 @@ class Controller_Admin_data extends SuperAdminController{
             ->execute();
 	    $this->request->redirect('/admin/data/homeroom');
 	}
+
+	###   Attendance
+
+	public function action_attendance(){
+	    $this->js[] = '/js/admin/data.js';
+
+	    $this->content = View::factory('admin/data/attendance');
+	    $this->content->lists = Model::factory('attendance')->get_lists();
+
+	}
+
+	public function action_editattendance(){
+	    if($_POST['attendance_id'] !== 'new'){
+	        Model::factory('attendance')->change_name($_POST['attendance_id'], $_POST['newname']);
+	    } else {
+	        Model::factory('attendance')->create_attendance($_POST['newname']);
+	    }
+	    $this->request->redirect('/admin/data/attendance');
+	}
+
+	public function action_delattendance($id){
+	    Model::factory('attendance')->delete_attendance($id);
+	    $this->request->redirect('/admin/data/attendance');
+	}
 }
-			
-
-
-
 ?>

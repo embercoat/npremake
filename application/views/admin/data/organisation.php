@@ -12,7 +12,7 @@
 foreach($organisations as $o){ ?>
     <tr>
     	<td><?=$o['name']; ?></td>
-    	<td><?=$o['type']; ?></td>
+    	<td><?=$o['typename']; ?></td>
     	<td>
      		<a href="/admin/data/delOrganisation/<?=$o['id'].'/'; ?>"><img src="/images/icon/red_x.svg" height="14px" /></a>
 			<a href="/admin/data/editOrganisation/<?=$o['id'].'/'; ?>"><img src="/images/icon/edit.gif" /></a>

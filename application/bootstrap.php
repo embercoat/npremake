@@ -106,6 +106,7 @@ Kohana::modules(array(
 	// 'unittest'   => MODPATH.'unittest',   // Unit testing
 	 'userguide'  => MODPATH.'userguide',  // User guide and API documentation
 	 'ckeditor'  => MODPATH.'ckeditor',  // User guide and API documentation
+     'xmlrpc'  => MODPATH.'xmlrpc',  // User guide and API documentation
 ));
 
 /**
