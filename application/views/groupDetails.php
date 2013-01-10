@@ -15,7 +15,7 @@ $resp = array();
 foreach($members as $m){
     $resp[$m['user_id']] = $m['fname'].' '.$m['lname'];
     ?>
-    <tr>
+    <tr <?php echo ($m['year'] != date('Y')) ? 'class="greyout"' : ''; ?>>
     	<td><?=$m['fname'].' '.$m['lname'];?></td>
         <td><?=$m['membertype'];?></td>
         <td><?=$m['year']; ?></td>
@@ -36,7 +36,7 @@ foreach($members as $m){
 	</thead>
 	<tbody>
 		<?php  foreach($homerooms as $h){ ?>
-		<tr>
+		<tr <?php echo ($m['year'] != date('Y')) ? 'class="greyout"' : ''; ?>>
 			<td><?=$h['room']; ?></td>
 			<td><?=$h['year']; ?></td>
 		</tr>
@@ -53,7 +53,7 @@ foreach($members as $m){
 			<td style="width: 100px;">Telefon</td>
 			<td style="width: 100px;">Start</td>
 			<td style="width: 100px;">Slut</td>
-			<td style="width: 100px;">Prioritet</td>			
+			<td style="width: 100px;">Prioritet</td>
 		</tr>
 	</thead>
 	<tbody>
