@@ -1,15 +1,15 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
- * 
+ *
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
 class Controller_Admin_Document extends SuperAdminController {
     function before(){
         parent::before();
-        
+
     }
-    
+
 	public function action_index()
 	{
 	    $documents = DB::select('*')
@@ -18,7 +18,7 @@ class Controller_Admin_Document extends SuperAdminController {
 	                    ->execute()
 	                    ->as_array();
 	    $this->content = View::factory('admin/document/main');
-	    $this->content->documents = $documents;   
+	    $this->content->documents = $documents;
 	}
 	public function action_add(){
 	    $this->css[] = '/css/form.css';
@@ -46,9 +46,12 @@ class Controller_Admin_Document extends SuperAdminController {
 	            $_POST['requireLogin'] = 0;
 	        if(!isset($_POST['requireAdmin']))
 	            $_POST['requireAdmin'] = 0;
-	            
+
+	        $doc_id = $_POST['document_id'];
+	        unset($_POST['document_id']);
 	            DB::update('document')
 	            ->set($_POST)
+	            ->where('id', '=', $doc_id)
 	            ->execute();
 	    }
 	    $this->css[] = '/css/form.css';
