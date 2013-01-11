@@ -30,6 +30,3 @@ function editAttendance(id){
 	document.getElementById('attendance_id').value = id; 
 }
 
-function hideEditBox(){
-	$('#editBox').hide();
-}

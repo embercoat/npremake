@@ -26,6 +26,7 @@ Class Model_organisation extends Model {
         ->execute();
         return $organisationid;
     }
+
     function get_organisation_members($id){
         return DB::select('*')
         ->from('lt_UserOrganisation')
@@ -45,7 +46,7 @@ Class Model_organisation extends Model {
         ->execute();
 
     }
-    function add_user_to_org($orgid, $userid, $title, $is_admin = false){
+    function add_user($orgid, $userid, $title, $is_admin = false){
         $sql = DB::insert('lt_UserOrganisation', array('userid', 'organisationid', 'title', 'isAdmin'))->ignore(true)
                 ->values(array(
     	            $userid,
@@ -54,5 +55,16 @@ Class Model_organisation extends Model {
     	            ($is_admin)
     	        ));
         $sql->execute();
+    }
+    function update_user($orgid, $userid, $title, $is_admin = false){
+        $sql = DB::update('lt_UserOrganisation')
+        ->set(array('title' => $title, 'isAdmin' => $is_admin))
+        ->where('userid', '=', $userid)
+        ->where('organisationid', '=', $orgid);
+        $sql->execute();
+    }
+
+    function remove_user($org, $userid){
+        DB::delete('lt_UserOrganisation')->where('organisationid', '=', $org)->where('userid', '=', $userid)->execute();
     }
 }

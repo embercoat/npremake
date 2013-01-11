@@ -61,13 +61,21 @@ class Controller_Admin_data extends SuperAdminController{
 	    $this->content->organisations = Model::factory('organisation')->get_organisation();
 	}
 	public function action_addusertoorganisation(){
-	    Model::factory('organisation')->add_user_to_org(
-	                $_POST['organisationid'],
-	                $_POST['userid'],
-	                $_POST['title'],
-	                (isset($_POST['is_admin']) ? 1:0)
-	           );
+	    if($_POST['edit'] == 0){
+    	    Model::factory('organisation')->add_user(
+    	                $_POST['organisationid'],
+    	                $_POST['userid'],
+    	                $_POST['title'],
+    	                (isset($_POST['is_admin']) ? 1:0)
+    	           );
+	    } elseif ($_POST['edit'] == 1){
+	        Model::factory('organisation')->update_user($_POST['organisationid'], $_POST['userid'], $_POST['title'], (isset($_POST['is_admin']) ? 1:0));
+	    }
 	    $this->request->redirect('/admin/data/editOrganisation/'.$_POST['organisationid']);
+	}
+	public function action_removeuserfromorganisation($org, $userid){
+	    Model::factory('organisation')->remove_user($org, $userid);
+	    $this->request->redirect('/admin/data/editOrganisation/'.$org);
 	}
 
 	public function action_delOrganisation($id){
