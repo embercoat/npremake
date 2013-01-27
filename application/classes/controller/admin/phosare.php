@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
@@ -12,14 +12,18 @@ class Controller_Admin_phosare extends SuperAdminController{
 		if($applicationId === false){
 		    //List them
 		    $this->content = View::factory('admin/phosare/applicationList');
+
 		    $applications = DB::select_array(array('a.*', DB::expr("Concat(u.fname, ' ', u.lname) as name")))
 		                        ->from(array('applicant','a'))
 		                        ->join(array('user', 'u'))
 		                        ->on('a.userid', '=', 'u.user_id')
 		                        ->where('approved', '=', '0')
+		                        ->order_by('a.program', 'asc')
+		                        ->order_by('name', 'asc')
 		                        ->execute()
 		                        ->as_array();
 		    $this->content->applications = $applications;
+		    $this->content->programs = array_merge(array(0 => 'Spelar ingen roll'), user::get_programs(false, true));
 		} else {
 		    //show the specific application
 		    $this->content = View::factory('admin/phosare/application');
@@ -29,7 +33,8 @@ class Controller_Admin_phosare extends SuperAdminController{
 		                            ->execute()
 		                            ->as_array();
             $this->content->application_data = $application_data;
-		    $this->content->user_data = user::get_user_data($application_data['userid']);
+		    $this->content->programs = array_merge(array(0 => 'Spelar ingen roll'), user::get_programs(false, true));
+            $this->content->user_data = user::get_user_data($application_data['userid']);
 		    $this->content->groups = user::get_user_groups($application_data['userid']);
 		}
 	}
@@ -50,7 +55,7 @@ class Controller_Admin_phosare extends SuperAdminController{
 		        ->on('lt_UserGroup.groupid', '=', 'group.id')
 		        ->join('membertype')
 		        ->on('lt_UserGroup.type', '=', 'membertype.id');
-		        
+
 	    switch($what){
 	        case 'thisYear':
 	            $list = $list->where('lt_UserGroup.year', '=', date('Y'));
@@ -80,10 +85,10 @@ class Controller_Admin_phosare extends SuperAdminController{
             ->order_by('priority', 'ASC')
             ->execute()
             ->as_array();
-            
+
 	}
 }
-			
+
 
 
 

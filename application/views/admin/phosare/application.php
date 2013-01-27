@@ -2,15 +2,22 @@
 <table>
 	<tr>
 		<td style="width: 150px;"><b>Timestamp</b></td>
-		<td style="width: 150px;"><?=date('d M Y h:i', $application_data['timestamp']); ?></td>
+		<td style="width: 150px;"><?php echo date('d M Y h:i', $application_data['timestamp']); ?></td>
 		<td style="width: 150px;"><b>Approved</b></td>
-		<td style="width: 150px;"><?=(($application_data['approved'] == 1) ? 'Yes' : 'No' ); ?></td>
+		<td style="width: 150px;"><?php echo (($application_data['approved'] == 1) ? 'Yes' : 'No' ); ?></td>
 	</tr>
+	<tr>
+		<td style="width: 150px;"><b>CPh</b></td>
+		<td style="width: 150px;"><?php echo (($application_data['cph'] == 1) ? 'Ja': 'Nej'); ?></td>
+		<td style="width: 150px;"><b>Program</b></td>
+		<td style="width: 150px;"><?php echo $programs[$application_data['program']]; ?></td>
+	</tr>
+
 	<tr>
 		<td colspan="4"><b>Motivation</b></td>
 	</tr>
 	<tr>
-		<td colspan="4"><?=$application_data['whyphosa']; ?></td>
+		<td colspan="4"><?php echo $application_data['whyphosa']; ?></td>
 	</tr>
 </table>
 <br />
@@ -18,38 +25,38 @@
 <table>
   	<tr>
     	<td style="width: 200px;"><b>Name</b></td>
-    	<td style="width: 250px;"><?=$user_data['fname'].' '.$user_data['lname']; ?></td>
+    	<td style="width: 250px;"><?php echo $user_data['fname'].' '.$user_data['lname']; ?></td>
   	</tr>
   	<tr>
 		<td><b>Phone</b></td>
-		<td><?=$user_data['phone']; ?></td>
+		<td><?php echo $user_data['phone']; ?></td>
   	</tr>
   	<tr>
 		<td><b>Email</b></td>
-		<td><?=$user_data['email']; ?></td>
+		<td><?php echo $user_data['email']; ?></td>
   	</tr>
   	<tr>
 		<td><b>Socialsecurity number</b></td>
-		<td><?=$user_data['socialsecuritynumber']; ?></td>
+		<td><?php echo $user_data['socialsecuritynumber']; ?></td>
   	</tr>
-  	<?
+  	<?php
   	$critical_fields = array('socialsecuritynumber', 'email', 'phone');
   	$all_good = true;
   	foreach($critical_fields as $cf)
   	    if(empty($user_data[$cf]))
   	        $all_good = false;
-  	
+
   	if($all_good){ ?>
   	<tr style="background-color: lightgreen">
 		<td><b>Critical info</b></td>
 		<td>All Good</td>
   	</tr>
-  	<? } else { ?>
+  	<?php } else { ?>
     <tr style="background-color: salmon">
 		<td><b>Critical info</b></td>
 		<td>Pieces missing</td>
   	</tr>
-  	<? } ?>
+  	<?php } ?>
 </table>
 <br />
 <h1>Groups</h1>
@@ -64,32 +71,31 @@
 	<tbody>
 	<?php foreach($groups as $g){ ?>
 	    <tr>
-	    	<td><?=$g['groupname']; ?></td>
-	    	<td><?=$g['membertype']; ?></td>
-	    	<td><?=$g['year']; ?></td>
+	    	<td><?php echo $g['groupname']; ?></td>
+	    	<td><?php echo $g['membertype']; ?></td>
+	    	<td><?php echo $g['year']; ?></td>
 	    </tr>
-	<? } ?>
+	<?php } ?>
 	</tbody>
 </table>
 <br />
-<?
+<?php
 $all_groups = array();
 foreach(user::get_group() as $g)
     $all_groups[$g['id']] = $g['name'];
-    
+
 $all_membertypes = array();
 foreach(user::get_membertype() as $mt)
     $all_membertypes[$mt['id']] = $mt['name'];
-?>
 
-<form action="/admin/phosare/approveApplication/" method="post">
-<?=Form::hidden('applicationid', $application_data['id']); ?>
-<?=Form::hidden('userid', $application_data['userid']); ?>
-<?=Form::label('addToGroup', 'Lägg till i:'); ?>
-<?=Form::select('addToGroup', $all_groups); ?>
+echo Form::open('/admin/phosare/approveApplication/', array('method'=>'post'))
+    .Form::hidden('applicationid', $application_data['id'])
+    .Form::hidden('userid', $application_data['userid'])
+    .Form::label('addToGroup', 'Lägg till i:')
+    .Form::select('addToGroup', $all_groups)
 
-<?=Form::label('asMemberType', 'Med rollen:'); ?>
-<?=Form::select('asMemberType', $all_membertypes); ?>
-	
-<?=Form::submit('', 'Godkänn'); ?>
+    .Form::label('asMemberType', 'Med rollen:')
+    .Form::select('asMemberType', $all_membertypes)
+
+    .Form::submit('', 'Godkänn'); ?>
 </form>

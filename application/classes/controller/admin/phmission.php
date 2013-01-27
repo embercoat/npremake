@@ -1,6 +1,6 @@
 <?php
 /**
- * 
+ *
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
@@ -13,7 +13,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 	}
 	public function action_list(){
 	    $this->content = View::Factory('admin/phmission/missionList');
-	    
+
 	    $this->content->missions = DB::select('*')
 	            ->from('mission')
 	            ->order_by('startdate', 'ASC')
@@ -22,6 +22,18 @@ class Controller_Admin_phmission extends SuperAdminController{
 	}
 	public function action_edit($mission_id = 'new'){
 	    $this->content = View::Factory('admin/phmission/editMission');
+	    $this->js[] = '/js/anytime/anytime.c.js';
+	    $this->css[] = '/css/anytime/anytime.c.css';
+	    $this->css[] = '/css/form.css';
+	    $this->css[] = '/css/jquery.ui.css';
+	    $this->js[] = '/js/jquery.hotkeys.js';
+	    $this->js[] = '/js/jquery.ui.js';
+	    $this->js[] = '/js/xmlrpc.js';
+	    $this->js[] = '/js/admin/phmission.js';
+
+/* TODO
+ * fix the autocomplete
+ */
 	    if(!empty($_POST)){
 	        if($_POST['mission_id'] == 'new'){
 		        list($mission_id, $null) = DB::insert('mission', array('name', 'description', 'startdate', 'enddate', 'responsible_organisation'))
@@ -58,7 +70,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 		$this->content->organisations = array('0' => '- Ingen');
 		foreach(DB::select('*')->from('organisation')->order_by('name', 'ASC')->execute()->as_array() as $org)
 		    $this->content->organisations[$org['id']] = $org['name'];
-	    
+
 	    $this->js[] = '/js/jquery.ui.timepicker.js';
 	    $this->js[] = '/js/jquery.ui.js';
 	    $this->css[] = '/css/form.css';
@@ -92,7 +104,7 @@ class Controller_Admin_phmission extends SuperAdminController{
 	        $this->request->redirect('/admin/phmission/edit/'.$mission_id);
 	}
 }
-			
+
 
 
 

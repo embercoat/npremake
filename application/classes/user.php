@@ -221,7 +221,7 @@ class user{
     public static function get_membertype($type_id = false){
         $data = DB::select('*')
                     ->from(array('membertype', 'mt'))
-                    ->order_by('name', 'asc');
+                    ->order_by('sortorder', 'asc');
         if($type_id !== false){
             $data = $data->where('id', '=', $type_id);
         }
