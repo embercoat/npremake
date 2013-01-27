@@ -385,7 +385,28 @@ class user{
         } else
             return false;
     }
-
+    /**
+     * isPhosare
+     * Checks whether or not the user is currently a phosare
+     *
+     * @return bool
+     */
+    function isPhosare(){
+        if($this->logged_in()) {
+            //Does he have the membertype of NPG for this year?
+            $data = DB::select(DB::expr('count(1)'))
+            ->from('lt_UserGroup')
+            ->where('userid', '=', $this->getId())
+            ->where('year', '=', DB::expr('year(now())'))
+            ->execute()
+            ->as_array();
+            if($data[0]['count(1)'] > 0){
+                //Guess he is. Let's return true and end it right here.
+                return true;
+            }
+        } else
+            return false;
+    }
     /**
 	 * get full name
 	 * Returns the full name of the current user
