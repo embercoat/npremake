@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
- * 
+ *
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
@@ -10,9 +10,9 @@ class Controller_me extends SuperController {
 			$this->request->redirect('/');
 		}
         parent::before();
-        
+
     }
-    
+
 	public function action_index()
 	{
 	    $this->content = View::factory('mainMe');
@@ -36,15 +36,20 @@ class Controller_me extends SuperController {
 	    $this->content->details = user::get_user_data($_SESSION['user']->getId());
 	    $this->content->userId = $_SESSION['user']->getId();
 	    $this->content->formTarget = '/me/editDetails';
+
+	    $this->content->unions = array();
+	    foreach(user::get_unions() as $u)
+	        $this->content->unions[$u['union_id']] = $u['name'];
+
 	    $this->css[] = '/css/editUser.css';
 	    $this->js[] = '/js/jquery.js';
 	    $this->js[] = '/js/jquery.collapser.js';
 	    $this->js[] = '/js/editUser.js';
-        
+
 	}
 	public function action_editGroups(){
 	    $this->content = View::factory('userGroups');
-        $this->content->groups = user::get_user_groups($_SESSION['user']->getId());    
+        $this->content->groups = user::get_user_groups($_SESSION['user']->getId());
 	}
 	public function action_groupDetails($id){
 	    if(isset($_POST) && !empty($_POST)){
@@ -83,8 +88,8 @@ class Controller_me extends SuperController {
         list($this->content->group) = DB::select('*')->from('group')->where('id','=',$id)->execute()->as_array();
         $this->content->responsibilities = DB::select_array(array(
                         'responsibility.*',
-                        'u.fname', 
-                        'u.lname', 
+                        'u.fname',
+                        'u.lname',
                         'u.phone'
                     ))
                     ->from('responsibility')
@@ -102,7 +107,7 @@ class Controller_me extends SuperController {
 	                   ->where('lt_UserMission.userid', '=', $_SESSION['user']->getId())
 	                   ->execute()
 	                   ->as_array();
-	                   
+
         $responsible_missions = DB::select('mission.*')
 	                   ->from('lt_UserOrganisation')
 	                   ->join('mission')
@@ -122,7 +127,7 @@ class Controller_me extends SuperController {
                                             ->on('mission.responsible_organisation','=', 'organisation.id')
                                             ->execute()
                                             ->as_array();
-                                            
+
         $is_responsible_for = DB::select('mission.id')
 	                   ->from('lt_UserOrganisation')
 	                   ->join('mission')

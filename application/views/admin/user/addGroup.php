@@ -1,11 +1,16 @@
-<form action="/admin/user/editGroup/new" method="post">
-<?=Form::hidden('groupid', 'new');?>
+<?php
+echo Form::open('/admin/user/editGroup/new')
+    .Form::hidden('groupid', 'new')
 
-<?=Form::label('name', 'Namn'); ?>
-<?=Form::input('name', '')?>
+    .Form::label('name', 'Namn')
+    .Form::input('name', '')
 
-<?=Form::label('shortname', 'Kortnamn'); ?>
-<?=Form::input('shortname', '')?>
+    .Form::label('shortname', 'Kortnamn')
+    .Form::input('shortname', '')
 
-<?=Form::submit('', 'Spara');?>
+    .Form::label('union', 'Kår')
+    .Form::input('union', '')
+
+    .Form::submit('', 'Spara')
+?>
 </form>

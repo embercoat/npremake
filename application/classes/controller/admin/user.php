@@ -80,13 +80,17 @@ class Controller_Admin_User extends SuperAdminController{
 	public function action_editGroup($id){
 	    if(isset($_POST) && !empty($_POST)){
 	        if($id == 'new'){
-	            list($id, $null) = DB::insert('group', array('name', 'shortname'))
-	                    ->values(array('name' => $_POST['name'], 'shortname' => $_POST['shortname']))
+	            list($id, $null) = DB::insert('group', array('name', 'shortname', 'union'))
+	                    ->values(array($_POST['name'], $_POST['shortname'], $_POST['union']))
                         ->execute();
 		        $_SESSION['messages']['success'][] = 'Successfully added '.$_POST['name'].' to groups';
 	        } else {
 		        $q = DB::update('group')
-		                    ->set(array('name' => $_POST['name'], 'shortname' => $_POST['shortname']))
+		                    ->set(array(
+		                            'name' => $_POST['name'],
+		                            'shortname' => $_POST['shortname'],
+		                            'union' => $_POST['union']
+		                    ))
 		                    ->where('id', '=', $_POST['groupid'])
 		                    ->execute();
 		        $_SESSION['messages']['success'][] = 'Successfully updated groupdetails';
@@ -107,6 +111,11 @@ class Controller_Admin_User extends SuperAdminController{
 	    $this->js[] = '/js/admin/groupDetail.js';
 	    $this->content->homeroom = $homeroom;
 	    $this->content->group = $group[0];
+
+	    $this->content->unions = array();
+	    foreach(user::get_unions() as $u)
+	        $this->content->unions[$u['union_id']] = $u['name'];
+
 	    $this->content->groupId = $id;
 	    $members = DB::select('u.fname', 'u.lname','u.user_id', 'ltug.year', array('mt.name', 'membertype'))
 	                ->from(array('lt_UserGroup', 'ltug'))

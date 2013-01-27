@@ -1,6 +1,6 @@
 <?php defined('SYSPATH') or die('No direct script access.');
 /**
- * 
+ *
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
@@ -9,7 +9,7 @@ class Controller_json extends SuperController {
         if(!isset($_SESSION['user']) || !$_SESSION['user']->logged_in())
         	die();
         parent::before();
-        
+
     }
     function after(){
         //Do nothing to suppres standard output.

@@ -172,6 +172,20 @@ class user{
     }
 
     /**
+	 * Get unions
+	 * Gets the unions
+	 *
+	 * @return array
+	 */
+    public static function get_unions(){
+        $data = DB::select('*')->from('union')->order_by('name', 'asc')->execute()->as_array();
+        $return = array();
+        foreach($data as $d)
+            $return[$d['union_id']] = $d;
+        return $return;
+    }
+
+    /**
 	 * getUserGroups
 	 * Gets the groups a user is a member of along with membertype and year.
 	 *
