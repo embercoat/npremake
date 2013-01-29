@@ -19,7 +19,7 @@ function performAction(){
 			$('#userForm').attr('action', '/admin/user/addToGroup/');
 			$('#groupSelectForm').removeClass('preHidden');
 
-		break; 
+		break;
 		}
 		case 'addToMission':{
 			$.getJSON('/json/getMission', function(data) {
@@ -45,15 +45,15 @@ function performAction(){
 			html = '';
 			$(':checked').each(function(index, object){
 				html = html+'<tr><td>'
-						+$('#fname_' + object.value).html() 
-						+ ' ' 
+						+$('#fname_' + object.value).html()
+						+ ' '
 						+$('#lname_' +object.value).html()
 						+'</td><td><input type="text" name="role['+object.value+']" /></td>'
 						+'<td><input type="checkbox" name="makeAdmin['+object.value+']" value="1"/></td></tr>\r\n';
 			});
 			$('#organisationList').html(html);
 			$('#organisationSelectForm').removeClass('preHidden');
-			
+
 		break;
 		}
 	}

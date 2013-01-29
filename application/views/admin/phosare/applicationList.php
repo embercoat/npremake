@@ -1,3 +1,11 @@
+<ul style="list-style: none;">
+    <li style="display: inline;"><a href="/admin/phosare/applicants">Årets icke behandlade</a></li>
+    <li style="display: inline;"><a href="/admin/phosare/applicantshistory/">Årets samtliga</a></li>
+    <?php
+    for($year = $firstYear['year'];$year<date('Y');$year++) {?>
+    <li style="display: inline;"><a href="/admin/phosare/applicantshistory/<?php echo $year; ?>"><?php echo $year; ?> samtliga</a></li>
+    <?php } ?>
+</ul>
 <table>
 	<thead>
 		<tr>

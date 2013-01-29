@@ -38,13 +38,12 @@ echo Form::open('/admin/data/updateOrganisation/'.$data['id'], array('method' =>
 </table>
 <?php } ?>
 </div>
-<div class="ui-widget" style="margin-top: 2em; font-family: Arial;"></div>
 <div style="position: fixed; top: 200px; left: 600px; background: lightGreen; padding: 10px;" id="editBox" class="preHidden">
 <?php echo Form::open("/admin/data/addusertoorganisation/")
 	.Form::hidden('organisationid', (($data)?$data['id']:''))
 	.Form::hidden('userid')
 	.Form::hidden('edit', '0')
-	.Form::label('user', 'Namn')
+	.Form::label('username', 'Namn')
 	.Form::input('username', '', array('id' => 'username'))
 	.Form::label('title', 'Titel')
 	.Form::input('title', '', array('id' => 'username'))

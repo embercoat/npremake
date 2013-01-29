@@ -1,7 +1,8 @@
-<?=Form::open('/admin/document/edit/'.$document_id, array('method' => 'post')); ?>
 <p>
-<?
-echo Form::label('name', 'Namn')
+<?php
+echo Form::open('/admin/document/edit/'.$document_id, array('method' => 'post'))
+    .Form::hidden('document_id', $document_id)
+    .Form::label('name', 'Namn')
     .Form::input('name', $document['name'])
     .Form::label('description', 'Beskrivning')
     .Form::textarea('description', $document['description'])
@@ -11,7 +12,7 @@ echo Form::label('name', 'Namn')
     .Form::checkbox('requireLogin', '1', (($document['requireLogin'] == 1) ? true : false))
     .Form::label('requireAdmin', 'Måste vara Admin?')
     .Form::checkbox('requireAdmin', '1', (($document['requireAdmin'] == 1) ? true : false))
-    .Form::submit('submit', 'Uppdatera');
+    .Form::submit('submit', 'Uppdatera')
+    .Form::close()
 ?>
 </p>
-<?=Form::close(); ?>

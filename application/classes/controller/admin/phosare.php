@@ -18,12 +18,14 @@ class Controller_Admin_phosare extends SuperAdminController{
 		                        ->join(array('user', 'u'))
 		                        ->on('a.userid', '=', 'u.user_id')
 		                        ->where('approved', '=', '0')
+		                        ->where(DB::expr('from_unixtime(timestamp, "%Y")'), '=', date('Y'))
 		                        ->order_by('a.program', 'asc')
 		                        ->order_by('name', 'asc')
 		                        ->execute()
 		                        ->as_array();
 		    $this->content->applications = $applications;
 		    $this->content->programs = array_merge(array(0 => 'Spelar ingen roll'), user::get_programs(false, true));
+		    list($this->content->firstYear) = DB::select(DB::expr('min(from_unixtime(timestamp, "%Y")) as year'))->from('applicant')->order_by('timestamp', 'asc')->execute()->as_array();
 		} else {
 		    //show the specific application
 		    $this->content = View::factory('admin/phosare/application');
@@ -37,6 +39,28 @@ class Controller_Admin_phosare extends SuperAdminController{
             $this->content->user_data = user::get_user_data($application_data['userid']);
 		    $this->content->groups = user::get_user_groups($application_data['userid']);
 		}
+
+	}
+	public function action_applicantshistory($year = false){
+	    if($year === false)
+	       $year = date('Y');
+
+	        //List them
+	        $this->content = View::factory('admin/phosare/applicationList');
+
+	        $applications = DB::select_array(array('a.*', DB::expr("Concat(u.fname, ' ', u.lname) as name")))
+	        ->from(array('applicant','a'))
+	        ->join(array('user', 'u'))
+	        ->on('a.userid', '=', 'u.user_id')
+	        ->where(DB::expr('from_unixtime(timestamp, "%Y")'), '=', $year)
+	        ->order_by('a.program', 'asc')
+	        ->order_by('name', 'asc')
+	        ->execute()
+	        ->as_array();
+	        $this->content->applications = $applications;
+	        $this->content->programs = array_merge(array(0 => 'Spelar ingen roll'), user::get_programs(false, true));
+	        list($this->content->firstYear) = DB::select(DB::expr('min(from_unixtime(timestamp, "%Y")) as year'))->from('applicant')->order_by('year', 'asc')->execute()->as_array();
+
 	}
 	public function action_approveApplication(){
 	    user::add_user_to_group($_POST['userid'], $_POST['addToGroup'], $_POST['asMemberType']);
@@ -47,7 +71,7 @@ class Controller_Admin_phosare extends SuperAdminController{
 	    $this->request->redirect('/admin/phosare/applicants/');
 	}
 	public function action_list($what = false) {
-        $list = DB::select_array(array('user.user_id', DB::expr("Concat(user.fname, ' ', user.lname) as phosarename"), 'group.name', 'lt_UserGroup.year', array('membertype.name', 'membertype')))
+        $list = DB::select_array(array('user.user_id' => 'userid', DB::expr("Concat(user.fname, ' ', user.lname) as phosarename"), 'group.name', 'lt_UserGroup.year', array('membertype.name', 'membertype')))
                 ->from('lt_UserGroup')
 		        ->join('user')
 		        ->on('lt_UserGroup.userid', '=', 'user.user_id')
@@ -72,6 +96,8 @@ class Controller_Admin_phosare extends SuperAdminController{
 	                                        'membertype' => 'Phösartyp',
 	                                        'year' => 'År'
 	                                 );
+	    $this->content->designation = true;
+	    $this->content->sortable = true;
 	}
 	public function action_responsible(){
 	    $this->content = View::factory('admin/phosare/responsible');

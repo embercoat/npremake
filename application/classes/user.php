@@ -389,7 +389,7 @@ class user{
 	        $data = DB::select(DB::expr('count(1)'))
 	            ->from('lt_UserGroup')
 	            ->where('userid', '=', $this->getId())
-	            ->where('groupid', '=', 2)
+	            ->where('groupid', '=', 1)
 	            ->execute()
 	            ->as_array();
 	        if($data[0]['count(1)'] > 0){

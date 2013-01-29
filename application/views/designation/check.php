@@ -1,0 +1,1 @@
+<input type="checkbox" name="userids[]" value="<?php echo $userid; ?>" /></td>

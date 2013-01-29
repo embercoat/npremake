@@ -7,7 +7,7 @@
 class menu{
     static function get_items(){
 		$menu = array();
-        $baseQuery = DB::select('*')->from('menu')->order_by(DB::Expr('`group`, sortorder'));
+        $baseQuery = DB::select('*')->from('menu')->order_by('group', 'ASC')->order_by('sortorder', 'ASC');
         if(isset($_SESSION['user'])){
             if(!$_SESSION['user']->logged_in())
                 $baseQuery = $baseQuery->where('requireLogin', '=', '0');

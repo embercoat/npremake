@@ -8,14 +8,6 @@ class Controller_Admin_User extends SuperAdminController{
 	}
 	public function action_index(){
 		$this->content = View::Factory('admin/user/mainUser');
-		$this->js[] = '/js/jquery.js';
-		$this->js[] = '/js/datatables/media/js/jquery.dataTables.js';
-		$this->js[] = '/js/admin/mainUser.js';
-
-		$this->css[] = '/css/form.css';
-		$this->css[] = '/js/datatables/media/css/demo_page.css';
-		$this->css[] = '/js/datatables/media/css/demo_table.css';
-
 		$this->content->users = DB::select('user_id', 'username','fname','lname')
 		                            ->from('user')
 		                            ->order_by(DB::Expr('lname, fname'))
@@ -26,7 +18,7 @@ class Controller_Admin_User extends SuperAdminController{
 	    $this->css[] = '/css/form.css';
 	    if(is_null($userId)){
 	        $_SESSION['messages']['fail'][] = 'Du måste ange ett Id';
-	        $this->request->redirect('/admin/user/');
+	        $this->request->redirect($_SERVER['HTTP_REFERER']);
 	    }
 	    if(isset($_POST) && !empty($_POST) && ($_POST['userid'] == $_SESSION['user']->getId() || $_SESSION['user']->isAdmin())){
 	        $id = $_POST['userid'];
@@ -46,11 +38,15 @@ class Controller_Admin_User extends SuperAdminController{
 	    $this->js[] = '/js/jquery.js';
 	    $this->js[] = '/js/jquery.collapser.js';
 	    $this->js[] = '/js/editUser.js';
+	    $this->content->unions = array();
+	    foreach(user::get_unions() as $u)
+	        $this->content->unions[$u['union_id']] = $u['name'];
+
 
 	}
 	public function action_delGroup($id){
 	    user::del_group($id);
-        $this->request->redirect('/admin/user/group/');
+        $this->request->redirect($_SERVER['HTTP_REFERER']);
 
 	}
 	public function action_group(){
@@ -60,7 +56,7 @@ class Controller_Admin_User extends SuperAdminController{
 	}
 	public function action_addGroup(){
         $this->css[] = '/css/form.css';
-	    $this->content = View::factory('admin/user/addGroup');
+	    $this->content = View::factory($_SERVER['HTTP_REFERER']);
 	}
 	public function action_addToOrganisation(){
 	    $organisation = $_POST['orgSelect'];
@@ -75,7 +71,7 @@ class Controller_Admin_User extends SuperAdminController{
 	    }
 	    $sql->execute();
 	    $_SESSION['messages']['success'][] = 'Användarna har lagts till i organisationen.';
-	    $this->request->redirect('/admin/user/');
+	    $this->request->redirect($_SERVER['HTTP_REFERER']);
 	}
 	public function action_editGroup($id){
 	    if(isset($_POST) && !empty($_POST)){
@@ -131,7 +127,7 @@ class Controller_Admin_User extends SuperAdminController{
 	public function action_addToGroup(){
 	    if(isset($_POST['userids']))
     	    user::add_user_to_group($_POST['userids'], $_POST['groupSelect'], $_POST['membershiptypeSelect']);
-        $this->request->redirect('/admin/user/');
+        $this->request->redirect($_SERVER['HTTP_REFERER']);
 	}
     public function action_addGroupHomeroom(){
         list($count) = DB::select(DB::expr('count(1) as c'))
@@ -163,7 +159,7 @@ class Controller_Admin_User extends SuperAdminController{
 
 	public function action_removeFromGroup($user_id, $group_id){
 	    user::removeUserFromGroup($user_id, $group_id);
-	    $this->request->redirect('/admin/user/');
+	    $this->request->redirect($_SERVER['HTTP_REFERER']);
 	}
 	public function action_addToMission(){
 	    $insert = DB::insert('lt_UserMission', array('userid', 'missionid'))->ignore(true);
@@ -172,7 +168,7 @@ class Controller_Admin_User extends SuperAdminController{
 	    }
 	    $insert->execute();
         $_SESSION['messages']['success'][] = 'User(s) added to mission';
-	    $this->request->redirect('/admin/user/');
+	    $this->request->redirect($_SERVER['HTTP_REFERER']);
 
 	}
 

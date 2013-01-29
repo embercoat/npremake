@@ -1,8 +1,8 @@
-<?='<?xml version="1.0"?>'; ?>
+<?php echo '<?xml version="1.0"?>'; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv"> 
-    <head> 
-        <title>LTU - Nolleperioden 2011</title> 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="sv" lang="sv">
+    <head>
+        <title>LTU - Nolleperioden 2011</title>
         <style type="text/css">
             @import url('/css/resethtml5.css');
             @import url('/css/style.css');
@@ -14,8 +14,8 @@
 ?>
         </style>
         <script type="text/javascript" src="/js/jquery.js">1;</script>
-        <meta http-equiv="Content-Language" content="sv" /> 
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+        <meta http-equiv="Content-Language" content="sv" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="robots" content="all" />
         <meta name="author" content="Kristian Tiny Nordman" />
         <meta name="email" content="npg@nolleperioden.se" />
@@ -27,23 +27,21 @@
                     echo '<script type="text/javascript" src="'.$j.'">1;</script>'."\r\n";
         ?>
         <script type="text/javascript" src="/js/main.js">1;</script>
-        <? if(!isset($_SESSION['user']) || !$_SESSION['user']->logged_in()) { ?>
+        <?php if(!isset($_SESSION['user']) || !$_SESSION['user']->logged_in()) { ?>
         <script type="text/javascript">
-            $(document).ready(function(){
-    	        document.loginform.textbox_username.focus();
-            });
-        <? } ?>
+            $(document).ready(function(){ $('#textbox_username').focus(); });
+        <?php } ?>
         </script>
     </head>
         <body>
-        <div id="topLogo"> 
+        <div id="topLogo">
             <div id="login_form">
-                <?
+                <?php
                 if (isset($_SESSION['user']) && $_SESSION['user']->logged_in()){
-                        echo '<a href="/backend/logout">Logga ut '.$_SESSION['user']->get_full_name().'</a>'; 
+                        echo '<a href="/backend/logout">Logga ut '.$_SESSION['user']->get_full_name().'</a>';
                 } else {
                     ?>
-                <form id="loginform" method="post" action="http://npremake.scripter.se/backend/login">
+                <form id="loginform" method="post" action="/backend/login">
                     <p>
                     Login
                     <input name="username" type="text" id="textbox_username" class="login" />
@@ -52,16 +50,16 @@
                     <button type="submit" id="submit" class="floatRight">Logga In</button>
                     </p>
                 </form>
-                <?
+                <?php
                 }
                 ?>
-            </div> 
-        </div> 
+            </div>
+        </div>
         <div id="sideMenu">
-            <?=$menu; ?>
+            <?php echo $menu; ?>
         </div>
         <div id="main">
-            <?
+            <?php
             if(isset($_SESSION['message'])){
                 echo "<ul>\r\n";
                 foreach($_SESSION['message'] as $class => $cont)
@@ -70,9 +68,9 @@
                 echo "</ul>";
             }
             unset($_SESSION['message']);
-            ?>
-            <?=$content; ?>
-        </div> 
-        <?=View::factory('stats');?>
-    </body> 
+
+            echo $content; ?>
+        </div>
+        <?php echo View::factory('stats');?>
+    </body>
 </html>
