@@ -16,6 +16,8 @@ class Controller_apply extends SuperController {
 	}
 
 	public function action_phosare(){
+	    $this->content = View::factory('apply/phosare');
+	    $this->content->justApplied = false;
 	    if(isset($_POST['whyphosa']) && ! empty($_POST['whyphosa'])){
 	        $_POST['cph'] = (isset($_POST['cph']) ? 1 : 0);
 	        DB::insert('applicant', array('userid', 'timestamp', 'whyphosa', 'cph', 'program'))
@@ -30,8 +32,8 @@ class Controller_apply extends SuperController {
 	                 )
 	                 ->execute();
 	        $_SESSION['message']['success'][] = 'Du har nu anmält ditt intresse att phösa';
+	        $this->content->justApplied = true;
 	    }
-	    $this->content = View::factory('apply/phosare');
 	    $this->content->application = user::instance()->getApplication($_SESSION['user']->getId());
 	}
 

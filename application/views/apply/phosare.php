@@ -13,6 +13,7 @@ if(count($application) == 0){
 
      .Form::submit('submit', 'Ansök!')
      .Form::close();
-} else { ?>
+} else {
+    if(!$justApplied) {?>
     <p>Du har redan ansökt om att bli phösare i år. Ta kontakt med NPG om du vill ändra din ansökan</p>
-<?php } ?>
+<?php }} ?>
