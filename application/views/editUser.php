@@ -1,8 +1,8 @@
-<h1>Editing details for: <?=$details['username'];?></h1><br/>
+<h1>Editing details for: <?php echo $details['username'];?></h1><br/>
 <div id="details">
-	<form action="<?=$formTarget?>" method="post">
 		<?php
-		echo Form::hidden('userid', $userId)
+		echo Form::open($formTarget)
+		.Form::hidden('userid', $userId)
 
 		.Form::label('fname', "Förnamn")
 		.Form::input('fname', $details['fname'])
@@ -52,12 +52,12 @@
 		.Form::label('union', 'Kårtillhörighet')
 		.Form::select('union', $unions, $details['union'])
 
-		.Form::label('driverlicens', "Körkort")
+		.Form::label('driverlicens', "Körkort (B, BE, C, CE, etc)")
 		.Form::input('driverlicens', $details['driverlicens'])
 
 		.Form::label('programId', "Program")
 		.Form::select('programId', user::get_programs(false, true), $details['programId'])
-		.Form::submit('submit', "Spara");
+		.Form::submit('submit', "Spara")
+		.Form::close();
 		?>
-		</form>
 </div>

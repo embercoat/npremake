@@ -18,22 +18,39 @@ class Controller_me extends SuperController {
 	    $this->content = View::factory('mainMe');
 	}
 	public function action_editDetails(){
-	    if(isset($_POST) && !empty($_POST) && $_SESSION['user']->getId() != 0){
-	        $id = $_SESSION['user']->getId();
-	        unset($_POST['userid'], $_POST['submit']);
-	        // Make sure the checkboxes are caught.
-	        $_POST['showPhone']     = (isset($_POST['showPhone'])     ? 1 : 0);
-            $_POST['showPost']      = (isset($_POST['showPost'])      ? 1 : 0);
-	        $_POST['showAllergies'] = (isset($_POST['showAllergies']) ? 1 : 0);
-	        $_POST['showEmail']     = (isset($_POST['showEmail'])     ? 1 : 0);
-	        user::change_user_details($id, $_POST);
-	        //Clear the session and do a new login to update the sessiondata
-	        unset($_SESSION['user']);
-	        $_SESSION['user'] = user::instance()->login_by_user_id($id);
-	        $_SESSION['message']['success'][] = 'Dina uppgifter har uppdaterats';
-	    }
 	    $this->content = View::factory('editUser');
 	    $this->content->details = user::get_user_data($_SESSION['user']->getId());
+
+	    if(isset($_POST) && !empty($_POST) && $_SESSION['user']->getId() != 0){
+	        $post = Validation::factory($_POST);
+	        $post
+    	        ->rule('fname', 'not_empty')
+    	        ->rule('lname', 'not_empty')
+	            ->rule('phone', 'not_empty')
+	        	->rule('socialsecuritynumber', 'not_empty')
+	        	->rule('socialsecuritynumber', array('user', 'check_ssn'), array(':value'))
+	            ->rule('cardnumber', 'not_empty')
+	            ->rule('email', 'not_empty')
+	            ->rule('email', 'email');
+
+	        if($post->check()){
+    	        $id = $_SESSION['user']->getId();
+    	        unset($_POST['userid'], $_POST['submit']);
+    	        // Make sure the checkboxes are caught.
+    	        $_POST['showPhone']     = (isset($_POST['showPhone'])     ? 1 : 0);
+                $_POST['showPost']      = (isset($_POST['showPost'])      ? 1 : 0);
+    	        $_POST['showAllergies'] = (isset($_POST['showAllergies']) ? 1 : 0);
+    	        $_POST['showEmail']     = (isset($_POST['showEmail'])     ? 1 : 0);
+    	        user::change_user_details($id, $_POST);
+    	        //Clear the session and do a new login to update the sessiondata
+    	        unset($_SESSION['user']);
+    	        $_SESSION['user'] = user::instance()->login_by_user_id($id);
+    	        $_SESSION['message']['success'][] = 'Dina uppgifter har uppdaterats';
+	        } else {
+                $_SESSION['message']['error'] = $post->errors('form_errors');
+	            $this->content->details = array_merge($this->content->details, $_POST);
+	        }
+	    }
 	    $this->content->userId = $_SESSION['user']->getId();
 	    $this->content->formTarget = '/me/editDetails';
 

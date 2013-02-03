@@ -63,7 +63,7 @@ body {
 	margin:9px;
 	padding:5px;
 }
-.fail {
+.fail, .error {
 	list-style:none outside none;
 	background-color:lightCoral;
 	margin:9px;

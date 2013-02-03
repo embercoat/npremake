@@ -1,7 +1,7 @@
 <?php
 
 class user{
-    private $user_data = array();
+    protected $user_data = array();
     private static $instance;
     protected $user_id;
 
@@ -16,7 +16,7 @@ class user{
 	 */
 	public function __construct($username = false, $password = false)
 	{
-		if (($username) && ($password̈́))
+		if (($username) && ($password))
 		{
 			$instance->login_by_username_and_password($username, $password);
 		}
@@ -170,7 +170,15 @@ class user{
             return array();
         }
     }
-
+    /**
+     * Get currentuser data
+     * Gets the userdata from the current user
+     *
+     * @return array
+     */
+    public function get_current_user_data(){
+        return $this->user_data;
+    }
     /**
 	 * Get unions
 	 * Gets the unions
@@ -468,6 +476,7 @@ class user{
      * @return bool
      */
     static function check_ssn($pnr){
+       $pnr = preg_replace("/[^0-9]/", "", $pnr);
        if (strlen($pnr) != 10) return false;
        $n = 2;
        $sum = 0;
