@@ -5,7 +5,7 @@
 <?php
 }
 
-if($all_good && false){
+if($all_good){
 
     if($application[0]['approved'] == 0) {
     echo Form::open('/apply/phosare/', array('method'=>'post'))
