@@ -18,9 +18,9 @@ return array
 			 * Ports and sockets may be appended to the hostname.
 			 */
 			'hostname'   => 'localhost',
-			'database'   => 'nollep',
-			'username'   => "draco",
-			'password'   => "#Warcraft1",
+			'database'   => 'nolleperioden',
+			'username'   => "root",
+			'password'   => "Str0ng&freE",
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',

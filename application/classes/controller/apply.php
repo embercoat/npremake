@@ -46,6 +46,7 @@ class Controller_apply extends SuperController {
 
 	    $critical_fields = unserialize(Model::factory('store')->get_value('phosarapplication_required_fields'));
 	    $all_good = true;
+
         $user_data = $_SESSION['user']->get_current_user_data();
 	    foreach($critical_fields as $cf){
 	        if(empty($user_data[$cf])){

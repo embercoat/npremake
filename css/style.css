@@ -49,13 +49,14 @@ body {
 }
 #topLogo {
     text-align: right;
-    height: 148px;
+    height: 187px;
     width: 899px;
-    background-image: url('/images/nollep2010_top.png');
+    background-image: url('/images/bannerNPG2013.jpg');
+    background-repeat: no-repeat;
 }
 #login_form{
     position: relative;
-    top: 106px;
+    top: 156px;
 }
 .success {
 	list-style:none outside none;
@@ -63,7 +64,7 @@ body {
 	margin:9px;
 	padding:5px;
 }
-.fail, .error {
+.fail {
 	list-style:none outside none;
 	background-color:lightCoral;
 	margin:9px;

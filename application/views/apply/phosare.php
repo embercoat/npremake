@@ -6,8 +6,7 @@
 }
 
 if($all_good){
-
-    if($application[0]['approved'] == 0) {
+    if((count($application) == 1 && $application[0]['approved'] == 0) or count($application) == 0) {
     echo Form::open('/apply/phosare/', array('method'=>'post'))
         .Form::hidden('applicationid', ((count($application)) ? $application['0']['id'] : 'new'))
 
@@ -22,6 +21,8 @@ if($all_good){
 
         .Form::submit('submit', 'Ansök!')
         .Form::close();
+    } else {
+	echo 'Din anmälan har redan blivit godkänd. Du kan inte längre ändra den.';
     }
 } else {
     echo 'Du saknar en del viktig information på din profil. Vänligen gå till <a href="/me/editDetails" style="text-decoration: underline">personuppgifter</a> och fyll i.';
