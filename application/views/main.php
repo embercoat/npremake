@@ -71,6 +71,6 @@
 
             echo $content; ?>
         </div>
-        <?php echo View::factory('stats');?>
+        <?php if(Model::factory('store')->get_value('show_statusbox')) echo View::factory('stats'); ?>
     </body>
 </html>
