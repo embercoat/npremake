@@ -1,5 +1,5 @@
 <?php
-    if(!$justApplied) {?>
+    if($justApplied) {?>
     <p>Du har redan ansökt om att bli phösare i år.</p>
 
 <?php
