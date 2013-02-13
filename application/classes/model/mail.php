@@ -59,7 +59,11 @@ class Model_mail extends Model {
         return $this;
     }
     function compile_headers(){
-        return implode("\r\n", $this->headers);
+	$h_final= '';
+	foreach($this->headers as $key => $value){
+		$h_final .= $key.': '.$value.'\r\n';
+	}
+        return $h_final;
     }
     function send(){
         return mail($this->to, $this->subject, $this->body, $this->compile_headers());
