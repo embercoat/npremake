@@ -502,8 +502,16 @@ class user{
         return $pass;
 
     }
-    static function change_passsword($userid, $newpassword){
+    static function change_password($userid, $newpassword){
         DB::update('user')->set(array('password' => self::encrypt_password($newpassword)))->where('user_id', '=', $userid)->execute();
+    }
+    static function check_password($userid, $password){
+        $count = DB::select('user_id')->from('user')->where('user_id', '=', $userid)->where('password', '=', self::encrypt_password($password))->execute()->as_array();
+        if(count($count) == 1){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 

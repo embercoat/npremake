@@ -17,6 +17,27 @@ class Controller_me extends SuperController {
 	{
 	    $this->content = View::factory('mainMe');
 	}
+	public function action_changePassword(){
+	    $this->content = View::factory('me/changePassword');
+
+	    if(isset($_POST) && !empty($_POST)){
+	        $post = Validation::factory($_POST);
+	        $post
+	        ->rule('newpassword', 'min_length', array(':value', '6'))
+	        ->rule('newpassword', 'not_empty')
+	        ->rule('newpassword', 'matches', array(':validation', 'newpassword', 'newpassword2'))
+	        ->rule('oldpassword', array('user', 'check_password'), array($_SESSION['user']->getId(), ':value'));
+
+	        if($post->check()){
+	            user::change_password($_SESSION['user']->getId(), $_POST['newpassword']);
+	            $_SESSION['message']['success'][] = 'Ditt lösenord är ändrat';
+	        } else {
+	            $_SESSION['message']['fail'] = $post->errors('form_errors');
+	            $this->content->details = $_POST;
+	        }
+
+	    }
+	}
 	public function action_editDetails(){
 	    $this->content = View::factory('editUser');
 	    $this->content->details = user::get_user_data($_SESSION['user']->getId());

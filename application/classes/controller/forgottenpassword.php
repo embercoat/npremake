@@ -23,7 +23,7 @@ class Controller_forgottenpassword extends SuperController {
 	                    ->body(View::factory('mail/newpassword')->set('newpass', $newpass))
 	                    ->send();
 
-	            user::change_passsword($userid[0]['user_id'], $newpass);
+	            user::change_password($userid[0]['user_id'], $newpass);
 
 	        }
 	        $_SESSION['message']['warning'][] = 'Om adressen fanns har ett nytt lösenord skickats till denna.';
