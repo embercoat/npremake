@@ -4,13 +4,19 @@ label {
 	display:block;
 	width: 200px;
 }
-input,select, textarea, button {
+input,select, textarea, button, #cke_body {
 	margin-bottom: 10px;
 	float:left;
 	clear:both;
 	padding: 3px;
 	border: 1px solid black;
 	width: 300px;
+}
+#cke_body {
+	width: 100%;
+}
+.cke_contents {
+	height: 250px !important;
 }
 input[type="checkbox"] {
 	clear: none;

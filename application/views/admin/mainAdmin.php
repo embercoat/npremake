@@ -47,6 +47,10 @@
 				<li><a href="/admin/user/group/">Grupper</a></li>
 			</ul>
 			<ul>
+				<li class="menuGroupHead">Mail</li>
+				<li><a href="/admin/mail/">Start</a></li>
+			</ul>
+			<ul>
 				<li class="menuGroupHead">Phösare</li>
 				<li><a href="/admin/phosare/applicants/">Ansökningar</a></li>
 				<li><a href="/admin/phosare/list/thisYear/">Årets Phösare</a></li>
