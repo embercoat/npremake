@@ -499,6 +499,7 @@ class user{
             $r = rand(0, (strlen($chars)-1));
             $pass .= $chars[$r];
         }
+        return $pass;
 
     }
     static function change_passsword($userid, $newpassword){
