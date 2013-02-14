@@ -502,7 +502,7 @@ class user{
 
     }
     static function change_passsword($userid, $newpassword){
-        DB::update('user')->set(array('password' => self::encrypt_password($newpassword)))->where('userid', '=', $userid)->execute();
+        DB::update('user')->set(array('password' => self::encrypt_password($newpassword)))->where('user_id', '=', $userid)->execute();
     }
 }
 

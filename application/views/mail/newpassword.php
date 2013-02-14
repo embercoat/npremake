@@ -1,7 +1,7 @@
-Hej!
+<p>Hej!</p>
 
-Här kommer ditt nya lösenord: <?php echo $newpass; ?>.
+<p>Här kommer ditt nya lösenord: <?php echo $newpass; ?>.</p>
 
-Mvh
-T.O.M
-Your friendly neighbourhood server
+<p>Mvh<br />
+T.O.M<br />
+Your friendly neighbourhood server</p>
