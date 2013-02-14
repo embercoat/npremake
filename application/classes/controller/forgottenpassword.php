@@ -24,8 +24,9 @@ class Controller_forgottenpassword extends SuperController {
 	                    ->send();
 
 	            user::change_passsword($userid[0]['user_id'], $newpass);
-	            $_SESSION['message']['warning'][] = 'Om adressen fanns har ett nytt lösenord skickats till denna.';
+
 	        }
+	        $_SESSION['message']['warning'][] = 'Om adressen fanns har ett nytt lösenord skickats till denna.';
 	    }
 	}
 
