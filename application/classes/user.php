@@ -488,6 +488,22 @@ class user{
 
         return !( ($sum + $pnr[9]) % 10);
     }
+    /**
+     *
+     */
+    static function generate_password($len = 8){
+        $chars = 'abcdefghigjklmnopqrstuvxyzABCDEFGHIJKLMNOPQRSTUVXYZ1234567890';
+
+        $pass = "";
+        for($i =0; $i<$len;$i++){
+            $r = rand(0, (strlen($chars)-1));
+            $pass .= $chars[$r];
+        }
+
+    }
+    static function change_passsword($userid, $newpassword){
+        DB::update('user')->set(array('password' => self::encrypt_password($newpassword)))->where('userid', '=', $userid);
+    }
 }
 
 

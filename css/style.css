@@ -70,6 +70,12 @@ body {
 	margin:9px;
 	padding:5px;
 }
+.warning {
+	list-style:none outside none;
+	background-color: orange;
+	margin:9px;
+	padding:5px;
+}
 input.login[class="login"] { /* Needed to override forms.css */
 	border: 1px solid #777777;
     width: 71px;
