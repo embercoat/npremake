@@ -5,7 +5,7 @@
  *
  */
 class menu{
-    static function get_items(){
+    static function get_items($disregardVisible = false){
 		$menu = array();
         $baseQuery = DB::select('*')->from('menu')->order_by('group', 'ASC')->order_by('sortorder', 'ASC');
         if(isset($_SESSION['user'])){
@@ -15,6 +15,8 @@ class menu{
                 $baseQuery = $baseQuery->where('requireAdmin','=','0');
             if(!$_SESSION['user']->isPhosare())
                 $baseQuery = $baseQuery->where('requirePhosare','=','0');
+            if($disregardVisible == false)
+                $baseQuery = $baseQuery->where('visible','=','1');
         } else
             $baseQuery = $baseQuery->where('requireLogin', '=', '0');
 
