@@ -3,7 +3,7 @@
 class Model_mail extends Model {
 
     public $subject, $from, $body;
-    public $to = array(), $cc = array(), $bcc = array();
+    public $to = '', $cc = array(), $bcc = array();
     public $headers = array(
             'Content-type' => 'text/html; charset=utf-8',
             );
@@ -59,15 +59,15 @@ class Model_mail extends Model {
         return $this;
     }
     function compile_headers(){
-	$h_final= '';
-	foreach($this->headers as $key => $value){
-		$h_final .= $key.': '.$value.'\r\n';
-	}
+    	$h_final= '';
+    	foreach($this->headers as $key => $value){
+    		$h_final .= $key.': '.$value.'\r\n';
+    	}
         return $h_final;
     }
     function send(){
         return mail($this->to, $this->subject, $this->body, $this->compile_headers());
-    }/* */
+    }
 }
 
 ?>

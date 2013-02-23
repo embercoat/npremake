@@ -513,6 +513,15 @@ class user{
             return false;
         }
     }
+    static function get_user_fields($fields = array('fname', 'lname', 'user_id'), $id = false){
+        if(!is_array($fields))
+            $fields = array($fields);
+        $sql = DB::select_array($fields)->from('user');
+        if($id !== false){
+            $sql->where('user_id', '=', $id);
+        }
+        return $sql->execute()->as_array();
+    }
 }
 
 
