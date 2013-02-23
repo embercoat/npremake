@@ -44,8 +44,10 @@ class Controller_Admin_Mail extends SuperAdminController{
 	        if($store['email'] != NULL){
     	        $mail = Model::factory('mail')
     	        ->to($store['email'])
+    	        ->from('npg@nolleperioden.se')
     	        ->subject($_POST['subject'])
     	        ->body($_POST['body']);
+    	        var_dump($mail->compile_headers());
     	        $mail->send();
     	        var_dump($store['email']);
 	        }

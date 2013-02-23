@@ -61,7 +61,7 @@ class Model_mail extends Model {
     function compile_headers(){
     	$h_final= '';
     	foreach($this->headers as $key => $value){
-    		$h_final .= $key.': '.$value.'\r\n';
+    		$h_final .= $key.': '.$value."\r\n";
     	}
         return $h_final;
     }
