@@ -47,6 +47,7 @@ class Controller_Admin_Mail extends SuperAdminController{
     	        ->subject($_POST['subject'])
     	        ->body($_POST['body']);
     	        $mail->send();
+    	        var_dump($store['email']);
 	        }
 	    }
 	}
