@@ -1,11 +1,10 @@
-
 <script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>
 <script type="text/javascript">
 window.onload = function(){
     CKEDITOR.replace( 'ckedit');
 }
 </script>
-
+<div style="float: left; font-weight: bold;font-size: 30px; color: red;">Obs! Fortfarande beta. Använd inte än</div>
 <?php
 echo Form::open('/admin/mail/send')
     .Form::label('subject', 'Titel')
