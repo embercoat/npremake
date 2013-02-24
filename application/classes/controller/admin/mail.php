@@ -14,7 +14,7 @@ class Controller_Admin_Mail extends SuperAdminController{
 	    $this->js[] = '/js/jquery.ui.js';
 		$this->content = View::Factory('admin/mail/mail');
 		$this->content->groups = user::get_group();
-		$this->content->phosare = phosare::get_phosare_fields();
+		$this->content->phosare = phosare::get_phosare_fields(false, false, array(array('user.fname', 'asc'), array('user.lname', 'asc')));
 		$this->content->membertypes = user::get_membertype();
 	}
 	public function action_send(){
@@ -38,7 +38,6 @@ class Controller_Admin_Mail extends SuperAdminController{
         if(isset($_POST['phosare'])){
             $recipients = array_unique(array_merge($recipients, $_POST['phosare']));
         }
-
 	    foreach($recipients as $r){
 	        list($store) = user::get_user_fields('email', $r);
 	        if($store['email'] != NULL){
@@ -47,11 +46,12 @@ class Controller_Admin_Mail extends SuperAdminController{
     	        ->from('npg@nolleperioden.se')
     	        ->subject($_POST['subject'])
     	        ->body($_POST['body']);
-    	        var_dump($mail->compile_headers());
     	        $mail->send();
-    	        var_dump($store['email']);
 	        }
 	    }
+
+	    $this->content = View::factory('admin/mail/send');
+	    $this->content->recipients = user::get_user_fields(array('fname', 'lname', 'email'), $recipients);
 	}
 }
 

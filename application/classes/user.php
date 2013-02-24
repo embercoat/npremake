@@ -518,7 +518,10 @@ class user{
             $fields = array($fields);
         $sql = DB::select_array($fields)->from('user');
         if($id !== false){
-            $sql->where('user_id', '=', $id);
+            if(is_numeric($id))
+                $sql->where('user_id', '=', $id);
+            elseif(is_array($id))
+                $sql->where('user_id', 'in', $id);
         }
         return $sql->execute()->as_array();
     }
