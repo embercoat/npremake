@@ -7,7 +7,7 @@
 <p style="background-color: lightgreen">
     Du är anmäld
     <?php if($l['open'] == 1) { ?>
-        <a href="/list/unparticipate/<?php echo $l['idlist'];?>">Avanmäl dig</a><br />
+        <a href="/signup/unparticipate/<?php echo $l['idlist'];?>">Avanmäl dig</a><br />
     <?php } else { ?>
         Listan är stängd
     <?php } ?>
@@ -19,7 +19,7 @@
 <p style="background-color: lightcoral">
     Du är inte anmäld
     <?php if($l['open'] == 1) { ?>
-        <a href="/list/participate/<?php echo $l['idlist'];?>">Anmäl dig</a>
+        <a href="/signup/participate/<?php echo $l['idlist'];?>">Anmäl dig</a>
     <?php } else { ?>
         Listan är stängd
     <?php } ?>

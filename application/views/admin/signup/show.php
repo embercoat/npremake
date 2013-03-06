@@ -17,7 +17,7 @@
 		}
 	}
 }*/
-echo Form::open((!$create ? '/admin/list/list/'.$list['idlist']: '/admin/list/create'))
+echo Form::open((!$create ? '/admin/signup/list/'.$list['idlist']: '/admin/signup/create'))
     .Form::label('name', 'Namn')
     .Form::input('name', (!$create ? $list['name']: ''))
     .Form::label('require_moderation', 'NPG godkänner?')

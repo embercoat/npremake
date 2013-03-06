@@ -4,7 +4,7 @@
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
-class Controller_list extends SuperController {
+class Controller_signup extends SuperController {
     function before(){
         parent::before();
     }

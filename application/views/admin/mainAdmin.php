@@ -56,7 +56,7 @@
 				<li><a href="/admin/phosare/list/thisYear/">Årets Phösare</a></li>
 				<li><a href="/admin/phosare/list/">Alla Phösare</a></li>
 				<li><a href="/admin/phosare/responsible/">Ansvariga just nu</a></li>
-				<li><a href="/admin/list/">Anmälningslistor</a></li>
+				<li><a href="/admin/signup/">Anmälningslistor</a></li>
 			</ul>
 			<ul>
 				<li class="menuGroupHead">Phösaruppdrag</li>
@@ -74,6 +74,11 @@
 				<li><a href="/admin/document/">Alla</a></li>
 				<li><a href="/admin/document/add">Lägg Till</a></li>
 			</ul>
+			<ul>
+				<li class="menuGroupHead">Listor</li>
+				<li><a href="/admin/list/allergy/">Phösare Allergier</a></li>
+			</ul>
+
 
 		</div>
 		<div id="main">
