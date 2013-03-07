@@ -9,7 +9,7 @@ echo Form::open('/admin/user/editGroup/new')
     .Form::input('shortname', '')
 
     .Form::label('union', 'Kår')
-    .Form::input('union', '')
+    .Form::select('union', $unions)
 
     .Form::submit('', 'Spara')
 ?>

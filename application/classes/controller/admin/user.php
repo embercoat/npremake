@@ -56,7 +56,10 @@ class Controller_Admin_User extends SuperAdminController{
 	}
 	public function action_addGroup(){
         $this->css[] = '/css/form.css';
-	    $this->content = View::factory($_SERVER['HTTP_REFERER']);
+	    $this->content = View::factory('admin/user/addGroup');
+	    $this->content->unions = array();
+	    foreach(user::get_unions() as $u)
+	        $this->content->unions[$u['union_id']] = $u['name'];
 	}
 	public function action_addToOrganisation(){
 	    $organisation = $_POST['orgSelect'];
