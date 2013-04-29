@@ -4,7 +4,7 @@
  * @author Kristian Nordman <kristian.nordman@scripter.se>
  *
  */
-class Controller_Admin_Mail extends SuperAdminController{
+class Controller_Admin_sms extends SuperAdminController{
 	function before(){
         parent::before();
 	}
@@ -12,7 +12,7 @@ class Controller_Admin_Mail extends SuperAdminController{
 	    $this->css[] = '/css/form.css';
 	    $this->css[] = '/css/mail.css';
 	    $this->js[] = '/js/jquery.ui.js';
-		$this->content = View::Factory('admin/mail/mail');
+		$this->content = View::Factory('admin/sms/sms');
 	}
 	public function action_send(){
 	    $user_membertype = array();
@@ -36,19 +36,17 @@ class Controller_Admin_Mail extends SuperAdminController{
             $recipients = array_unique(array_merge($recipients, $_POST['phosare']));
         }
 	    foreach($recipients as $r){
-	        list($store) = user::get_user_fields('email', $r);
-	        if($store['email'] != NULL){
-    	        $mail = Model::factory('mail')
-    	        ->to($store['email'])
-    	        ->from('npg@nolleperioden.se')
-    	        ->subject($_POST['subject'])
+	        list($store) = user::get_user_fields('phone', $r);
+	        if($store['phone'] != NULL){
+    	        $sms = Model::factory('sms')
+    	        ->add_recipient($store['phone'])
     	        ->body($_POST['body']);
-    	        $mail->send();
+    	        $sms->send();
 	        }
 	    }
 
-	    $this->content = View::factory('admin/mail/send');
-	    $this->content->recipients = user::get_user_fields(array('fname', 'lname', 'email'), $recipients);
+	    $this->content = View::factory('admin/sms/send');
+	    $this->content->recipients = user::get_user_fields(array('fname', 'lname', 'phone'), $recipients);
 	}
 }
 

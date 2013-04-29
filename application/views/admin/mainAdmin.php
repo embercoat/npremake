@@ -47,8 +47,9 @@
 				<li><a href="/admin/user/group/">Grupper</a></li>
 			</ul>
 			<ul>
-				<li class="menuGroupHead">Mail</li>
-				<li><a href="/admin/mail/">Start</a></li>
+				<li class="menuGroupHead">Utskick</li>
+				<li><a href="/admin/mail/">Mail</a></li>
+				<li><a href="/admin/sms/">SMS</a></li>
 			</ul>
 			<ul>
 				<li class="menuGroupHead">Phösare</li>
@@ -83,7 +84,7 @@
 
 		</div>
 		<div id="main">
-		    <?
+		    <?php
             if(isset($messages)){
                 echo "<ul>\r\n";
                 foreach($messages as $class => $cont)
@@ -92,8 +93,8 @@
                 echo "</ul>";
             }
             ?>
-            <?=$content; ?>
+            <?php echo $content; ?>
         </div>
-		<?=View::factory('stats');?>
+		<?php echo View::factory('stats');?>
 	</body>
 </html>

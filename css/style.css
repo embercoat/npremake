@@ -92,7 +92,7 @@ td, tr {
 
 a { 
     font-family: verdana, arial, helvetica, sans-serif; 
-    font-size: 8pt; 
+    font-size: 8pt; th
     text-decoration: none; 
     color: #000000; 
 }
@@ -137,4 +137,7 @@ dd {
 }
 .preHidden {
 	display: none;
+}
+th {
+	text-align: left;
 }

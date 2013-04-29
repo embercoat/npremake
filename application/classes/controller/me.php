@@ -114,7 +114,7 @@ class Controller_me extends SuperController {
                     ->on('homeroom.homeroom_id', '=', 'lt_HomeroomGroup.homeroom')
                     ->execute()
                     ->as_array();
-        $this->content->members = DB::select('u.fname', 'u.lname','u.user_id', 'ltug.year', array('mt.name', 'membertype'))
+        $this->content->members = DB::select('u.fname', 'u.lname','u.user_id', 'u.phone', 'u.email', 'ltug.year', array('mt.name', 'membertype'))
 	                ->from(array('lt_UserGroup', 'ltug'))
 	                ->where('ltug.groupid','=',$id)
                     ->join(array('user', 'u'))
