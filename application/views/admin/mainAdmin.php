@@ -77,7 +77,7 @@
 			<ul>
 				<li class="menuGroupHead">Listor</li>
 				<li><a href="/admin/list/allergy/">Phösare Allergier</a></li>
-				<li><a href="/admin/list/stuklist/">Phösare Allergier</a></li>
+				<li><a href="/admin/list/stuklist/">Phösare Stukarbetare</a></li>
 			</ul>
 
 
