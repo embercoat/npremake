@@ -61,6 +61,41 @@ class Controller_Admin_list extends SuperAdminController{
         $this->content = file_get_contents(DOCROOT.'tmp/allergies.ods');
         unlink(DOCROOT.'tmp/allergies.ods');
 	}
+	public function action_stuklist(){
+	    require Kohana::find_file('vendor', 'ods');
+	    $ods = ods::newODS();
+
+	    $ods->addCell('Stuklista',0,0,'Stuklista','string','bold');
+	    $ods->addCell('Stuklista',1,0,'','string');
+	    $ods->set_column_width(0, 10);
+
+	    $row_counter = 2;
+
+	    $sql = DB::select('*')
+	    ->from('user')
+	    ->where('karworker', '<>', '')
+	    ->order_by('lname', 'ASC')
+	    ->order_by('fname', 'ASC')
+	    ->where('user_id', 'IN', DB::select('userid')
+	            ->from('lt_UserGroup')
+	            ->where('year', '=', date('Y'))
+	    );
+	    $result = $sql->execute()
+	    ->as_array();
+	    foreach($result as $r){
+	        $ods->addCell('Stuklista',$row_counter,0,$r['lname'].', '.$r['fname'],'string');
+	        $ods->addCell('Stuklista',$row_counter++,1,$r['karworker'],'string');
+	    }
+
+	    $ods->saveOds(DOCROOT.'tmp/stuklist.ods'); //save the object to a ods file; //save the object to a ods file
+
+	    $this->headers['Content-Disposition'] = 'attachment; filename="stuklist.ods"';
+	    $this->contenttype = 'application/vnd.oasis.opendocument.spreadsheet';
+	    $this->headers['Content-Type'] = $this->contenttype;
+
+	    $this->content = file_get_contents(DOCROOT.'tmp/stuklist.ods');
+	    unlink(DOCROOT.'tmp/stuklist.ods');
+	}
 }
 
 
