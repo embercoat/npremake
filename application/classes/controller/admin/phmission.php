@@ -40,8 +40,18 @@ class Controller_Admin_phmission extends SuperAdminController{
 		            ->values(array(
 		                'name'         => $_POST['name'],
 		                'description'  => $_POST['description'],
-		                'startdate'	   => $_POST['starttime'],
-		                'enddate'      => $_POST['endtime'],
+		                'startdate'	   => mktime(
+		                                    $_POST['starttime']['hour'],
+		                                    $_POST['starttime']['minute'],
+            		                        0,
+            		                        $_POST['starttime']['month'],
+            		                        $_POST['starttime']['day']),
+		                'enddate'	   => mktime(
+		                                    $_POST['endtime']['hour'],
+		                                    $_POST['endtime']['minute'],
+            		                        0,
+            		                        $_POST['endtime']['month'],
+            		                        $_POST['endtime']['day']),
 		            	'responsible_organisation' => $_POST['responsible_organisation']
 		            ))
 		            ->execute();
@@ -51,8 +61,18 @@ class Controller_Admin_phmission extends SuperAdminController{
 		            ->set(array(
 		                'name'         => $_POST['name'],
 		                'description'  => $_POST['description'],
-		                'startdate'	   => $_POST['starttime'],
-		                'enddate'      => $_POST['endtime'],
+		                'startdate'	   => mktime(
+		                                    $_POST['starttime']['hour'],
+		                                    $_POST['starttime']['minute'],
+            		                        0,
+            		                        $_POST['starttime']['month'],
+            		                        $_POST['starttime']['day']),
+		                'enddate'	   => mktime(
+		                                    $_POST['endtime']['hour'],
+		                                    $_POST['endtime']['minute'],
+            		                        0,
+            		                        $_POST['endtime']['month'],
+            		                        $_POST['endtime']['day']),
 		                'responsible_organisation' => $_POST['responsible_organisation']
 		            ))
 		            ->where('id','=',$_POST['mission_id'])

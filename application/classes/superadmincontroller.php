@@ -1,7 +1,7 @@
 <?php
 /**
- * 
- * @author Kristian Nordman <kristian.nordman@scripter.se> 
+ *
+ * @author Kristian Nordman <kristian.nordman@scripter.se>
  * This is the supercontroller that all the other controllers inherit from.
  * Contains the things that are common for all the controllers
  *
@@ -16,10 +16,11 @@ class SuperAdminController extends Kohana_Controller {
     protected $custom_head = array();
     private $starttime;
     private $stats = array();
+    protected $noheader = false;
 	/**
-	 * This function is run before the controller. 
+	 * This function is run before the controller.
 	 * Useful for preparing the environment
-	 * 
+	 *
 	 */
     public function before(){
         if(!isset($_SESSION['user']) || !$_SESSION['user']->isAdmin()){
@@ -36,11 +37,15 @@ class SuperAdminController extends Kohana_Controller {
             $this->mainView->messages = $_SESSION['messages'];
             unset($_SESSION['messages']);
         }
-        $this->mainView->content = $this->content;
-        $this->mainView->css = $this->css;
-        $this->mainView->custom_head = $this->custom_head;
-        $this->mainView->js = $this->js;
-        $this->response->body($this->mainView);
+        if($this->noheader === false){
+            $this->mainView->content = $this->content;
+            $this->mainView->css = $this->css;
+            $this->mainView->custom_head = $this->custom_head;
+            $this->mainView->js = $this->js;
+            $this->response->body($this->mainView);
+        } else {
+            $this->response->body($this->content);
+        }
     }
 
 }

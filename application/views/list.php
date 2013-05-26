@@ -24,7 +24,7 @@ if($sortable)
 		<?php  foreach($list as $l){ ?>
 		<tr>
 			<?php foreach($keys as $k) {
-			    if($k != 'userid' && $designation) { ?>
+			    if($k != 'userid' && !$designation) { ?>
 				<td><?php echo $l[$k]; ?></td>
 			    <?php }
 			}
