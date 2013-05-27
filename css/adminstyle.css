@@ -42,7 +42,11 @@ body {
 	min-height:80%;	
 }
 td{
-	border:1px solid black;	
+	border:1px solid black;
+	vertical-align: middle;	
+}
+tr {
+	height: 1.4em;
 }
 thead {
 	font-weight: bold;

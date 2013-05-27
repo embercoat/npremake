@@ -91,7 +91,6 @@ class Controller_me extends SuperController {
 	}
 	public function action_groupDetails($id){
 	    if(isset($_POST) && !empty($_POST)){
-	        var_dump($_POST);
 	        DB::insert('responsibility', array('user', 'group', 'start', 'end', 'priority'))
 	            ->values(array(
 	                    $_POST['user'],
@@ -108,7 +107,7 @@ class Controller_me extends SuperController {
                             0,
                             0,
                             $_POST['starttime']['month'],
-                            (($_POST['starttime']['shift'] == 0) ? $_POST['starttime']['month'] : $_POST['starttime']['month']+1)+1
+                            (($_POST['starttime']['shift'] == 0) ? $_POST['starttime']['day'] : $_POST['starttime']['day']+1)+1
 	                    ),
 	                    $_POST['priority']
 	            ))

@@ -107,7 +107,8 @@ class Controller_Admin_phosare extends SuperAdminController{
             ->on('r.group', '=', 'group.id')
             ->join('user')
             ->on('r.user', '=', 'user.user_id')
-            ->where(DB::expr('unix_timestamp()'), 'between', DB::expr('start and end'))
+            ->where(DB::expr(time()), 'between', DB::expr('start and end'))
+            ->order_by('group.name', 'ASC')
             ->order_by('priority', 'ASC')
             ->execute()
             ->as_array();
