@@ -91,12 +91,25 @@ class Controller_me extends SuperController {
 	}
 	public function action_groupDetails($id){
 	    if(isset($_POST) && !empty($_POST)){
+	        var_dump($_POST);
 	        DB::insert('responsibility', array('user', 'group', 'start', 'end', 'priority'))
 	            ->values(array(
 	                    $_POST['user'],
 	                    $_POST['group_id'],
-	                    $_POST['start'],
-	                    $_POST['end'],
+	                    mktime(
+                            (($_POST['starttime']['shift'] == 0) ? 6 : 18),
+                            0,
+                            0,
+                            $_POST['starttime']['month'],
+                            $_POST['starttime']['day']+1
+                        ),
+	                    mktime(
+                            (($_POST['starttime']['shift'] == 0) ? 18 : 6),
+                            0,
+                            0,
+                            $_POST['starttime']['month'],
+                            (($_POST['starttime']['shift'] == 0) ? $_POST['starttime']['month'] : $_POST['starttime']['month']+1)+1
+	                    ),
 	                    $_POST['priority']
 	            ))
 	            ->execute();
@@ -136,6 +149,10 @@ class Controller_me extends SuperController {
                     ->where('group', '=', $id)
                     ->execute()
                     ->as_array();
+    }
+    public function action_delResponsibility($id){
+        DB::delete('responsibility')->where('id', '=', $id)->execute();
+        $this->request->redirect($_SERVER['HTTP_REFERER']);
     }
 	public function action_Mission(){
 	    $missions = DB::select('*')
