@@ -6,7 +6,6 @@ if($designation)
     echo View::factory('designation/start');
 if($sortable)
     echo View::factory('datatable/start')->set('target', 'sorttable');
-
 ?>
 
 <table <?php if($sortable) echo 'id="sorttable" style="float: left;width: 100%;"'; ?>>
@@ -24,7 +23,7 @@ if($sortable)
 		<?php  foreach($list as $l){ ?>
 		<tr>
 			<?php foreach($keys as $k) {
-			    if($k != 'userid' && !$designation) { ?>
+			    if($k != 'userid' || $designation) { ?>
 				<td><?php echo $l[$k]; ?></td>
 			    <?php }
 			}
