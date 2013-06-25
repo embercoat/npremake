@@ -99,8 +99,8 @@ class Controller_Admin_phosare extends SuperAdminController{
 	    $this->content->designation = true;
 	    $this->content->sortable = true;
 	}
-	public function action_responsible(){
-	    $this->content = View::factory('admin/phosare/responsible');
+	public function action_dutynow(){
+	    $this->content = View::factory('admin/phosare/duty');
         $this->content->responsible = DB::select_array(array('r.*', 'user.fname', 'user.lname', 'user.phone', 'group.name'))
             ->from(array('responsibility', 'r'))
             ->join('group')
@@ -112,6 +112,22 @@ class Controller_Admin_phosare extends SuperAdminController{
             ->order_by('priority', 'ASC')
             ->execute()
             ->as_array();
+
+	}
+	public function action_duty(){
+	    $this->content = View::factory('admin/phosare/duty');
+	    $this->content->responsible = DB::select_array(array('r.*', 'user.fname', 'user.lname', 'user.phone', 'group.name'))
+	    ->from(array('responsibility', 'r'))
+	    ->join('group')
+	    ->on('r.group', '=', 'group.id')
+	    ->join('user')
+	    ->on('r.user', '=', 'user.user_id')
+	    ->where('start', 'between', DB::expr(mktime(0,0,0,0,0).' and '.mktime(0,0,0,0,0,((int)date('Y')+1))))
+	    ->order_by('start', 'ASC')
+	    ->order_by('group.name', 'ASC')
+	    ->order_by('priority', 'ASC')
+	    ->execute()
+	    ->as_array();
 
 	}
 }
