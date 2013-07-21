@@ -23,7 +23,6 @@ else
  * @see  http://php.net/timezones
  */
 date_default_timezone_set('Europe/Stockholm');
-
 /**
  * Set the default locale.
  *
@@ -31,7 +30,6 @@ date_default_timezone_set('Europe/Stockholm');
  * @see  http://php.net/setlocale
  */
 setlocale(LC_ALL, 'en_US.utf-8');
-
 /**
  * Enable the Kohana auto-loader.
  *

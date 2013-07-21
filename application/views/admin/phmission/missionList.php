@@ -10,9 +10,9 @@
 	<tbody>
 	<? foreach($missions as $mission) { ?>
 	    <tr>
-	    	<td><?=$mission['name']; ?></td>
-	    	<td><?=date('d M Y h:i', $mission['startdate']); ?></td>
-	    	<td><?=date('d M Y h:i', $mission['enddate']); ?></td>
+	    	<td><?php echo $mission['name']; ?></td>
+	    	<td><?php echo date('d M Y h:i', $mission['startdate']); ?></td>
+	    	<td><?php echo date('d M Y h:i', $mission['enddate']); ?></td>
 	    	<td>
 	    		<a href="/admin/phmission/edit/<?=$mission['id']; ?>"><img src="/images/icon/edit.gif" /></a>
         		<a href="/admin/phmission/delMission/<?=$mission['id']; ?>"><img src="/images/icon/red_x.svg" height="14px"; /></a>
