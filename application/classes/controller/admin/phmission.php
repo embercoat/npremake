@@ -79,15 +79,17 @@ class Controller_Admin_phmission extends SuperAdminController{
 		            ->execute();
 	            DB::update('lt_UserMission')
 	                ->set(array('spare' => '0'))
+	                ->where('missionid', '=', $_POST['mission_id'])
 	                ->execute();
 	            if(isset($_POST['spare']) && count($_POST['spare']) > 0)
-	                DB::update('lt_UserMission')->set(array('spare' => '1'))->where('userid', 'in', $_POST['spare'])->execute();
+	                DB::update('lt_UserMission')->set(array('spare' => '1'))->where('userid', 'in', $_POST['spare'])->where('missionid', '=', $_POST['mission_id'])->execute();
 
 	            DB::update('lt_UserMission')
 	                ->set(array('attended' => '0'))
+	                ->where('missionid', '=', $_POST['mission_id'])
 	                ->execute();
 	            if(isset($_POST['attended']) && count($_POST['attended']) > 0)
-	                DB::update('lt_UserMission')->set(array('attended' => '1'))->where('userid', 'in', $_POST['attended'])->execute();
+	                DB::update('lt_UserMission')->set(array('attended' => '1'))->where('userid', 'in', $_POST['attended'])->where('missionid', '=', $_POST['mission_id'])->execute();
 	        }
 	    }
 	    if($mission_id !== 'new'){

@@ -191,7 +191,15 @@ class Controller_me extends SuperController {
 	                   ->execute()
 	                   ->as_array();
 	    if(isset($is_responsible_for[0]['id']) && $is_responsible_for[0]['id'] == $mission_id){
-	        $this->content->users = DB::select_array(array(DB::Expr('concat(user.fname, " ", user.lname) as name'), 'user.user_id', 'user.phone'))
+	        $this->content->users = DB::select_array(
+	                                    array(
+	                                        DB::Expr('concat(user.fname, " ", user.lname) as name'),
+	                                        'user.user_id',
+	                                        'user.phone',
+	                                        'lt_UserMission.spare',
+	                                        'lt_UserMission.attended'
+	                                    )
+	                                )
                                     ->from('lt_UserMission')
                                     ->join('user')
                                     ->on('lt_UserMission.userid','=','user.user_id')
