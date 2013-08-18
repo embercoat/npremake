@@ -1,4 +1,4 @@
-<h1>Nytt Phösaruppdrag</h1>
+<h1>(Nytt) Phösaruppdrag</h1>
 <?php echo Form::open('/admin/phmission/edit/'.((isset($mission_id))?$mission_id:'new'), array('method' => 'post')); ?>
 <p>
 <?php
@@ -34,27 +34,32 @@ echo Form::hidden('mission_id', ((isset($mission_id))?$mission_id:'new'))
     .Form::submit('button', (($mission_id == 'new') ? 'Skapa': 'Uppdatera'));
 ?>
 </p>
-<?php echo Form::close(); ?>
+
 
 <?php if(!empty($users)){ ?>
 <table style="float: left; clear: both;">
 	<thead>
 		<tr>
-			<th style="width: 200px;">Name</th>
-			<th>Modify</th>
+			<th style="width: 200px;">Namn</th>
+			<th style="width: 80px;">Reserv</th>
+			<th style="width: 80px;">Närvaro</th>
+			<th style="width: 80px;">Ta bort</th>
 		</tr>
 	</thead>
 	<tbody>
-	<? foreach($users as $u){ ?>
+	<?php foreach($users as $u){ ?>
 		<tr>
-			<td><?=$u['name']; ?></td>
-			<td>
-				<a href="/admin/phmission/rmUser/<?=$mission_id; ?>/<?=$u['user_id']; ?>/">
+			<td><?php echo $u['name']; ?></td>
+		    <td><?php echo Form::checkbox('spare[]', $u['user_id'], (($u['spare'] == 1) ? true : false)); ?></td>
+		    <td><?php echo Form::checkbox('attended[]', $u['user_id'], (($u['attended'] == 1) ? true : false)); ?></td>
+		    <td>
+				<a href="/admin/phmission/rmUser/<?php echo $mission_id; ?>/<?php echo $u['user_id']; ?>/">
 					<img src="/images/icon/red_x.svg" height="14px"; />
 				</a>
 			</td>
 		</tr>
-	<? } ?>
+	<?php } ?>
 	</tbody>
 </table>
-<? } ?>
+<?php echo Form::submit('button', (($mission_id == 'new') ? 'Skapa': 'Uppdatera')).Form::close(); ?>
+<?php } ?>

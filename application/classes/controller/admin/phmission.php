@@ -77,6 +77,17 @@ class Controller_Admin_phmission extends SuperAdminController{
 		            ))
 		            ->where('id','=',$_POST['mission_id'])
 		            ->execute();
+	            DB::update('lt_UserMission')
+	                ->set(array('spare' => '0'))
+	                ->execute();
+	            if(isset($_POST['spare']) && count($_POST['spare']) > 0)
+	                DB::update('lt_UserMission')->set(array('spare' => '1'))->where('userid', 'in', $_POST['spare'])->execute();
+
+	            DB::update('lt_UserMission')
+	                ->set(array('attended' => '0'))
+	                ->execute();
+	            if(isset($_POST['attended']) && count($_POST['attended']) > 0)
+	                DB::update('lt_UserMission')->set(array('attended' => '1'))->where('userid', 'in', $_POST['attended'])->execute();
 	        }
 	    }
 	    if($mission_id !== 'new'){
@@ -97,7 +108,14 @@ class Controller_Admin_phmission extends SuperAdminController{
 	    $this->css[] = '/css/jquery.ui.css';
 	    $this->css[] = '/css/jquery-ui-timepicker.css';
 	    $this->content->mission_id = $mission_id;
-	    $this->content->users = DB::select_array(array(DB::Expr('concat(user.fname, " ", user.lname) as name'), 'user.user_id'))
+	    $this->content->users = DB::select_array(
+	                                    array(
+	                                            DB::Expr('concat(user.fname, " ", user.lname) as name'),
+	                                            'user.user_id',
+	                                            'lt_UserMission.spare',
+	                                            'lt_UserMission.attended'
+	                                    )
+	                                )
                                     ->from('lt_UserMission')
                                     ->join('user')
                                     ->on('lt_UserMission.userid','=','user.user_id')
