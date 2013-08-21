@@ -21,7 +21,7 @@ if($sortable)
 	</thead>
 	<tbody>
 		<?php  foreach($list as $l){ ?>
-		<tr>
+		<tr <?php echo ((isset($l['userid'])) ? 'id="uid_'.$l['userid'].'"' : ''); ?>>
 			<?php foreach($keys as $k) {
 			    if($k != 'userid' || $designation) { ?>
 				<td><?php echo $l[$k]; ?></td>

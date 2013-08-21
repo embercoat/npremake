@@ -24,7 +24,7 @@ td {
 			</td>
 			<td>
 				<h1>Sluttid:</h1>
-				<?php echo date('d M Y h:i', $missionDetails['startdate']); ?>
+				<?php echo date('d M Y h:i', $missionDetails['enddate']); ?>
 			</td>
 		</tr>
 		<tr>
