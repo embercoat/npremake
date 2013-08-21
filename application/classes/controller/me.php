@@ -179,6 +179,7 @@ class Controller_me extends SuperController {
                                             ->from('mission')
                                             ->join('organisation')
                                             ->on('mission.responsible_organisation','=', 'organisation.id')
+                                            ->where('mission.id', '=', $mission_id)
                                             ->execute()
                                             ->as_array();
 
