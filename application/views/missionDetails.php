@@ -20,11 +20,11 @@ td {
 		<tr>
 			<td>
 				<h1>Starttid:</h1>
-				<?php echo date('d M Y h:i', $missionDetails['startdate']); ?>
+				<?php echo date('d M Y H:i', $missionDetails['startdate']); ?>
 			</td>
 			<td>
 				<h1>Sluttid:</h1>
-				<?php echo date('d M Y h:i', $missionDetails['enddate']); ?>
+				<?php echo date('d M Y H:i', $missionDetails['enddate']); ?>
 			</td>
 		</tr>
 		<tr>
