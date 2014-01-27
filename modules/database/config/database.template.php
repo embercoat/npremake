@@ -19,8 +19,8 @@ return array
 			 */
 			'hostname'   => 'localhost',
 			'database'   => 'nolleperioden',
-			'username'   => "tiny",
-			'password'   => "Str0ng&freE",
+			'username'   => "user",
+			'password'   => "passwd",
 			'persistent' => FALSE,
 		),
 		'table_prefix' => '',

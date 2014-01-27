@@ -4,3 +4,4 @@
 /.gitignore
 /.project
 /dump_logs
+/modules/database/config/database.php
