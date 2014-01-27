@@ -1,4 +1,4 @@
-<?php
+﻿<?php
     if($justApplied) {?>
     <p>Du har redan ansökt om att bli phösare i år.</p>
 
@@ -11,9 +11,16 @@ if($all_good){
         .Form::hidden('applicationid', ((count($application)) ? $application['0']['id'] : 'new'))
 
         .Form::label('whyphosa', 'Varför vill Du phösa?')
-        .Form::textarea('whyphosa', ((count($application)) ? $application['0']['whyphosa'] : ''),array('rows' => 10, 'cols' => 50))
+        
+	.Form::textarea('whyphosa', ((count($application)) ? $application['0']['whyphosa'] : ''),array('rows' => 10, 'cols' => 50))
 
-        .Form::label('program', "Jag vill phösa")
+        
+	.Form::label('phosbuddy', 'Vilka vill du Phösa med?')
+        
+	.Form::textarea('phosbuddy', ((count($application)) ? $application['0']['phosbuddy'] : ''),array('rows' => 10, 'cols' => 50))
+
+
+	.Form::label('program', "Jag vill phösa")
         .Form::select('program', array_merge(array(0 => 'Spelar ingen roll'), user::get_programs(false, true)), ((count($application)) ? $application['0']['program'] : ''))
 
         .Form::label('cph', "Jag vill vara CPh")
