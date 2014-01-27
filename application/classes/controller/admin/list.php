@@ -68,7 +68,11 @@ class Controller_Admin_list extends SuperAdminController{
             $_POST['sel'][array_search('groupname', $_POST['sel'])] = array('group.name', 'groupname');
             $this->groupsel = true;
         }
-	    $query = DB::select_array($_POST['sel'])->from('user');
+		$Pho = array('fname', 'lname');
+	    $query = DB::select_array(array_merge($Pho, $_POST['sel']))->from('user');
+		$query ->order_by('lname','asc')->order_by('fname', 'asc');
+		
+		
 
 	    if(isset($_POST['cond']['isPhosare'])){
 	        $query->or_where('user.user_id', 'IN',
