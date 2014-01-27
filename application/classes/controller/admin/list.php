@@ -70,8 +70,11 @@ class Controller_Admin_list extends SuperAdminController{
         }
 		$Pho = array('fname', 'lname');
 	    $query = DB::select_array(array_merge($Pho, $_POST['sel']))->from('user');
+
 		$query ->order_by('lname','asc')->order_by('fname', 'asc');
-		
+		$query->or_where('user.user_id', 'IN',
+	                DB::select('userid')->from('lt_UserGroup')->where('year', '=', date('Y'))
+	        );
 		
 
 	    if(isset($_POST['cond']['isPhosare'])){
