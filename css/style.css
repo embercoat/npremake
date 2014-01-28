@@ -30,6 +30,7 @@ body {
     font-size: 8pt;
     font-weight: normal;
     color: black;
+
     
 }
 #sideMenu {
@@ -51,7 +52,7 @@ body {
     text-align: right;
     height: 187px;
     width: 899px;
-    background-image: url('/images/NPG banner 2014.jpg');
+    background-image: url('/images/NPG2014 header.jpg');
     background-repeat: no-repeat;
 }
 #login_form{
