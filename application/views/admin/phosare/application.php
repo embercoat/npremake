@@ -19,6 +19,12 @@
 	<tr>
 		<td colspan="4"><?php echo $application_data['whyphosa']; ?></td>
 	</tr>
+	<tr>
+		<td colspan="4"><b>Phösargrupp</b></td>
+	</tr>
+	<tr>
+		<td colspan="4"><?php echo $application_data['phosbuddy']; ?></td>
+	</tr>
 </table>
 <br />
 <h1>Userdata</h1>
