@@ -18,6 +18,10 @@ if($all_good){
 	.Form::label('phosbuddy', 'Vilka vill du Phösa med?')
         
 	.Form::textarea('phosbuddy', ((count($application)) ? $application['0']['phosbuddy'] : ''),array('rows' => 10, 'cols' => 50))
+	
+	.Form::label('klass', 'Jag studerar')
+        
+	.Form::textarea('klass', ((count($application)) ? $application['0']['klass'] : ''),array('rows' => 1, 'cols' => 50))
 
 
 	.Form::label('program', "Jag vill phösa")
@@ -25,6 +29,9 @@ if($all_good){
 
         .Form::label('cph', "Jag vill vara CPh")
         .Form::checkbox('cph', 1, ((count($application)) ? $application['0']['cph'] : 0))
+		
+		.Form::label('importantMe', "Är Phösargrupp viktigare än nolleklass. OBS ej kuggfråga")
+        .Form::checkbox('importantMe', 1, ((count($application)) ? $application['0']['importantMe'] : 0))
 
         .Form::submit('submit', 'Ansök!')
         .Form::close();

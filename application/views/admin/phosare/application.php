@@ -9,6 +9,7 @@
 	<tr>
 		<td style="width: 150px;"><b>CPh</b></td>
 		<td style="width: 150px;"><?php echo (($application_data['cph'] == 1) ? 'Ja': 'Nej'); ?></td>
+		
 		<td style="width: 150px;"><b>Program</b></td>
 		<td style="width: 150px;"><?php echo $programs[$application_data['program']]; ?></td>
 	</tr>
@@ -25,6 +26,14 @@
 	<tr>
 		<td colspan="4"><?php echo $application_data['phosbuddy']; ?></td>
 	</tr>
+	<tr>
+		<td colspan="4"><b>Studerar</b></td>
+	</tr>
+	<tr>
+		<td colspan="4"><?php echo $application_data['klass']; ?></td>
+	</tr>
+	<td style="width: 150px;"><b>Tycker grupp är viktigare än klass</b></td>
+		<td style="width: 150px;"><?php echo (($application_data['importantMe'] == 1) ? 'Ja': 'Nej'); ?></td>
 </table>
 <br />
 <h1>Userdata</h1>
@@ -40,6 +49,10 @@
   	<tr>
 		<td><b>Email</b></td>
 		<td><?php echo $user_data['email']; ?></td>
+  	</tr>
+	<tr>
+		<td><b>STUK-lag</b></td>
+		<td><?php echo $user_data['karworker']; ?></td>
   	</tr>
   	<tr>
 		<td><b>Socialsecurity number</b></td>
