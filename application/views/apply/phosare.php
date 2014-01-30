@@ -10,7 +10,7 @@ if($all_good){
     echo Form::open('/apply/phosare/', array('method'=>'post'))
         .Form::hidden('applicationid', ((count($application)) ? $application['0']['id'] : 'new'))
 
-        .Form::label('whyphosa', 'Varför vill Du phösa?')
+        .Form::label('whyphosa', 'Berätta kort om dig själv och varför du vill phösa. OBS att detta kan bli utslagsfråga.')
         
 	.Form::textarea('whyphosa', ((count($application)) ? $application['0']['whyphosa'] : ''),array('rows' => 10, 'cols' => 50))
 
@@ -20,8 +20,16 @@ if($all_good){
 	.Form::textarea('phosbuddy', ((count($application)) ? $application['0']['phosbuddy'] : ''),array('rows' => 10, 'cols' => 50))
 	
 	.Form::label('klass', 'Jag studerar')
-        
 	.Form::textarea('klass', ((count($application)) ? $application['0']['klass'] : ''),array('rows' => 1, 'cols' => 50))
+	
+	.Form::label('studentikosa', 'Studentikåsa engagemang. T.ex. Föreningar, sektioner.')
+	.Form::textarea('studentikosa', ((count($application)) ? $application['0']['studentikosa'] : ''),array('rows' => 1, 'cols' => 50))
+	
+	.Form::label('phosHistoryBox', "Har du phöst tidigare?")
+    .Form::checkbox('phosHistoryBox', 1, ((count($application)) ? $application['0']['phosHistoryBox'] : 0))
+	
+	.Form::label('phosHistory', 'Om ja, vilka årtal?')   
+	.Form::textarea('phosHistory', ((count($application)) ? $application['0']['klass'] : ''),array('rows' => 1, 'cols' => 50))
 
 
 	.Form::label('program', "Jag vill phösa")

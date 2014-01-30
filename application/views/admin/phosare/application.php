@@ -32,8 +32,21 @@
 	<tr>
 		<td colspan="4"><?php echo $application_data['klass']; ?></td>
 	</tr>
+	<tr>
+		<td colspan="4"><b>Studentikåsa engagemang</b></td>
+	</tr>
+	<tr>
+		<td colspan="4"><?php echo $application_data['studentikosa']; ?></td>
+	</tr>
+	<tr>
+		<td style="width: 150px;"><b>Phöst tidigare</b></td>
+		<td style="width: 150px;"><?php echo (($application_data['phosHistoryBox'] == 1) ? 'Ja': 'Nej'); ?></td>
+		
+		<td style="width: 150px;"><b>Phöst år</b></td>
+		<td style="width: 150px;"><?php echo $application_data['phosHistory']; ?></td>
+	</tr>
 	<td style="width: 150px;"><b>Tycker grupp är viktigare än klass</b></td>
-		<td style="width: 150px;"><?php echo (($application_data['importantMe'] == 1) ? 'Ja': 'Nej'); ?></td>
+	<td style="width: 150px;"><?php echo (($application_data['importantMe'] == 1) ? 'Ja': 'Nej'); ?></td>
 </table>
 <br />
 <h1>Userdata</h1>
@@ -49,6 +62,18 @@
   	<tr>
 		<td><b>Email</b></td>
 		<td><?php echo $user_data['email']; ?></td>
+  	</tr>
+	<tr>
+		<td><b>Kårtillhärlighet</b></td>
+		<td><?php 
+			if($user_data['union'] == 1){
+				echo 'LS';
+			}else if($user_data['union'] == 2){
+				echo 'TKL';
+			}else{
+				echo 'Fristående';
+			}
+			?></td>
   	</tr>
 	<tr>
 		<td><b>STUK-lag</b></td>
