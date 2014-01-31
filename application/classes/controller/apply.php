@@ -30,11 +30,9 @@ class Controller_apply extends SuperController {
 								$_POST['phosbuddy'],
     	                        $_POST['cph'],
     	                        $_POST['program']
-								$_POST['klass']
-								$_POST['importantMe']
-								$_POST['phosHistory']
-								$_POST['phosHistoryBox']
-								$_POST['studentikosa']
+								
+								
+								
     	                    )
     	                 )
     	                 ->execute();
