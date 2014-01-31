@@ -21,7 +21,7 @@ class Controller_apply extends SuperController {
 	    if(isset($_POST['whyphosa']) && ! empty($_POST['whyphosa'])){
 	        $_POST['cph'] = (isset($_POST['cph']) ? 1 : 0);
 	        if($_POST['applicationid'] == 'new'){
-    	        DB::insert('applicant', array('userid', 'timestamp', 'whyphosa','phosbuddy', 'cph', 'program'))
+    	        DB::insert('applicant', array('userid', 'timestamp', 'whyphosa','phosbuddy', 'cph', 'program','klass', 'importantMe', 'phosHistory', 'phosHistoryBox','studentikosa'))
     	                ->values(
     	                    array(
     	                    	$_SESSION['user']->getId(),
@@ -30,6 +30,11 @@ class Controller_apply extends SuperController {
 								$_POST['phosbuddy'],
     	                        $_POST['cph'],
     	                        $_POST['program']
+								$_POST['klass']
+								$_POST['importantMe']
+								$_POST['phosHistory']
+								$_POST['phosHistoryBox']
+								$_POST['studentikosa']
     	                    )
     	                 )
     	                 ->execute();
