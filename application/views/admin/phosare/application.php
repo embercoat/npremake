@@ -51,6 +51,13 @@
 	<td style="width: 150px;"><b>Kårmedlem</b></td>
 	<td style="width: 150px;"><?php echo (($application_data['union'] == 1) ? 'Ja': 'Nej'); ?></td>
 	</tr>
+	
+	<tr>
+		<td style="width: 150px;"><b>Inskrivningsår</b></td>
+		<td style="width: 150px;"><?php echo $application_data['inskrivning']; ?></td>
+		
+
+	</tr>
 </table>
 <br />
 <h1>Userdata</h1>

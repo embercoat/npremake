@@ -22,6 +22,9 @@ if($all_good){
 	.Form::label('klass', 'Jag studerar')
 	.Form::textarea('klass', ((count($application)) ? $application['0']['klass'] : ''),array('rows' => 1, 'cols' => 50))
 	
+	.Form::label('inskrivning', 'Inskrivningsår')
+	.Form::textarea('inskrivning', ((count($application)) ? $application['0']['inskrivning'] : ''),array('rows' => 1, 'cols' => 50))
+	
 	.Form::label('studentikosa', 'Studentikåsa engagemang. T.ex. Föreningar, sektioner.')
 	.Form::textarea('studentikosa', ((count($application)) ? $application['0']['studentikosa'] : ''),array('rows' => 1, 'cols' => 50))
 	

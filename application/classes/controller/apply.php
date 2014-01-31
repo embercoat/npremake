@@ -24,7 +24,7 @@ class Controller_apply extends SuperController {
 			$_POST['phosHistoryBox'] = (isset($_POST['phosHistoryBox']) ? 1 : 0);
 			$_POST['importantMe'] = (isset($_POST['importantMe']) ? 1 : 0);
 	        if($_POST['applicationid'] == 'new'){
-    	        DB::insert('applicant', array('userid', 'timestamp', 'whyphosa','phosbuddy', 'cph', 'program','klass', 'importantMe', 'phosHistory', 'phosHistoryBox','studentikosa', 'union'))
+    	        DB::insert('applicant', array('userid', 'timestamp', 'whyphosa','phosbuddy', 'cph', 'program','klass', 'importantMe', 'phosHistory', 'phosHistoryBox','studentikosa', 'union', 'inskrivning'))
     	                ->values(
     	                    array(
     	                    	$_SESSION['user']->getId(),
