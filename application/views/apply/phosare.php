@@ -29,7 +29,7 @@ if($all_good){
     .Form::checkbox('phosHistoryBox', 1, ((count($application)) ? $application['0']['phosHistoryBox'] : 0))
 	
 	.Form::label('phosHistory', 'Om ja, vilka årtal?')   
-	.Form::textarea('phosHistory', ((count($application)) ? $application['0']['klass'] : ''),array('rows' => 1, 'cols' => 50))
+	.Form::textarea('phosHistory', ((count($application)) ? $application['0']['phosHistory'] : ''),array('rows' => 1, 'cols' => 50))
 
 
 	.Form::label('program', "Jag vill phösa")
