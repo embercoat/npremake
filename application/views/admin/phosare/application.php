@@ -45,8 +45,12 @@
 		<td style="width: 150px;"><b>Phöst år</b></td>
 		<td style="width: 150px;"><?php echo $application_data['phosHistory']; ?></td>
 	</tr>
+	<tr>
 	<td style="width: 150px;"><b>Tycker grupp är viktigare än klass</b></td>
 	<td style="width: 150px;"><?php echo (($application_data['importantMe'] == 1) ? 'Ja': 'Nej'); ?></td>
+	<td style="width: 150px;"><b>Kårmedlem</b></td>
+	<td style="width: 150px;"><?php echo (($application_data['union'] == 1) ? 'Ja': 'Nej'); ?></td>
+	</tr>
 </table>
 <br />
 <h1>Userdata</h1>
