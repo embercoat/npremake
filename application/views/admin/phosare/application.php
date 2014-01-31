@@ -68,7 +68,7 @@
 		<td><?php echo $user_data['email']; ?></td>
   	</tr>
 	<tr>
-		<td><b>Kårtillhärlighet</b></td>
+		<td><b>Kårtillhörlighet</b></td>
 		<td><?php 
 			if($user_data['union'] == 1){
 				echo 'LS';

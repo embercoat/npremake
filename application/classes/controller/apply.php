@@ -20,6 +20,9 @@ class Controller_apply extends SuperController {
 	    $this->content->justApplied = false;
 	    if(isset($_POST['whyphosa']) && ! empty($_POST['whyphosa'])){
 	        $_POST['cph'] = (isset($_POST['cph']) ? 1 : 0);
+			$_POST['union'] = (isset($_POST['union']) ? 1 : 0);
+			$_POST['phosHistoryBox'] = (isset($_POST['phosHistoryBox']) ? 1 : 0);
+			$_POST['importantMe'] = (isset($_POST['importantMe']) ? 1 : 0);
 	        if($_POST['applicationid'] == 'new'){
     	        DB::insert('applicant', array('userid', 'timestamp', 'whyphosa','phosbuddy', 'cph', 'program','klass', 'importantMe', 'phosHistory', 'phosHistoryBox','studentikosa', 'union'))
     	                ->values(
