@@ -38,6 +38,8 @@ body {
 	width:160px;
 	margin-right: 20px;
 	float: left;
+	
+	
 }
 #main {
 	height:500px;
@@ -49,7 +51,8 @@ body {
 	text-align:right;
 }
 #topLogo {
-    text-align: right;
+    float: left;
+	text-align: right;
     height: 187px;
     width: 899px;
     background-image: url('/images/NPG2014 headerOrange.jpg');
