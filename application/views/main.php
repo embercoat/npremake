@@ -60,7 +60,7 @@
 		<a href = "http://medlem.teknologkaren.se/">
 		<img src = "/images/bli-medlem-300x93.png" style = "width: 150px; margin: 10px 0 0 10px; position: absolute; left: 899px; top: 160px"/>
 		</a>
-		<a href = "http://www.luleastudentkar.com/">
+		<a href = "http://www.luleastudentkar.com">
 		<img src = "/images/ls.gif" style = "width: 150px; margin: 10px 0 0 10px; position: absolute; left: 1070px; top: 0px"/></a>
 		<a href = "http://medlem.luleastudentkar.com/">
 		<img src = "/images/LS-medlem.png" style = "width: 150px; margin: 10px 0 0 10px; position: absolute; left: 1070px; top: 160px"/></a>
