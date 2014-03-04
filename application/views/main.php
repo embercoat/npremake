@@ -55,7 +55,7 @@
                 ?>
             </div>
         </div>
-		<a href = "http://www.teknolagkaren.se/">
+		<a href = "http://www.teknologkaren.se/">
 		<img src = "/images/tkllogo.jpg" style = "width: 150px; margin: 10px 0 0 10px; position: absolute; left: 899px; top: 0px"/></a>
 		<a href = "http://medlem.teknologkaren.se/">
 		<img src = "/images/bli-medlem-300x93.png" style = "width: 150px; margin: 10px 0 0 10px; position: absolute; left: 899px; top: 160px"/>
