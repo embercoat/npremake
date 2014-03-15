@@ -15,7 +15,7 @@ Class Model_postfix extends Model {
         $result = $postfix->query(Database::SELECT, $sql)->as_array();
         if(count($result)){
             //Update
-            $sql = DB::update('alias')->set(array('goto' => implode("\n", $rec), 'modified' => date('Y-m-d H:i:s'), 'active' => (bool)count($rec)))->where('address', '=', $alias.'@'.$this->config['domain']);
+            $sql = DB::update('alias')->set(array('goto' => implode(",", $rec), 'modified' => date('Y-m-d H:i:s'), 'active' => (bool)count($rec)))->where('address', '=', $alias.'@'.$this->config['domain']);
             $postfix->query(Database::UPDATE, $sql);
         } else {
             //Insert
