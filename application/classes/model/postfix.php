@@ -22,7 +22,7 @@ Class Model_postfix extends Model {
             $sql = DB::insert('alias', array('address', 'goto','domain', 'created', 'modified', 'active'))
                 ->values(array(
                         $alias.'@'.$this->config['domain'],
-                        implode("\n", $rec),
+                        implode(",", $rec),
                         $this->config['domain'],
                         date('Y-m-d H:i:s'),
                         date('Y-m-d H:i:s'),
