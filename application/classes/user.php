@@ -292,6 +292,7 @@ class user{
         }
         try{
              $query->execute();
+             Model::factory('hook')->execute('user_group_change', $group_id);
              $_SESSION['messages']['success'][] = "The users have been added to the groups";
         } catch(Exception $e){
             $_SESSION['messages']['fail'][] = "One or more of the users already existed in that group with that role";
@@ -314,6 +315,7 @@ class user{
                     ->where('groupid', 'in', DB::Expr('('.implode(',', $group_id).')'))
                     ->and_where('userid','in',DB::Expr('('.implode(',',$user_id).')'))
                     ->execute();
+        Model::factory('hook')->execute('user_group_change', $group_id);
     }
 
     /**

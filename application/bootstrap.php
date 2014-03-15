@@ -107,6 +107,8 @@ Kohana::modules(array(
      'xmlrpc'  => MODPATH.'xmlrpc',  // User guide and API documentation
 ));
 
+Model::factory('hook')->init();
+
 /**
  * Set the routes. Each route must have a minimum of a name, a URI and a set of
  * defaults for the URI.
