@@ -5,3 +5,5 @@
 /.project
 /dump_logs
 /modules/database/config/database.php
+/application/config/database.php
+/npremake.sql
